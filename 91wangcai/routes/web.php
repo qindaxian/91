@@ -16,16 +16,16 @@ Route::get('/', function () {
 });
 
 //前台首页
-Route::any('index/index', 'IndexController@index');
+Route::get('index/index', 'IndexController@index');
 //前台帮助中心
-Route::any('helpcenter/index', 'HelpcenterController@index');
+Route::get('helpcenter/index', 'HelpcenterController@index');
 //前台信息披露
-Route::any('informationdisclosure/index', 'InformationdisclosureController@index');
+Route::get('informationdisclosure/index', 'InformationdisclosureController@index');
 //前台出借金额
-Route::any('loan/index', 'LoanController@index');
+Route::get('loan/index', 'LoanController@index');
 //前台运营报告
-Route::any('operationreport/index', 'OperationreportController@index');
+Route::get('operationreport/index', 'OperationreportController@index');
 //前台项目列表
-Route::any('projectlist/index', 'ProjectlistController@index');
+Route::get('projectlist/index', 'ProjectlistController@index');
 //前台旺财记事
-Route::any('chronicle/index', 'ChronicleController@index');
+Route::get('chronicle/index', 'ChronicleController@index');

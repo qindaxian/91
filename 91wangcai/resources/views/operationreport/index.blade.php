@@ -7,8 +7,8 @@
     <meta name="keywords" content="91旺财，运营，运营报告，运营数据">
     <meta name="description" content="91旺财运营数据全景展示，平台数据、月度交易数据、借款数据、用户及项目数据、地域分布数据以及91旺财年报完整呈现">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="static/v1.1.0/css/report/report_index_style.css?t=1">
-    <!-- <link rel="stylesheet" type="text/css" href="static/v1.1.0/css/report/report_ForIE_style.css"> -->
+    <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/report/report_index_style.css?t=1">
+    <!-- <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/report/report_ForIE_style.css"> -->
     <div style="display:none;">
         <script>
             var _hmt = _hmt || [];
@@ -73,13 +73,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="static/v1.1.0/img/common/weixin1.png"/>
+                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
             </div>
         </div>
     </div>
@@ -98,13 +98,13 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="static/v1.1.0" id="ctx"/>
+    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
     <div class="wrap navWrap clearfix">
         <h2 class="logo">
             <a href="/">
-                <img src="static/v1.1.0/img/common/logo.png" alt="91旺财">
+                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
             </a>
         </h2>
         <div class="nav">
@@ -204,7 +204,7 @@
     </div> -->
     <!-- banner开始 -->
     <div class="banner_wrap">
-        <img src="static/v1.1.0/img/operateReport/index/banner.png" id="banner_pc">
+        <img src="http://www.91.com/v1.1.0/img/operateReport/index/banner.png" id="banner_pc">
     </div>
 
     <!-- 平台数据总览开始 -->
@@ -214,43 +214,43 @@
                 <div class="headTop">
                     <p class="platformNum">平台数据总览</p>
                     <div class="safeYy">
-                        <img src="static/v1.1.0/img/operateReport/index/left.png" class="left">
+                        <img src="http://www.91.com/v1.1.0/img/operateReport/index/left.png" class="left">
                         <p><l>稳健运营：</l><span class="comdify"></span>天</p>
-                        <img src="static/v1.1.0/img/operateReport/index/right.png" class="right">
+                        <img src="http://www.91.com/v1.1.0/img/operateReport/index/right.png" class="right">
                     </div>
                     <p class="dateStop">数据截止至：<span></span></p>
                     <div class="dataAll">
                         <div class="first">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">累计借贷金额（元）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                         <div class="first second">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">累计借贷笔数（笔）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                         <div class="first third">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">累计为用户赚取（元）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                     </div>
                     <div class="dataAll">
                         <div class="first last fouth">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">借贷余额（元）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                         <div class="first fouth">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">借贷余额笔数（笔）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                         <div class="first fouth">
                             <p class="money"><l class="comdify"></l></p>
                             <p class="desc">利息余额（元）</p>
-                            <!-- <img src="static/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
+                            <!-- <img src="http://www.91.com/v1.1.0/img/operateReport/index/jiao.png" class="jiao"> -->
                         </div>
                     </div>
                 </div>
@@ -405,19 +405,19 @@
                 <script id="monthRichWrap" type="text/html">
                     <div class="dataRich">
                         <h3>最<span>勤奋</span>财主</h3>
-                        <img src="static/v1.1.0/img/operateReport/index/rich1.png">
+                        <img src="http://www.91.com/v1.1.0/img/operateReport/index/rich1.png">
                         <p></p>
                         <p>月累计出借笔数<span class="comdify"></span>笔</p>
                     </div>
                     <div class="dataRich dataCent">
                         <h3>最<span>土豪</span>财主</h3>
-                        <img src="static/v1.1.0/img/operateReport/index/rich2.png">
+                        <img src="http://www.91.com/v1.1.0/img/operateReport/index/rich2.png">
                         <p>  •  岁  •  </p>
                         <p>月累计出借金额<span class="comdify"></span>元</p>
                     </div>
                     <div class="dataRich">
                         <h3>最<span>聪明</span>财主</h3>
-                        <img src="static/v1.1.0/img/operateReport/index/rich3.png">
+                        <img src="http://www.91.com/v1.1.0/img/operateReport/index/rich3.png">
                         <p>岁</p>
                         <p>月累计赚取收益<span class="comdify"></span>元</p>
                     </div>
@@ -450,17 +450,17 @@
                         <div class="heartServiceTitle">月解决用户实际问题<span></span>条</div>
                         <div class="heartService">
                             <div class="weixin">
-                                <img src="static/v1.1.0/img/operateReport/index/weixin.png">
+                                <img src="http://www.91.com/v1.1.0/img/operateReport/index/weixin.png">
                                 <p>通过微信接待<span class="comdify"></span>位用户</p>
                             </div>
-                            <img src="static/v1.1.0/img/operateReport/index/line.jpg" class="line">
+                            <img src="http://www.91.com/v1.1.0/img/operateReport/index/line.jpg" class="line">
                             <div class="weixin weixin2">
-                                <img src="static/v1.1.0/img/operateReport/index/qq.png">
+                                <img src="http://www.91.com/v1.1.0/img/operateReport/index/qq.png">
                                 <p>通过QQ接待<span class="comdify"></span>位用户</p>
                             </div>
-                            <img src="static/v1.1.0/img/operateReport/index/line.jpg" class="line2">
+                            <img src="http://www.91.com/v1.1.0/img/operateReport/index/line.jpg" class="line2">
                             <div class="weixin">
-                                <img src="static/v1.1.0/img/operateReport/index/phone.png">
+                                <img src="http://www.91.com/v1.1.0/img/operateReport/index/phone.png">
                                 <p>接听<span class="comdify"></span>次用户咨询电话</p>
                             </div>
                         </div>
@@ -472,7 +472,7 @@
                     <h2>产品迭代</h2>
                     <div class="proIteration">
                         <div class="upLeft">
-                            <p><b>UP</b><img src="static/v1.1.0/img/operateReport/index/up.png"></p>
+                            <p><b>UP</b><img src="http://www.91.com/v1.1.0/img/operateReport/index/up.png"></p>
                             <P>APP升级迭代<span></span>次</br>让我们的产品更完美</P>
                         </div>
                         <div class="upRight">
@@ -544,10 +544,10 @@
 
             <div class="reportOld">
                 <div class="imgAll hidden">
-                    <a href="/?operateReport1"><img src="static/v1.1.0/img/operateReport/index/report4.png"></a>
-                    <a href="/?operateReport2"><img src="static/v1.1.0/img/operateReport/index/report1.png"></a>
-                    <a href="/?operateReport3"><img src="static/v1.1.0/img/operateReport/index/report2.png"></a>
-                    <a href="/?operateReport4"><img src="static/v1.1.0/img/operateReport/index/report3.png"></a>
+                    <a href="/?operateReport1"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report4.png"></a>
+                    <a href="/?operateReport2"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report1.png"></a>
+                    <a href="/?operateReport3"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report2.png"></a>
+                    <a href="/?operateReport4"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report3.png"></a>
                 </div>
                 <div class="imgAllNew imgAllNew1 hidden" id="imgAllNewWrap1">
                     <script id="imgAllNew1" type="text/html">
@@ -564,13 +564,13 @@
         <!--2016季度、2017月度报告结束 -->
     </div>
 </div>
-<!-- <script src="static/v1.1.0/js/lib/highcharts.js"></script>
-<script src="static/v1.1.0/js/lib/echarts.min.js"></script>
-<script src="static/v1.1.0/js/lib/china.js"></script>
-<script src="static/v1.1.0/js/lib/bootstrap.min.js"></script>
-<script src="static/v1.1.0/js/lib/artTemplate/template.js"></script>
-<script src="static/v1.1.0/js/report/index.js?t=3"></script>
+<!-- <script src="http://www.91.com/v1.1.0/js/lib/highcharts.js"></script>
+<script src="http://www.91.com/v1.1.0/js/lib/echarts.min.js"></script>
+<script src="http://www.91.com/v1.1.0/js/lib/china.js"></script>
+<script src="http://www.91.com/v1.1.0/js/lib/bootstrap.min.js"></script>
+<script src="http://www.91.com/v1.1.0/js/lib/artTemplate/template.js"></script>
+<script src="http://www.91.com/v1.1.0/js/report/index.js?t=3"></script>
  -->
-<script src="static/v1.1.0/js/report/index_main.js"></script>
+<script src="http://www.91.com/v1.1.0/js/report/index_main.js"></script>
 </body>
 </html>

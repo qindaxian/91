@@ -6,7 +6,7 @@
     <meta name="keywords" content="91旺财，帮助中心，网络借贷，借贷平台">
     <meta name="description" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，为金融消费者提供专业、透明、高效、公平的互联网直接借贷服务。">
     <!-- 导入帮助中心样式开始 -->
-    <link rel="stylesheet" type="text/css" href="static/v1.1.0/css/help/help_style.css?t=01">
+    <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/help/help_style.css?t=01">
     <!-- 导入帮助中心样式结束 -->
 </head>
 
@@ -62,13 +62,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="static/v1.1.0/img/common/weixin1.png"/>
+                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
             </div>
         </div>
     </div>
@@ -87,13 +87,13 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="static/v1.1.0" id="ctx"/>
+    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
     <div class="wrap navWrap clearfix">
         <h2 class="logo">
             <a href="/">
-                <img src="static/v1.1.0/img/common/logo.png" alt="91旺财">
+                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
             </a>
         </h2>
         <div class="nav">
@@ -312,8 +312,8 @@
                             <p>c.挂失/注销/变更证明，证明中有银行盖章且显示原卡号；</p>
                             <p>d.手持身份证正反面全脸照片</p>
                             <div class="imgAll">
-                                <img src="static/v1.1.0/img/help/file1.jpg">
-                                <img src="static/v1.1.0/img/help/file2.jpg" class="img2">
+                                <img src="http://www.91.com/v1.1.0/img/help/file1.jpg">
+                                <img src="http://www.91.com/v1.1.0/img/help/file2.jpg" class="img2">
                             </div>
                             <p>解绑材料请发送至客服邮箱:<a href="mailto:kefu@91jinrong.com">kefu@91jinrong.com</a>，我们会在一个工作日内处理完成并回电；如有更多需求，请致电24小时客服热线：400-000-0091。</p>
                         </div>
@@ -436,58 +436,58 @@
                             <table class="table_blank table-ct" width="100%" cellspacing="0" cellpadding="0" border="0">
                                 <tr><th class="ct">支持银行</th><th>单笔限额</th><th>单日限额</th><th class="last">单月限额</th></tr>
                                 <!-- 工商银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank1.png"></td><td>5万</td><td>5万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank1.png"></td><td>5万</td><td>5万</td><td class="last">60万</td></tr>
                                 <!-- 工商银行开始 -->
                                 <!-- 农业银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank2.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank2.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 农业银行结束 -->
                                 <!-- 中国银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank3.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank3.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 中国银行结束 -->
                                 <!-- 建设银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank4.png"></td><td>10万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank4.png"></td><td>10万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 建设银行结束 -->
                                 <!-- 广发银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank11.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank11.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 广发银行结束 -->
                                 <!-- 民生银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank12.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank12.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr>
                                 <!-- 民生银行结束 -->
                                 <!--光大银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank5.png"></td><td>10万</b></td><td>40万</b></td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank5.png"></td><td>10万</b></td><td>40万</b></td><td class="last">60万</td></tr>
                                 <!-- 光大银行结束 -->
                                 <!-- 招商银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank8.png"></td><td>5万</td><td>5万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank8.png"></td><td>5万</td><td>5万</td><td class="last">60万</td></tr>
                                 <!-- 招商银行结束 -->
                                 <!-- 兴业银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank10.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank10.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 兴业银行结束 -->
                                 <!-- 平安银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank6.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank6.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr>
                                 <!-- 平安银行结束 -->
                                 <!-- 中信银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank14.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank14.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 中信银行结束 -->
                                 <!-- 交通银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank13.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank13.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 交通银行结束 -->
                                 <!-- 浦发银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank9.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank9.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr>
                                 <!-- 浦发银行结束 -->
                                 <!-- 华夏银行开始 -->
-                                <!-- <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank7.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr> -->
+                                <!-- <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank7.png"></td><td>5万</b></td><td>40万</b></td><td class="last">60万</td></tr> -->
                                 <!-- 华夏银行结束 -->
                                 <!-- 邮政银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank15.png"></td><td>5000</td><td>5000</td><td class="last">15万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank15.png"></td><td>5000</td><td>5000</td><td class="last">15万</td></tr>
                                 <!-- 邮政银行结束 -->
                                 <!-- 北京银行开始 -->
-                                <!-- <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank17.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr> -->
+                                <!-- <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank17.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr> -->
                                 <!-- 北京银行结束 -->
                                 <!-- 上海银行开始 -->
-                                <!-- <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank16.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr> -->
+                                <!-- <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank16.png"></td><td>5万</td><td>40万</td><td class="last">60万</td></tr> -->
                                 <!-- 上海银行结束 -->
                                 <!-- 厦门银行开始 -->
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank18.png"></td><td>500万</td><td>500万</td><td class="last">500万</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank18.png"></td><td>500万</td><td>500万</td><td class="last">500万</td></tr>
                                 <!-- 厦门银行结束 -->
                             </table>
                             <p class="tips"><em>*</em>工商银行  农业银行  建设银行  民生银行  光大银行  中信银行 平安银行
@@ -496,17 +496,17 @@
                                 <em>*</em> 以上快捷充值支持银行充值次数限制：单日20次，单月200次。</p>
                             <table class="table_blank table_bt">
                                 <tr><th>银行名称</th><th>用户类型</th><th>单卡单笔消费上限（元）</th><th>单卡每日消费上限（元）</th><th>总限额累计上限（元）</th></tr>
-                                <tr><td class="lt" rowspan="3"><img src="static/v1.1.0/img/help/bank/bank17.png"></td><td class="tl">普通</td><td>300</td><td>300</td><td>300</td></tr>
+                                <tr><td class="lt" rowspan="3"><img src="http://www.91.com/v1.1.0/img/help/bank/bank17.png"></td><td class="tl">普通</td><td>300</td><td>300</td><td>300</td></tr>
                                 <tr><td class="tl">动态密码</td><td>1000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">证书</td><td>100万</td><td>100万</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="3"><img src="static/v1.1.0/img/help/bank/bank11.png"></td><td class="tl">USBkey</td><td>5000</td><td>5000</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="3"><img src="http://www.91.com/v1.1.0/img/help/bank/bank11.png"></td><td class="tl">USBkey</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">动态口令</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">key令</td><td>5000</td><td>5000</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="2"><img src="static/v1.1.0/img/help/bank/bank6.png"></td><td class="tl">USBkey</td><td>5万</td><td>5万</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="2"><img src="http://www.91.com/v1.1.0/img/help/bank/bank6.png"></td><td class="tl">USBkey</td><td>5万</td><td>5万</td><td>无限额</td></tr>
                                 <tr><td class="tl">动态口令</td><td>5万</td><td>5万</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="2" ><img src="static/v1.1.0/img/help/bank/bank8.png"></td><td class="tl">USBkey</td><td>无限额</td><td>无限额</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="2" ><img src="http://www.91.com/v1.1.0/img/help/bank/bank8.png"></td><td class="tl">USBkey</td><td>无限额</td><td>无限额</td><td>无限额</td></tr>
                                 <tr><td class="tl">大众版</td><td>5000</td><td>无限额</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="8"><img src="static/v1.1.0/img/help/bank/bank1.png"></td><td class="tl">柜面注册存量静态密码客户</td><td>300</td><td>300</td><td>300</td></tr>
+                                <tr><td class="lt" rowspan="8"><img src="http://www.91.com/v1.1.0/img/help/bank/bank1.png"></td><td class="tl">柜面注册存量静态密码客户</td><td>300</td><td>300</td><td>300</td></tr>
                                 <tr><td class="tl">电子银行口令卡客户（未开通短信认证）</td><td>500</td><td>1000</td><td>无限额</td></tr>
                                 <tr><td class="tl">电子银行口令卡客户（开通短信认证）</td><td>2000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">电子密码器</td><td>20万</td><td>100万</td><td>无限额</td></tr>
@@ -514,10 +514,10 @@
                                 <tr><td class="tl">一代U盾客户（开通短信认证）</td><td>100万</td><td>100万</td><td>无限额</td></tr>
                                 <tr><td class="tl">二代U盾客户</td><td>100万</td><td>100万</td><td>无限额</td></tr>
                                 <tr><td class="tl">网银互联签约客户</td><td>5000</td><td>5000</td><td>无限额</td></tr>
-                                <tr><td  class="lt" rowspan="3"><img src="static/v1.1.0/img/help/bank/bank5.png"></td><td class="tl">动态密码</td><td>1万</td><td>1万</td><td>无限额</td></tr>
+                                <tr><td  class="lt" rowspan="3"><img src="http://www.91.com/v1.1.0/img/help/bank/bank5.png"></td><td class="tl">动态密码</td><td>1万</td><td>1万</td><td>无限额</td></tr>
                                 <tr><td class="tl">阳光令牌</td><td>50万</td><td>50万</td><td>无限额</td></tr>
                                 <tr><td class="tl">PUSH支付</td><td>1万</td><td>1万</td><td>无限额</td></tr>
-                                <tr><td  class="lt" rowspan="13"><img src="static/v1.1.0/img/help/bank/bank4.png"></td><td class="tl">全部（签约）</td><td>50万</td><td>50万</td><td>无限额</td></tr>
+                                <tr><td  class="lt" rowspan="13"><img src="http://www.91.com/v1.1.0/img/help/bank/bank4.png"></td><td class="tl">全部（签约）</td><td>50万</td><td>50万</td><td>无限额</td></tr>
                                 <tr><td class="tl">动态口令卡（刮刮卡）</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">短信动态口令</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">文件证书</td><td>0</td><td>0</td><td>无限额</td></tr>
@@ -530,27 +530,27 @@
                                 <tr><td class="tl">USB Key+短信确认</td><td>50万</td><td>50万</td><td>无限额</td></tr>
                                 <tr><td class="tl">USB Key</td><td>5万</td><td>10万</td><td>无限额</td></tr>
                                 <tr><td class="tl">音频盾</td><td>50万</td><td>50万</td><td>无限额</td></tr>
-                                <!-- <tr><td class="lt"  rowspan="4"><img src="static/v1.1.0/img/help/bank/bank12.png"></td><td>大众版（短信验证码）</td><td>5000</td><td>5000</td><td>无限额</td></tr>
+                                <!-- <tr><td class="lt"  rowspan="4"><img src="http://www.91.com/v1.1.0/img/help/bank/bank12.png"></td><td>大众版（短信验证码）</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td>大众版（浏览器证书）</td><td>5000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td>贵宾版（U宝）</td><td>50万</td><td>50万</td><td>无限额</td></tr>
                                 <tr><td>贵宾版（OTP）</td><td>50万</td><td>50万</td><td>无限额</td></tr>
-                                <tr><td class="lt"><img src="static/v1.1.0/img/help/bank/bank3.png"></td><td>中国银行动态口令</td><td>5万</td><td>1000万</td><td>无限额</td></tr> -->
-                                <tr><td class="lt" rowspan="3"><img src="static/v1.1.0/img/help/bank/bank15.png"></td><td class="tl">XXUSBkey</td><td>200万</td><td>200万</td><td>无限额</td></tr>
+                                <tr><td class="lt"><img src="http://www.91.com/v1.1.0/img/help/bank/bank3.png"></td><td>中国银行动态口令</td><td>5万</td><td>1000万</td><td>无限额</td></tr> -->
+                                <tr><td class="lt" rowspan="3"><img src="http://www.91.com/v1.1.0/img/help/bank/bank15.png"></td><td class="tl">XXUSBkey</td><td>200万</td><td>200万</td><td>无限额</td></tr>
                                 <tr><td class="tl">XX动态口令</td><td>1万</td><td>1万</td><td>无限额</td></tr>
                                 <tr><td class="tl">电子令牌</td><td>20万</td><td>20万</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="2"><img src="static/v1.1.0/img/help/bank/bank14.png"></td><td class="tl">动态口令</td><td>1000</td><td>5000</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="2"><img src="http://www.91.com/v1.1.0/img/help/bank/bank14.png"></td><td class="tl">动态口令</td><td>1000</td><td>5000</td><td>无限额</td></tr>
                                 <tr><td class="tl">USBKey</td><td>100万</td><td>100万</td><td>无限额</td></tr>
-                                <!-- <tr><td class="lt" rowspan="4"><img src="static/v1.1.0/img/help/bank/bank2.png"></td><td>一代K宝</td><td>50万</td><td>100万</td><td>无限额</td></tr>
+                                <!-- <tr><td class="lt" rowspan="4"><img src="http://www.91.com/v1.1.0/img/help/bank/bank2.png"></td><td>一代K宝</td><td>50万</td><td>100万</td><td>无限额</td></tr>
                                 <tr><td>二代K宝</td><td>100万</td><td>500万</td><td>无限额</td></tr>
                                 <tr><td>动态口令卡</td><td>1000</td><td>1000</td><td>无限额</td></tr>
                                 <tr><td>K码支付</td><td>1000</td><td>3000</td><td>无限额</td></tr> -->
-                                <tr><td class="lt" rowspan="3"><img src="static/v1.1.0/img/help/bank/bank7.png"></td><td class="tl">非签约客户（密码验证）</td><td>300</td><td>1000</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="3"><img src="http://www.91.com/v1.1.0/img/help/bank/bank7.png"></td><td class="tl">非签约客户（密码验证）</td><td>300</td><td>1000</td><td>无限额</td></tr>
                                 <tr><td class="tl">手机动态验证</td><td>500</td><td>2000</td><td>无限额</td></tr>
                                 <tr><td class="tl">证书/U-key</td><td>5000</td><td>2万</td><td>无限额</td></tr>
-                                <tr><td class="lt" rowspan="2"><img src="static/v1.1.0/img/help/bank/bank10.png"></td><td class="tl">开通网上支付手机交易短信保护</td><td>1000元和5000元可以自己在网上选择</td><td>1000元和5000元可以自己在网上选择</td><td>1000元和5000元可以自己在网上选择</td></tr>
+                                <tr><td class="lt" rowspan="2"><img src="http://www.91.com/v1.1.0/img/help/bank/bank10.png"></td><td class="tl">开通网上支付手机交易短信保护</td><td>1000元和5000元可以自己在网上选择</td><td>1000元和5000元可以自己在网上选择</td><td>1000元和5000元可以自己在网上选择</td></tr>
                                 <tr><td class="tl">证书（普通证书，U盾）</td><td>自行设置限额</td><td>自行设置限额</td><td>自行设置限额</td></tr>
                                 <!-- 交通银行 -->
-                                <tr><td class="lt" rowspan="2"><img src="static/v1.1.0/img/help/bank/bank13.png"></td><td class="tl">USBkey（证书认证版）</td><td>1000000</td><td>1000000</td><td>无限额</td></tr>
+                                <tr><td class="lt" rowspan="2"><img src="http://www.91.com/v1.1.0/img/help/bank/bank13.png"></td><td class="tl">USBkey（证书认证版）</td><td>1000000</td><td>1000000</td><td>无限额</td></tr>
                                 <tr><td class="tl">短信密码版</td><td>50000</td><td>50000</td><td>无限额</td></tr>
                             </table>
                         </div>
@@ -635,7 +635,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="static/v1.1.0/js/help/help_main.js"></script>
+<script type="text/javascript" src="http://www.91.com/v1.1.0/js/help/help_main.js"></script>
 
 <div class="footer">
     <div class="wrap clearfix footerWrap">
@@ -667,11 +667,11 @@
             <dt class="tipTitle">关注</dt>
             <dd class="clearfix">
                 <div class="codeItem wxCode">
-                    <img src="static/v1.1.0/img/common/wxcode1.jpg" alt="91旺财服务平台微信公众号">
+                    <img src="http://www.91.com/v1.1.0/img/common/wxcode1.jpg" alt="91旺财服务平台微信公众号">
                     扫描二维码关注微信
                 </div>
                 <!--     <div class="codeItem">
-                        <img src="static/v1.1.0/img/common/wxcode2.jpg" alt="91旺财服务平台微信公众号2">
+                        <img src="http://www.91.com/v1.1.0/img/common/wxcode2.jpg" alt="91旺财服务平台微信公众号2">
                         扫描二维码关注微信
                     </div> -->
             </dd>
@@ -679,7 +679,7 @@
         <dl class="footer_item">
             <dt class="tipTitle">扫码下载客户端</dt>
             <dd class="footer_app">
-                <img src="static/v1.1.0/img/common/appcode.png" alt="91旺财app下载二维码">
+                <img src="http://www.91.com/v1.1.0/img/common/appcode.png" alt="91旺财app下载二维码">
             </dd>
         </dl>
     </div>
@@ -699,7 +699,7 @@
                     <!-- <a href="/about/management">管理团队</a> <a href="/about/qualification">证照资质</a> <a href="/about/regulation">法律法规</a> <a href="/about/index">关于我们</a> <a href="/about/index#adder">联系我们</a> <a href="/about/job">招聘信息</a> <a href="/about/website_reports">最新动态</a> <a href="/about/media_reports">媒体报道</a><br/> -->
                     <span>Copyright © 2014 91wangcai.com Inc. All Rights Reserved.</span>
                     <span class="mid">先智创科（北京）科技有限公司&nbsp;&nbsp;京ICP备16002181号-1</span>
-                    <span><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007186"><img src='static/v1.1.0/img/common/gongan.png'>京公网安备 11010202007186号</a></span>
+                    <span><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007186"><img src='http://www.91.com/v1.1.0/img/common/gongan.png'>京公网安备 11010202007186号</a></span>
                 </div>
             </div>
         </div>

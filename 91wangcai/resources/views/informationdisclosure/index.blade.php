@@ -7,7 +7,7 @@
     <meta name="keywords" content="91旺财,信息披露,安全合规,合规平台,安全平台">
     <meta name="description" content="91旺财安全有保障的互联网出借平台,为出借者提供安全、透明的优质出借产品,期限灵活，100元起投,厦门银行存管,为您的资金保驾护航">
     <!-- 导入关于我们的css开始... -->
-    <link href="static/v1.1.0/css/about/about_style.css" rel="stylesheet" type="text/css">
+    <link href="http://www.91.com/v1.1.0/css/about/about_style.css" rel="stylesheet" type="text/css">
     <!-- 导入关于我们的css结束... -->
 </head>
 <body>
@@ -62,13 +62,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="static/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="static/v1.1.0/img/common/weixin1.png"/>
+                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
             </div>
         </div>
     </div>
@@ -87,13 +87,13 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="static/v1.1.0" id="ctx"/>
+    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
     <div class="wrap navWrap clearfix">
         <h2 class="logo">
             <a href="/">
-                <img src="static/v1.1.0/img/common/logo.png" alt="91旺财">
+                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
             </a>
         </h2>
         <div class="nav">
@@ -206,7 +206,7 @@
             <div class="innerTab">
                 <div class="tit">公司介绍</div>
                 <div class="content company">
-                    <!-- <h2><img src="static/v1.1.0/img/about/aboutLogo.jpg"></h2> -->
+                    <!-- <h2><img src="http://www.91.com/v1.1.0/img/about/aboutLogo.jpg"></h2> -->
                     <div class="inner">
                         <p>91科技成立于2011年9月1日，经过6年多的发展，已从最初的金融信息及交易撮合业务领域进入到众创、文化创意、传媒娱乐、创业投资等领域，构建起“创新金融服务+创业投资”双轮驱动的泛金融生态系统，打造出专注于服务“个人+企业+金融机构+政府”的全业务生态生活圈，为企业和消费者提供高效的金融生活服务解决方案。</p>
                         <p>金融及金融服务板块意在运用互联网信息技术及数据分析等手段，提高贷款、保险等交易效率，降低交易成本，切实推行普惠金融。凭借着创新的业务模式和服务理念，91科技成为比尔•盖茨到访的中国科技金融企业；荣登福布斯中文榜“中国互联网金融50强”；与海通证券、厦门银行、北京银行等300多家传统金融机构达成战略合作；并被《新闻联播》、《焦点访谈》等央视品牌栏目连续报道10余次；曾荣获工信部颁发的“2015CITE‘创新产品与应用奖’”、“中关村国家自主创新示范区‘金种子工程’企业”等多项行业大奖。</p>
@@ -264,7 +264,7 @@
                         </div>
                         <div class="wcPic">
                             <p><b>91旺财APP</b>：91旺财</p>
-                            <img src="static/v1.1.0/img/common/appcode.png">
+                            <img src="http://www.91.com/v1.1.0/img/common/appcode.png">
                         </div>
                     </div>
                     <div class="text">
@@ -272,14 +272,14 @@
                     </div>
                     <h3>办公环境</h3>
                     <div class="picList">
-                        <img src="static/v1.1.0/img/about/pic1.jpg">
-                        <img class="r" src="static/v1.1.0/img/about/pic2.jpg">
-                        <img src="static/v1.1.0/img/about/pic3.jpg">
-                        <img class="r" src="static/v1.1.0/img/about/pic4.jpg">
-                        <img src="static/v1.1.0/img/about/pic5.jpg">
-                        <img class="r" src="static/v1.1.0/img/about/pic6.jpg">
-                        <img src="static/v1.1.0/img/about/pic7.jpg">
-                        <img class="r" src="static/v1.1.0/img/about/pic8.jpg">
+                        <img src="http://www.91.com/v1.1.0/img/about/pic1.jpg">
+                        <img class="r" src="http://www.91.com/v1.1.0/img/about/pic2.jpg">
+                        <img src="http://www.91.com/v1.1.0/img/about/pic3.jpg">
+                        <img class="r" src="http://www.91.com/v1.1.0/img/about/pic4.jpg">
+                        <img src="http://www.91.com/v1.1.0/img/about/pic5.jpg">
+                        <img class="r" src="http://www.91.com/v1.1.0/img/about/pic6.jpg">
+                        <img src="http://www.91.com/v1.1.0/img/about/pic7.jpg">
+                        <img class="r" src="http://www.91.com/v1.1.0/img/about/pic8.jpg">
                     </div>
                     <!-- <h3>联系我们</h3>
                     <p>先智创科（北京）科技有限公司</p>
@@ -297,7 +297,7 @@
 <div class="dialogWrap">
     <div class="dialogBox">
         <div class="hd"><i class="close">×</i></div>
-        <div class="bd"><img src="static/v1.1.0/img/about/picBig1.jpg"></div>
+        <div class="bd"><img src="http://www.91.com/v1.1.0/img/about/picBig1.jpg"></div>
     </div>
 </div>
 </div>
@@ -332,11 +332,11 @@
             <dt class="tipTitle">关注</dt>
             <dd class="clearfix">
                 <div class="codeItem wxCode">
-                    <img src="static/v1.1.0/img/common/wxcode1.jpg" alt="91旺财服务平台微信公众号">
+                    <img src="http://www.91.com/v1.1.0/img/common/wxcode1.jpg" alt="91旺财服务平台微信公众号">
                     扫描二维码关注微信
                 </div>
                 <!--     <div class="codeItem">
-                        <img src="static/v1.1.0/img/common/wxcode2.jpg" alt="91旺财服务平台微信公众号2">
+                        <img src="http://www.91.com/v1.1.0/img/common/wxcode2.jpg" alt="91旺财服务平台微信公众号2">
                         扫描二维码关注微信
                     </div> -->
             </dd>
@@ -344,7 +344,7 @@
         <dl class="footer_item">
             <dt class="tipTitle">扫码下载客户端</dt>
             <dd class="footer_app">
-                <img src="static/v1.1.0/img/common/appcode.png" alt="91旺财app下载二维码">
+                <img src="http://www.91.com/v1.1.0/img/common/appcode.png" alt="91旺财app下载二维码">
             </dd>
         </dl>
     </div>
@@ -364,7 +364,7 @@
                     <!-- <a href="/about/management">管理团队</a> <a href="/about/qualification">证照资质</a> <a href="/about/regulation">法律法规</a> <a href="/about/index">关于我们</a> <a href="/about/index#adder">联系我们</a> <a href="/about/job">招聘信息</a> <a href="/about/website_reports">最新动态</a> <a href="/about/media_reports">媒体报道</a><br/> -->
                     <span>Copyright © 2014 91wangcai.com Inc. All Rights Reserved.</span>
                     <span class="mid">先智创科（北京）科技有限公司&nbsp;&nbsp;京ICP备16002181号-1</span>
-                    <span><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007186"><img src='static/v1.1.0/img/common/gongan.png'>京公网安备 11010202007186号</a></span>
+                    <span><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007186"><img src='http://www.91.com/v1.1.0/img/common/gongan.png'>京公网安备 11010202007186号</a></span>
                 </div>
             </div>
         </div>
@@ -381,6 +381,6 @@
         ga('send', 'pageview');
     </script>
 </div>
-<script src="static/v1.1.0/js/about/about_main.js"></script>
+<script src="http://www.91.com/v1.1.0/js/about/about_main.js"></script>
 </body>
 </html>
