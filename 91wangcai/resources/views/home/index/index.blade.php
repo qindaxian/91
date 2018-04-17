@@ -10,7 +10,7 @@
     </div>
     <div class="wrap userWrap">
                 <div class="welcomeWrap">
-                    <h2 class="welcomeText">15810083779，欢迎您！</h2>
+                    <h2 class="welcomeText">欢迎您！</h2>
                     <div class="welcomeSplit"></div>
                     <div class="propertyWrap">
                         <h2 class="propertyItem">
