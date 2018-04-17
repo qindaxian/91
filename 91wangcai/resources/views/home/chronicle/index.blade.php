@@ -1,4 +1,8 @@
 
+@extends('home.common.base')
+@section('content')
+
+
 <!doctype html>
 <html>
 <head>
@@ -196,6 +200,7 @@
     </div>
 </div>
 <!--header结束-->
+
 <!-- loading开始 -->
 <div class="loadWrap">
     <span class="loadlogo"></span>
@@ -211,6 +216,9 @@
     </div>
 </div>
 <!--main结束-->
+
+@endsection('content')
+
 <div class="footer">
     <div class="wrap clearfix footerWrap">
         <dl class="footer_item addressWrap">
@@ -294,3 +302,4 @@
 <script src="http://www.91.com/v1.1.0/js/daily/index_main.js"></script>
 </body>
 </html>
+

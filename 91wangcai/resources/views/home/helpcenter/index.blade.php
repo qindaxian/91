@@ -1,3 +1,7 @@
+
+@extends('home.common.base')
+@section('content')
+
 <!doctype html>
 <html>
 <head>
@@ -166,6 +170,7 @@
         </div>
     </div>
 </div>
+
 
 
 
@@ -637,6 +642,9 @@
 </div>
 <script type="text/javascript" src="http://www.91.com/v1.1.0/js/help/help_main.js"></script>
 
+@endsection('content')
+
+
 <div class="footer">
     <div class="wrap clearfix footerWrap">
         <dl class="footer_item addressWrap">
@@ -718,3 +726,4 @@
 </div>
 </body>
 </html>
+

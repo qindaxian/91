@@ -20,6 +20,13 @@ Route::group(['namespace' => 'Admin'], function(){
    	Route::get('admin/product-project','ProductController@project');
 
    	Route::get('admin/product-creditor','ProductController@creditor');
+});
+
+Route::group(['namespace' => 'Home'], function(){
+    // 控制器在 "App\Http\Controllers\Home" 命名空间下
+
+
+   	Route::get('admin/product-creditor','ProductController@creditor');
    	Route::get('admin/login','LoginController@login');
 });
 
@@ -65,6 +72,7 @@ Route::group(['middleware' => ['web','admin.login.login']], function () {
 
 Route::group(['namespace' => 'Home'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
+
    	//前台首页
 	Route::get('home/index', 'IndexController@index');
 	//前台帮助中心

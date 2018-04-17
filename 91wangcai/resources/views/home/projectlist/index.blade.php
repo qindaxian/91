@@ -1,3 +1,7 @@
+
+@extends('home.common.base')
+@section('content')
+
 <!doctype html>
 <html>
 <head>
@@ -161,6 +165,7 @@
 
 
 
+
 <div class="mainList">
     <div class="list_banner"><a href="../../help/safety"></a></div>
     <div class="pro_nav">
@@ -185,13 +190,6 @@
                     <div class="productListWrap">
                         <h3><span></span>BJ-DY-0109015</h3>
                         <div class="rightTip">
-
-
-
-
-
-
-
 
 
 
@@ -994,6 +992,9 @@
         <a href="/about/borrowKnowledge" target="_blank" class="lastImg"><img src="http://www.91.com/v1.1.0/img/list/listbottm3.png"/></a>
     </div>
 </div>
+
+@endsection('content')
+
 <div class="footer">
     <div class="wrap clearfix footerWrap">
         <dl class="footer_item addressWrap">
@@ -1076,3 +1077,4 @@
 <script type="text/javascript" src="http://www.91.com/v1.1.0/js/financing/list_main.js"></script>
 </body>
 </html>
+

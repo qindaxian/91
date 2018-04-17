@@ -20,6 +20,7 @@ class AdminLogin
             return redirect('admin/login');
         }
 
+
         return $next($request);
     }
 }

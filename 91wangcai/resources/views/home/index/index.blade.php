@@ -1,3 +1,18 @@
+
+@extends('home.common.base')
+@section('content')
+<!-- banner轮换图开始 -->
+<script src="http://www.91.com/js/lbt/script/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.91.com/js/lbt/script/carousel.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<div class="sliderWrap">
+    <div class="slider-wrap">
+        <h1>轮播图</h1>
+    </div>
+    <div class="wrap userWrap">
+                <div class="welcomeWrap">
+                    <h2 class="welcomeText">欢迎您！</h2>
+
 <!doctype html>
 <html>
 <head>
@@ -251,6 +266,7 @@
     <div class="wrap userWrap">
                 <div class="welcomeWrap">
                     <h2 class="welcomeText">15810083779，欢迎您！</h2>
+
                     <div class="welcomeSplit"></div>
                     <div class="propertyWrap">
                         <h2 class="propertyItem">
@@ -265,6 +281,11 @@
     </div>
 </div>
 <!-- banner轮换图结束 -->
+
+
+
+
+
 <!-- 首页内容部分开始 -->
 <div class="wrap">
     <!-- 平台公告开始 -->
@@ -334,15 +355,6 @@
                                 BJ-DY-0108976
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
-
-
 
 
                             </div>
@@ -443,14 +455,6 @@
 
 
 
-
-
-
-
-
-
-
-
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -493,14 +497,6 @@
                                 BJ-DY-0308972
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
-
 
 
 
@@ -548,15 +544,6 @@
                             <div class="rightTip">
 
 
-
-
-
-
-
-
-
-
-
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -599,14 +586,6 @@
                                 BJ-DY-0109015
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
-
 
 
 
@@ -741,6 +720,12 @@
         </a>
     </dl>
     <!-- 运营数据结束 -->
+
+
+
+</div>
+<!-- 首页内容部分结束 -->
+@endsection('content')
 
     <!-- 合作伙伴开始 -->
     <dl class="moduleItem">
