@@ -164,10 +164,10 @@
                     </ul>
                 </li>
                 <li class="loginOutWrap">
-                    <a href="javascript:void(0)" id="exitUser" >退出</a>
+                    <a href="javascript:void(0)" id="exitUser" >退出<input type="hidden" class="md_id"  value="{{$md_id}}"></a>
                 </li>
 
-
+                    
 
             </ul>
         </div>

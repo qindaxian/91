@@ -6,9 +6,6 @@
     *return():
     */
 
-$data = $_GET('_');
-
-var_dump($data);
 
 //{"status":200,"message":"请求成功","data":{"wc_total":"0.00","total":"0.0","wc_balance":"0.00",
 //    "qb_total":"0.00","frost":"0.0","isBilateralUser":0,"award_status":"2","balance":"0.00",

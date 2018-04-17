@@ -1732,10 +1732,11 @@ UsrInfo.prototype = {
     },
     //获取账户信息
     getAccount_all:function(){
+    	var md_id = $('.md_id').val();
         var _that=this;
         var obj={};
         obj.url="/mobile/v2/wc_user_account.php";
-        obj.params={'id':23};
+        obj.params={md_id:md_id};
         obj.type="get";
         obj.success=function(json){
             // $(".uBtn").addClass("active");
