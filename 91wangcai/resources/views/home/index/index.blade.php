@@ -218,6 +218,8 @@
         <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
     </div>
 
+<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+
     <script type="text/javascript">
         $(function(){
             $(".carousel-content").carousel({
