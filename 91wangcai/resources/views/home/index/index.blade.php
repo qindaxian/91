@@ -52,7 +52,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+            hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
@@ -74,7 +74,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?382d46152bf65f80c0f430f478b4500b";
+            hm.src = "https://hm.baidu.com/hm.js?382d46152bf65f80c0f430f478b4500b";
             hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
@@ -199,12 +199,48 @@
 
 <!-- 导入头部结束 -->
 <!-- banner轮换图开始 -->
-<script src="http://www.91.com/js/lbt/script/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/js/lbt/script/carousel.js"></script>
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.91.com/css/style.css">
+<script type="text/javascript" src="http://www.91.com/js/scripts/jquery.min.js"></script>
+<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src="http://www.91.com/js/scripts/carousel.js"></script>
 <div class="sliderWrap">
     <div class="slider-wrap">
-        <h1>轮播图</h1>
+        <div class="carousel-content">
+        <ul class="carousel">
+            <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
+            <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
+            <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
+            <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
+            <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
+        </ul>
+        <ul class="img-index"></ul>
+        <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
+        <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
+    </div>
+<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+    <script type="text/javascript">
+        $(function(){
+            $(".carousel-content").carousel({
+                carousel : ".carousel",//轮播图容器
+                indexContainer : ".img-index",//下标容器
+                prev : ".carousel-prev",//左按钮
+                next : ".carousel-next",//右按钮
+                timing : 3000,//自动播放间隔
+                animateTime : 800,//动画时间
+                auto : true,//是否自动播放
+            });
+            $(".carousel-prev").hover(function(){
+                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
+            },function(){
+                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
+            });
+            $(".carousel-next").hover(function(){
+                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
+            },function(){
+                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
+            });
+        });
+    </script>
     </div>
     <div class="wrap userWrap">
                 <div class="welcomeWrap">
@@ -812,6 +848,6 @@
     </script>
 </div>
 <!-- 导入底部结束 -->
-<script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script>
+<!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
 </body>
 </html>
