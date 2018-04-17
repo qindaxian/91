@@ -36,4 +36,6 @@ Route::group(['namespace' => 'Home'], function(){
 	Route::get('home/projectlist', 'ProjectlistController@index');
 	//前台旺财记事
 	Route::get('home/chronicle', 'ChronicleController@index');
+	//个人中心
+    Route::get('home/user', 'UserController@index');
 });
