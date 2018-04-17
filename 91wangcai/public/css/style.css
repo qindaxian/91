@@ -6,7 +6,11 @@ ul{
 .carousel-content{
 	position: relative;
 	display: inline-block;
+
+	margin-left: 17%;
+
 	margin-left:17%;
+
 }
 .carousel{
 	width: 1000px;
@@ -61,4 +65,7 @@ ul{
 }
 .carousel-next{
 	right: 0;
+
+	z-index: 1000;
+
 }
