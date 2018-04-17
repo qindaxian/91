@@ -577,8 +577,13 @@
  -->
 <script src="http://www.91.com/v1.1.0/js/report/index_main.js"></script>
 
+</body>
+</html>
+
+
 @endsection('content')
 
 </body>
 </html>
+
 

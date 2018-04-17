@@ -1,4 +1,5 @@
 
+
 @extends('home.common.base')
 @section('content')
 
@@ -217,6 +218,7 @@
 </div>
 <!--main结束-->
 
+
 @endsection('content')
 
 <div class="footer">
@@ -301,5 +303,9 @@
 <!-- 导入对应js开始 -->
 <script src="http://www.91.com/v1.1.0/js/daily/index_main.js"></script>
 </body>
+
 </html>
+
+</html>
+
 

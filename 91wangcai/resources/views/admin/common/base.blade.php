@@ -15,6 +15,10 @@
 <LINK rel="Shortcut Icon" href="favicon.ico" />
 
 
+<LINK rel="Bookmark" href="favicon.ico" >
+<LINK rel="Shortcut Icon" href="favicon.ico" />
+
+
 <LINK rel="Bookmark" href="http://www.91.com/admin/favicon.ico" >
 <LINK rel="Shortcut Icon" href="http://www.91.com/admin/favicon.ico" />
 
@@ -36,6 +40,7 @@
 
 
 
+
 <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
@@ -45,7 +50,10 @@
 
 
 
+
+
 <link href="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -74,6 +82,9 @@
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/static/h-ui/js/H-ui.js"></script>
+
+<script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+
 
 <script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 

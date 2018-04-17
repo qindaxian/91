@@ -1,19 +1,3 @@
-
-
-@extends('home.common.base')
-@section('content')
-<!-- banner轮换图开始 -->
-<script src="http://www.91.com/js/lbt/script/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/js/lbt/script/carousel.js"></script>
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<div class="sliderWrap">
-    <div class="slider-wrap">
-        <h1>轮播图</h1>
-    </div>
-    <div class="wrap userWrap">
-                <div class="welcomeWrap">
-                    <h2 class="welcomeText">欢迎您！</h2>
-
 <!doctype html>
 <html>
 <head>
@@ -197,19 +181,11 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
-
                     <a href="http://www.91.com/index.php/home/index" class="js_userTabLink" target="_blank">登录</a>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
                     <a href="http://www.91.com/index.php/home/reg" class="js_userTabLink" target="_blank">注册</a>
-
-                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
-                </li>
-                <li class="centerLine"><span>|</span></li>
-                <li>
-                    <a href="/user/to_register" class="js_userTabLink" target="_blank">注册</a>
-
                 </li>
 
 
@@ -230,119 +206,65 @@
 <div class="sliderWrap">
     <div class="slider-wrap">
         <div class="carousel-content">
-        <ul class="carousel">
-            <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
-        </ul>
-        <ul class="img-index"></ul>
-        <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
-        <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
-    </div>
-
-<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
-
-
-<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
-
-
-<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
-
-
-    <script type="text/javascript">
-        $(function(){
-            $(".carousel-content").carousel({
-                carousel : ".carousel",//轮播图容器
-                indexContainer : ".img-index",//下标容器
-                prev : ".carousel-prev",//左按钮
-                next : ".carousel-next",//右按钮
-                timing : 3000,//自动播放间隔
-                animateTime : 800,//动画时间
-                auto : true,//是否自动播放
+            <ul class="carousel">
+                <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
+            </ul>
+            <ul class="img-index"></ul>
+            <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
+            <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
+        </div>
+        <!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+        <script type="text/javascript">
+            $(function(){
+                $(".carousel-content").carousel({
+                    carousel : ".carousel",//轮播图容器
+                    indexContainer : ".img-index",//下标容器
+                    prev : ".carousel-prev",//左按钮
+                    next : ".carousel-next",//右按钮
+                    timing : 3000,//自动播放间隔
+                    animateTime : 800,//动画时间
+                    auto : true,//是否自动播放
+                });
+                $(".carousel-prev").hover(function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
+                },function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
+                });
+                $(".carousel-next").hover(function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
+                },function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
+                });
             });
-            $(".carousel-prev").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
-            },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
-            });
-            $(".carousel-next").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
-            },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
-            });
-        });
-    </script>
+        </script>
     </div>
     <div class="wrap userWrap">
 
 
 
-
-        <div class="loginRegisterWrap">
-            <!-- 登录开始 -->
-            <div class="loginWrap js_item">
-                <!-- <span class="loginArrow"></span> -->
-                <form method="post" action="/login">
-                    {{csrf_field()}}
-                    <ul>
-                        <li>
-                            <label for="username" class="form_group_focus">
-                                <div class="error_tip hide" id="error_detail_message"></div>
-                                <span class="userNameIcon"></span>
-                                <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone">
-                            </label>
-                        </li>
-                        <li>
-                            <label for="pwd">
-                                <span class="pwdIcon"></span>
-                                <input type="password" class="input pwd" id="pwd" placeholder="请输入密码" autocomplete="off" name="user_password">
-                            </label>
-                        </li>
-                        <li class="forgotWrap">
-                            <a href="/user/forgot_password" class="forgotPwdLink">忘记密码</a>
-                        </li>
-                        <li>
-                            <input type="submit" value="登录" class="loginBtn" id="login_btn">
-                        </li>
-                        <li class="checkProtocol">
-                            <input id="tiaokuanLogin" class="hidden" name="" type="checkbox" value="" checked=""><span class="checked_box" id="login_check"></span> 我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
-                        </li>
-                    </ul>
-                </form>
+        <div class="welcomeWrap">
+            <h2 class="welcomeText"><?php echo $data->user_phone; ?>，欢迎您！</h2>
+            <div class="welcomeSplit"></div>
+            <div class="propertyWrap">
+                <h2 class="propertyItem">
+                    <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span><?php echo $data->user_total_assets; ?><span class="propertyText">元</span>
+                </h2>
+                <h2 class="propertyItem">
+                    <span class="propertyText">账户余额:</span><?php echo $data->user_balance; ?><span class="propertyText">元</span>
+                </h2>
             </div>
-            <!-- 登录结束 -->
+            <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
         </div>
 
 
+
     </div>
 </div>
 <!-- banner轮换图结束 -->
-
-                <div class="welcomeWrap">
-                    <h2 class="welcomeText">15810083779，欢迎您！</h2>
-
-                    <div class="welcomeSplit"></div>
-                    <div class="propertyWrap">
-                        <h2 class="propertyItem">
-                            <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span>0.00<span class="propertyText">元</span>
-                        </h2>
-                        <h2 class="propertyItem">
-                            <span class="propertyText">账户余额:</span>0.00<span class="propertyText">元</span>
-                        </h2>
-                    </div>
-                    <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
-                </div>
-    </div>
-</div>
-<!-- banner轮换图结束 -->
-
-
-
-
-
-
 <!-- 首页内容部分开始 -->
 <div class="wrap">
     <!-- 平台公告开始 -->
@@ -412,6 +334,14 @@
                                 BJ-DY-0108976
                             </h3>
                             <div class="rightTip">
+
+
+
+
+
+
+
+
 
 
 
@@ -513,6 +443,14 @@
 
 
 
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -555,6 +493,13 @@
                                 BJ-DY-0308972
                             </h3>
                             <div class="rightTip">
+
+
+
+
+
+
+
 
 
 
@@ -604,6 +549,14 @@
 
 
 
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -646,6 +599,13 @@
                                 BJ-DY-0109015
                             </h3>
                             <div class="rightTip">
+
+
+
+
+
+
+
 
 
 
@@ -782,14 +742,6 @@
     </dl>
     <!-- 运营数据结束 -->
 
-
-
-
-</div>
-<!-- 首页内容部分结束 -->
-@endsection('content')
-
-
     <!-- 合作伙伴开始 -->
     <dl class="moduleItem">
         <dt>
@@ -905,8 +857,6 @@
 <!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
 </body>
 </html>
-
 <script>
 
 </script>
-

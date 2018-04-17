@@ -22,6 +22,12 @@ Route::group(['namespace' => 'Admin'], function(){
    	Route::get('admin/product-creditor','ProductController@creditor');
 });
 
+//中间件
+
+
+   	Route::get('admin/product-creditor','ProductController@creditor');
+});
+
 Route::group(['namespace' => 'Home'], function(){
     // 控制器在 "App\Http\Controllers\Home" 命名空间下
 
@@ -57,11 +63,19 @@ Route::group(['middleware' => ['web','admin.login']], function () {
 
 //中间件
 
+
 Route::group(['middleware' => ['web','admin.login.login']], function () {
     Route::get('/admin/login/login','Admin\LoginController@login');
     //登录页面
     Route::get('/admin/index/index','Admin\IndexController@index');
     //后台首页路由
+
+});
+
+
+Route::group(['namespace' => 'Home'], function(){
+    // 控制器在 "App\Http\Controllers\Admin" 命名空间下
+
 
 });*/
 
@@ -72,6 +86,7 @@ Route::group(['middleware' => ['web','admin.login.login']], function () {
 
 Route::group(['namespace' => 'Home'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
+
 
    	//前台首页
 	Route::get('home/index', 'IndexController@index');
@@ -87,4 +102,16 @@ Route::group(['namespace' => 'Home'], function(){
 	Route::get('home/projectlist', 'ProjectlistController@index');
 	//前台旺财记事
 	Route::get('home/chronicle', 'ChronicleController@index');
+
+	//用户注册
+    Route::get('home/reg', 'IndexController@reg');
+    //短信验证码
+    Route::get('home/registers','IndexController@loginDo');
+    //注册账号
+    Route::post('/doreg','IndexController@doReg');
+    //用户登陆
+    Route::post('/login','IndexController@login');
+    //登陆成功
+    Route::get('home/user','IndexController@user');
+
 });

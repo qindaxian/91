@@ -1,6 +1,8 @@
 
+
 @extends('home.common.base')
 @section('content')
+
 
 <!doctype html>
 <html>
@@ -376,7 +378,10 @@
     </div>
 </div>
 
+
+
 @endsection('content')
+
 
 
 <!-- 导入底部开始 -->
@@ -465,5 +470,8 @@
 <script type="text/javascript" src="http://www.91.com/v1.1.0/js/financing/tenThousand.js?t=2"></script> -->
 <script src="http://www.91.com/v1.1.0/js/financing/detail_main.js"></script>
 </body>
+
+</html>
+
 </html>
 

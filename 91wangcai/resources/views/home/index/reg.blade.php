@@ -1,5 +1,208 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>91旺财官网-网络借贷信息中介平台</title>
+    <meta name="keywords" content="91旺财，91旺财官网，91金融，网络借贷,互联网金融，借贷平台">
+    <meta name="description" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航">
+    <meta name="baidu-site-verification" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航" />
+    <!-- 导入首页样式开始 -->
+    <link href="http://www.91.com/v1.1.0/css/homepage/homepage_style.css" rel="stylesheet" type="text/css">
+    <!-- 导入首页样式结束 -->
+    <!-- 导入轮播图样式开始 -->
+    <!-- 导入轮播图样式结束 -->
+    <div class="none">
+        <!-- www.91wangcai.com的统计代码 -->
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        <!-- www.91wangcai.com的统计代码 -->
+        <!-- www.91wangcai.com的https统计代码 -->
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        <!-- www.91wangcai.com的https统计代码 -->
+    </div>
+</head>
+<body>
+<!-- 导入头部开始 -->
+
+
+
+
+
+
+
+
+<div class="none">
+    <!-- www.91wangcai.com的统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- www.91wangcai.com的统计代码 -->
+    <!-- www.91wangcai.com的最新https的统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- www.91wangcai.com的最新https的统计代码 -->
+    <!-- wangcai.91jinrong.com的统计代码结束 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?382d46152bf65f80c0f430f478b4500b";
+            hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</div>
+<div class="sideShade"></div>
+
+<div class="tools">
+    <div class="slideWrap">
+        <div class="sideNav">联系我们</div>
+        <div class="slideContact">
+            <div class="info">
+                <h5><strong>7×24小时专业顾问</strong></h5>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <h5><strong>QQ在线</strong></h5>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <h5><strong>自助查询</strong></h5>
+                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <h5><strong>官方微信</strong></h5>
+                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
+            </div>
+        </div>
+    </div>
+    <div id="backTop">顶部</div>
+</div>
+<!-- 浏览器版本过低提示开始 -->
+<div class="web_browserTip hide" id="web_browserTip">
+    亲，您的浏览器版本太低，快快<a href="/common/upgrade">升级</a>吧
+</div>
+<!-- 浏览器版本过低提示结束 -->
+<div id="header" class="header">
+    <!--旺财client_id-->
+    <input type="hidden" value="91wangcai" id="wc_pc_clientid"/>
+    <!--oauth 地址-->
+    <input type="hidden" value="https://www.91wangcai.com" id="oauth_base_url"/>
+    <!--clientsecret值-->
+    <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
+    <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
+    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
+    <!-- 顶部公告开始 -->
+    <!-- 顶部公告结束 -->
+    <div class="wrap navWrap clearfix">
+        <h2 class="logo">
+            <a href="/">
+                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
+            </a>
+        </h2>
+        <div class="nav">
+            <ul class="headerNav">
+                <li class=" active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="">
+                    <a href="/list">项目列表</a>
+                </li>
+                <li id="diaryNav" class="">
+                    <a href="/daily/index" class="yunyingReportWc">旺财记事</a>
+                    <div class="hideSlideMain hide">
+                        <div class="topArrowBgWrap" >
+                            <!-- <i class="top-arrow1"></i> -->
+                            <i class="top-arrow2"></i>
+                        </div>
+                        <ul class="diary">
+                            <li>
+                                <a href="/daily/caizhu">财主见面会</a>
+                            </li>
+                            <li>
+                                <a href="/daily/index">旺财日记</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="reportNav" class="">
+                    <a href="/?reportData" class="yunyingReport">运营报告</a>
+                    <!-- <div class="hideSlideMain hide">
+                        <div class="topArrowBgWrap" >
+                            <i class="top-arrow1"></i>
+                            <i class="top-arrow2"></i>
+                        </div>
+                        <ul class="report">
+                            <li>
+                                <a href="/?operateReportQ1">2017年Q1季度报告</a>
+                            </li>
+                            <li>
+                                <a href="/?operateReport4">2016年Q4季度报告</a>
+                            </li>
+                            <li>
+                                <a href="/?operateReport3">2016年Q3季度报告</a>
+                            </li>
+                            <li>
+                                <a href="/?operateReport2">2016年Q2季度报告</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </li>
+                <li class=""><a href="/help/index">帮助中心</a></li>
+                <li class=""><a href="/about/index">信息披露</a></li>
+            </ul>
+        </div>
+        <div class="userNav">
+            <ul class="loginWrapRight clearfix">
+
+
+
+                <li id="nav_login_link" class="loginUrlLink">
+                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
+                </li>
+                <li class="centerLine"><span>|</span></li>
+                <li>
+                    <a href="http://www.91.com/index.php/home/reg" class="js_userTabLink" target="_blank">注册</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 导入头部结束 -->
+
 @extends('home.common.base')
 @section('content')
+
 <!-- banner轮换图开始 -->
 <link rel="stylesheet" type="text/css" href="http://www.91.com/css/style.css">
 <script type="text/javascript" src="http://www.91.com/js/scripts/jquery.min.js"></script>
@@ -534,6 +737,7 @@
             </div>
 
 
+
         </dd>
     </dl>
     <!-- 媒体报道结束 -->
@@ -566,6 +770,188 @@
         </a>
     </dl>
     <!-- 运营数据结束 -->
+
+
+    <!-- 合作伙伴开始 -->
+    <dl class="moduleItem">
+        <dt>
+            <h3 class="moduleTitle">合作机构</h3>
+        </dt>
+        <dd class="partnerList clearfix">
+            <div class="list">
+                <a href="/about/cooperation/#haitong">
+                    <img src="http://www.91.com/v1.1.0/img/homepage/partner1.png" alt="海通证券">
+                </a>
+            </div>
+            <div class="list">
+                <a href="/about/cooperation/#kuandai">
+                    <img src="http://www.91.com/v1.1.0/img/homepage/partner3.png" alt="宽带资本" >
+                </a>
+            </div>
+            <div class="list">
+                <a href="/about/cooperation/#jingwei">
+                    <img src="http://www.91.com/v1.1.0/img/homepage/partner2.png" alt="经纬中国" >
+                </a>
+            </div>
+            <div class="list lastList">
+                <a href="/about/cooperation/#xiamen">
+                    <img src="http://www.91.com/v1.1.0/img/homepage/partner4.png" alt="厦门银行" >
+                </a>
+            </div>
+        </dd>
+    </dl>
+    <!-- 合作伙伴结束 -->
+</div>
+<!-- 首页内容部分结束 -->
+<!-- 导入底部开始 -->
+<div class="footer">
+    <div class="wrap clearfix footerWrap">
+        <dl class="footer_item addressWrap">
+            <dt class="tipTitle">联系我们</dt>
+            <dd>
+                <div class="address">
+                    <p>北京地址：</p>
+                    <p>北京市西城区黄寺大街23号167幢 九一金融大厦</p>
+                    <p>咨询、投诉、举报电话：400-000-0091</p>
+                    <p>咨询、投诉、举报邮箱：<a href="mailto:kefu@91jinrong.com">kefu@91jinrong.com</a></p>
+                </div>
+                <!--  <div class="address">
+                     <p>上海地址：</p>
+                     <p>上海市浦东新区浦三路21弄55、56号银亿滨江中心1808室</p>
+                     <p>电话：021-68821696</p>
+                 </div> -->
+                <!-- <div class="address">
+                    <p>后台运营及数据处理中心：</p>
+                    <p>北京市石景山区石景山路31号盛景国际A座8层</p>
+                </div> -->
+                <div class="address">
+                    <p>友情链接：<a href="//www.91jinrong.com" target="_blank">91金融&nbsp;</a> <a href="https://zhongchuang.91jinrong.com/" target="_blank">91众创空间</a></p>
+                    <p>温馨提示：<span>市场有风险，借贷需谨慎</span></p>
+                </div>
+            </dd>
+        </dl>
+        <dl class="footer_item codeWrap">
+            <dt class="tipTitle">关注</dt>
+            <dd class="clearfix">
+                <div class="codeItem wxCode">
+                    <img src="http://www.91.com/v1.1.0/img/common/wxcode1.jpg" alt="91旺财服务平台微信公众号">
+                    扫描二维码关注微信
+                </div>
+                <!--     <div class="codeItem">
+                        <img src="http://www.91.com/v1.1.0/img/common/wxcode2.jpg" alt="91旺财服务平台微信公众号2">
+                        扫描二维码关注微信
+                    </div> -->
+            </dd>
+        </dl>
+        <dl class="footer_item">
+            <dt class="tipTitle">扫码下载客户端</dt>
+            <dd class="footer_app">
+                <img src="http://www.91.com/v1.1.0/img/common/appcode.png" alt="91旺财app下载二维码">
+            </dd>
+        </dl>
+    </div>
+
+    <div class="codyright">
+        <div class="wrap">
+            <div class="codyrightItem">
+                <div class="xinyong">
+                    <a href="/?itrust1" target="_blank" class="itrust itrust1"></a>
+                    <a href="/?itrust2" target="_blank" class="itrust itrust2"></a>
+                    <a href="/?itrust3" target="_blank" class="itrust itrust3"></a>
+                    <a href="/?itrust4" target="_blank" class="itrust itrust4"></a>
+                    <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1082842294" target="_blank" class="itrust itrust5"></a>
+                    <a href="http://www.itrust.org.cn/home/index/satification_certificate/wm/MY2017090601" target="_blank" class="itrust itrust6"></a>
+                </div>
+                <div class="copyrightText">
+                    <!-- <a href="/about/management">管理团队</a> <a href="/about/qualification">证照资质</a> <a href="/about/regulation">法律法规</a> <a href="/about/index">关于我们</a> <a href="/about/index#adder">联系我们</a> <a href="/about/job">招聘信息</a> <a href="/about/website_reports">最新动态</a> <a href="/about/media_reports">媒体报道</a><br/> -->
+                    <span>Copyright © 2014 91wangcai.com Inc. All Rights Reserved.</span>
+                    <span class="mid">先智创科（北京）科技有限公司&nbsp;&nbsp;京ICP备16002181号-1</span>
+                    <span><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007186"><img src='http://www.91.com/v1.1.0/img/common/gongan.png'>京公网安备 11010202007186号</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display:none;">
+    <script>
+        //google统计
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-53638773-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</div>
+<!-- 导入底部结束 -->
+<!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
+</body>
+</html>
+<script>
+    //验证码60秒
+    var InterValObj; //timer变量，控制时间
+    var count = 30; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+    function sendMessage() {
+        curCount = count;
+        //设置button效果，开始计时
+        $("#btnSendCode").attr("disabled", "true");
+        $("#btnSendCode").val(curCount + "秒后可重新发送");
+        InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        //请求后台发送验证码 TODO
+    }
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重新发送验证码");
+        }
+        else {
+            curCount--;
+            $("#btnSendCode").val(curCount + "秒后可重新发送");
+        }
+    }
+    //验证码发送
+    $('#btnSendCode').click(function(){
+        var user_phone = $("input[name = 'user_phone']").val();
+        var url = "http://www.91.com/index.php/home/registers";
+        $.ajax({
+            url:url,
+            data:{'user_phone':user_phone},
+            type:"GET",
+            success:function(msg){
+            }
+        });
+    });
+    //密码认证
+    $(function(){
+        var validate = {
+            "checkAccount":false
+        };
+        $("input[name = 'user_password']").blur(function(){
+            var account = $(this).val().trim();
+            if(account == ""){
+                alert("密码不能为空");
+                return validate.checkAccount = false;
+            }
+            var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+            if(!reg.test(account)){
+                alert("密码格式不正确");
+                return validate.checkAccount = false;
+            }
+            $(this).after("<span></span>");
+            return validate.checkAccount = true;
+        });
+        //组织提交
+        $("form[name = 'reg']").submit(function(){
+            $("input[name = 'user_password']").trigger("blur");
+            return validate.checkAccount;
+        });
+    });
+
+</script>
+
 </div>
 <!-- 首页内容部分结束 -->
 @endsection

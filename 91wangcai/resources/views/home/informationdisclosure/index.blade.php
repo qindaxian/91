@@ -1,4 +1,5 @@
 
+
 @extends('home.common.base')
 @section('content')
 
@@ -308,7 +309,9 @@
 </div>
 <!--放大图片结束-->
 
+
 @endsection('content')
+
 
 <div class="footer">
     <div class="wrap clearfix footerWrap">

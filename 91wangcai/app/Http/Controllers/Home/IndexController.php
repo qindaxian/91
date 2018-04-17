@@ -9,6 +9,9 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 
+use App\Http\Models\user;
+
+
 /**
  * Class IndexController
  * @package App\Http\Controllers
@@ -96,7 +99,83 @@ class IndexController extends Controller
         $sms = $_POST['sms'];
         $user_password = $_POST['user_password'];
         $code = $_SESSION['code'];
+
+        if($sms != $code) {
+            echo "<script>alert('验证码不正确');location.href='home/reg'</script>";
+        }else{
+            $pwd = md5($user_password);
+            $data = ['user_phone'=>$user_phone,'user_password'=>$pwd];
+            $user = new user();
+            $result = $user->selOne($user_phone);
+            if($result) {
+                echo "<script>alert('手机号已被注册');location.href='home/reg'</script>";
+            }else {
+                $res = $user->add($data);
+                if($res) {
+                    echo "<script>location.href='home/index'</script>";
+                    unset($_SESSION);
+                    session_destroy();
+                }else {
+                    echo "<script>alert('注册失败');location.href='home/reg'</script>";
+                }
+            }
+        }
+    }
+
+    /**
+     * 用户登陆
+     */
+    public function login()
+    {
+        $user_phone = $_POST['user_phone'];
+        $user_password = md5($_POST['user_password']);
+        $user = new user();
+        $res = $user->login($user_phone,$user_password);
+        if($res){
+            $data = $this->object_to_array($res);
+            setcookie('user_name',$data['user_phone'],time()+3600*24);
+            echo "<script>location.href='home/user'</script>";
+        }else {
+            echo "<script>alert('用户名或密码错误');location.href='home/index'</script>";
+        }
+    }
+
+    /**
+     * 登陆成功
+     */
+    public function user()
+    {
+        if(empty($_COOKIE['user_name'])){
+            echo "<script>alert('您好！您还没有登陆');</script>";
+            die;
+        }
+        $user = new user();
+        $data = $user->selOne($_COOKIE['user_name']);
+//        $data = ['user_phone'=>$array['user_phone'],'user_total_assets'=>$array['user_total_assets'],'user_balance'=>$array['user_balance']];
+        return view('home/index/user',['data'=>$data]);
+    }
+
+    /**
+     * 对象 转 数组
+     *
+     * @param object $obj 对象
+     * @return array
+     */
+    function object_to_array($obj) {
+        $obj = (array)$obj;
+        foreach ($obj as $k => $v) {
+            if (gettype($v) == 'resource') {
+                return;
+            }
+            if (gettype($v) == 'object' || gettype($v) == 'array') {
+                $obj[$k] = (array)object_to_array($v);
+            }
+        }
+        return $obj;
+    }
+
         var_dump($code,$sms); 
     }
+
 
 }

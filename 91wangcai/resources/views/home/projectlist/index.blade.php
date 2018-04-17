@@ -1,4 +1,5 @@
 
+
 @extends('home.common.base')
 @section('content')
 
@@ -190,6 +191,7 @@
                     <div class="productListWrap">
                         <h3><span></span>BJ-DY-0109015</h3>
                         <div class="rightTip">
+
 
 
 
@@ -993,7 +995,9 @@
     </div>
 </div>
 
+
 @endsection('content')
+
 
 <div class="footer">
     <div class="wrap clearfix footerWrap">
@@ -1076,5 +1080,9 @@
 </div>
 <script type="text/javascript" src="http://www.91.com/v1.1.0/js/financing/list_main.js"></script>
 </body>
+
 </html>
+
+</html>
+
 
