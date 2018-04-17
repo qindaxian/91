@@ -130,9 +130,22 @@ class IndexController extends Controller
         if($res){
             $data = $this->object_to_array($res);
             setcookie('user_name',$data['user_phone'],time()+3600*24);
+            echo "<script>alert('登陆成功');location.href='home/user'</script>";
         }else {
             echo "<script>alert('用户名或密码错误');location.href='home/index'</script>";
         }
+    }
+
+    /**
+     * 登陆成功
+     */
+    public function user()
+    {
+        if(!empty($_COOKIE['user_name'])){
+            echo "<script>alert('您好！您还没有登陆');location.href='home/reg'</script>";
+            die;
+        }
+        return view('home/index/user');
     }
 
     /**
