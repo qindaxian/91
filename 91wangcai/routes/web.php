@@ -18,6 +18,7 @@ Route::group(['namespace' => 'Admin'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
    	Route::get('admin/index','IndexController@index');
    	Route::get('admin/product-project','ProductController@project');
+
    	Route::get('admin/product-creditor','ProductController@creditor');
    	Route::get('admin/login','LoginController@login');
 });
@@ -28,6 +29,38 @@ Route::group(['middleware' => ['web','admin.login']], function () {
     Route::get('/admin/index','Admin\IndexController@index');
     //后台首页路由
 });
+
+
+
+
+   	Route::get('admin/product-creditor','ProductController@creditor');
+   	//债权添加
+   	Route::get('admin/creditor-add','ProductController@creditor_add');
+   	//债权图片上传
+   	Route::get('admin/creditor_upload','ProductController@creditor_upload');
+   	Route::post('admin/creditor_upload','ProductController@creditor_upload');
+});
+
+/*//中间件
+
+   	Route::get('admin/product-project_add','ProductController@project_add');
+   	Route::get('admin/product-creditor','ProductController@creditor');
+   	Route::get('admin/login','LoginController@index');
+});
+
+//中间件
+
+Route::group(['middleware' => ['web','admin.login.login']], function () {
+    Route::get('/admin/login/login','Admin\LoginController@login');
+    //登录页面
+    Route::get('/admin/index/index','Admin\IndexController@index');
+    //后台首页路由
+
+});*/
+
+});
+
+
 
 
 Route::group(['namespace' => 'Home'], function(){

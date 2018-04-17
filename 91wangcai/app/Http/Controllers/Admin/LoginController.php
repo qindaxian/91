@@ -1,16 +1,24 @@
 <?php
 /**
+
  * User: Tiney S
  * Date: 2018/4/17
  * Time: 10:26
+
+ * User: Qin Daxian
+ * Date: 2018/4/16
+ * Time: 9:10
+
  */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Input;
 use App\Http\Models\AdminModel;
 use App\Http\Models\UserModel;
+
 
 /**
  * Class IndexController
@@ -18,6 +26,7 @@ use App\Http\Models\UserModel;
  */
 class LoginController extends Controller
 {
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
      * 后台登录
@@ -46,4 +55,13 @@ class LoginController extends Controller
     	}
         return view('admin/login/login');
     }
+
+	/**9
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
+	 * 前台首页
+	 */
+	public function index(){
+		return view('admin/Login/login');
+	}
+
 }
