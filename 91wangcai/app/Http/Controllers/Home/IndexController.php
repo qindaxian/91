@@ -108,7 +108,7 @@ class IndexController extends Controller
             }else {
                 $res = $user->add($data);
                 if($res) {
-                    echo "<script>alert('注册成功');location.href='home/index'</script>";
+                    echo "<script>location.href='home/index'</script>";
                     unset($_SESSION);
                     session_destroy();
                 }else {
@@ -130,7 +130,7 @@ class IndexController extends Controller
         if($res){
             $data = $this->object_to_array($res);
             setcookie('user_name',$data['user_phone'],time()+3600*24);
-            echo "<script>alert('登陆成功');location.href='home/user'</script>";
+            echo "<script>location.href='home/user'</script>";
         }else {
             echo "<script>alert('用户名或密码错误');location.href='home/index'</script>";
         }
@@ -146,8 +146,8 @@ class IndexController extends Controller
             die;
         }
         $user = new user();
-        $res = $user->selOne($_COOKIE['user_name']);
-        $data = $this->object_to_array($res);
+        $data = $user->selOne($_COOKIE['user_name']);
+//        $data = ['user_phone'=>$array['user_phone'],'user_total_assets'=>$array['user_total_assets'],'user_balance'=>$array['user_balance']];
         return view('home/index/user',['data'=>$data]);
     }
 

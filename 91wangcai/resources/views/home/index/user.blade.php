@@ -247,19 +247,17 @@
 
 
         <div class="welcomeWrap">
-            <?php foreach($data as $v):?>
-            <h2 class="welcomeText"><?php echo $v['user_phone']?>，欢迎您！</h2>
+            <h2 class="welcomeText"><?php echo $data->user_phone; ?>，欢迎您！</h2>
             <div class="welcomeSplit"></div>
             <div class="propertyWrap">
                 <h2 class="propertyItem">
-                    <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span><?php echo $v['user_total_assets']?><span class="propertyText">元</span>
+                    <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span><?php echo $data->user_total_assets; ?><span class="propertyText">元</span>
                 </h2>
                 <h2 class="propertyItem">
-                    <span class="propertyText">账户余额:</span><?php echo $v['user_balance']?><span class="propertyText">元</span>
+                    <span class="propertyText">账户余额:</span><?php echo $data->user_balance; ?><span class="propertyText">元</span>
                 </h2>
             </div>
             <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
-            <?php endforeach;?>
         </div>
 
 
