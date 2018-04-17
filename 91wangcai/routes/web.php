@@ -46,4 +46,10 @@ Route::group(['namespace' => 'Home'], function(){
 	Route::get('home/projectlist', 'ProjectlistController@index');
 	//前台旺财记事
 	Route::get('home/chronicle', 'ChronicleController@index');
+	//用户注册
+    Route::get('home/reg', 'IndexController@reg');
+    //短信验证码
+    Route::get('home/registers','IndexController@loginDo');
+    //注册账号
+    Route::post('/doreg','IndexController@doReg');
 });
