@@ -5,18 +5,28 @@
  * Date: 2018/4/16
  * Time: 9:10
 
+
+ * User: Feng Yikai
+ * Date: 2018/4/16
+ * Time: 9:10
+
  * User: Qin Daxian
  * Date: 2018/4/17
  * Time: 10:18
+
 
  */
 
 namespace App\Http\Controllers\Admin;
 
 
+use App\Http\Controllers\Controller;
+
+
 use App\Http\Models\CreditorModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 /**
  * Class IndexController
@@ -33,6 +43,7 @@ use App\Http\Models\ProjectModel;
  */
 
 
+
 class ProductController extends Controller
 {
     /**
@@ -42,6 +53,11 @@ class ProductController extends Controller
      */
     public function project(){
         return view('admin/product/project_list');
+    }
+
+
+    public function creditor(){
+    	return view('admin/product/creditor_list');
     }
 
     public function creditor_add(){

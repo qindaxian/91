@@ -20,6 +20,20 @@ Route::group(['namespace' => 'Admin'], function(){
    	Route::get('admin/product-project','ProductController@project');
 
    	Route::get('admin/product-creditor','ProductController@creditor');
+   	Route::get('admin/login','LoginController@login');
+});
+
+//中间件
+Route::group(['middleware' => ['web','admin.login']], function () {
+    
+    Route::get('/admin/index','Admin\IndexController@index');
+    //后台首页路由
+});
+
+
+
+
+   	Route::get('admin/product-creditor','ProductController@creditor');
    	//债权添加
    	Route::get('admin/creditor-add','ProductController@creditor_add');
    	//债权图片上传
@@ -45,6 +59,7 @@ Route::group(['middleware' => ['web','admin.login.login']], function () {
 });*/
 
 });
+
 
 
 

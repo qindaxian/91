@@ -4,7 +4,9 @@
 	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 项目管理 <span class="c-gray en">&gt;</span> 项目列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 
 
+
 	<script type="text/javascript" src="http://www.91.com/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+
 
 	<div class="Hui-article">
 		<article class="cl pd-20">
@@ -15,6 +17,9 @@
 				<input type="text" name="" id="" placeholder=" 项目名称" style="width:250px" class="input-text">
 				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜项目</button>
 			</div>
+
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+
 
 			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 
@@ -53,6 +58,9 @@
 		</article>
 	</div>
 </section>
+
+@endsection
+
 
 @endsection
 
