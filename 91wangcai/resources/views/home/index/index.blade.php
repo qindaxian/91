@@ -1,3 +1,19 @@
+
+
+@extends('home.common.base')
+@section('content')
+<!-- banner轮换图开始 -->
+<script src="http://www.91.com/js/lbt/script/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.91.com/js/lbt/script/carousel.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<div class="sliderWrap">
+    <div class="slider-wrap">
+        <h1>轮播图</h1>
+    </div>
+    <div class="wrap userWrap">
+                <div class="welcomeWrap">
+                    <h2 class="welcomeText">欢迎您！</h2>
+
 <!doctype html>
 <html>
 <head>
@@ -181,11 +197,19 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
+
                     <a href="http://www.91.com/index.php/home/index" class="js_userTabLink" target="_blank">登录</a>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
                     <a href="http://www.91.com/index.php/home/reg" class="js_userTabLink" target="_blank">注册</a>
+
+                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
+                </li>
+                <li class="centerLine"><span>|</span></li>
+                <li>
+                    <a href="/user/to_register" class="js_userTabLink" target="_blank">注册</a>
+
                 </li>
 
 
@@ -217,7 +241,16 @@
         <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
         <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
     </div>
+
 <!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+
+
+<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+
+
+<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+
+
     <script type="text/javascript">
         $(function(){
             $(".carousel-content").carousel({
@@ -243,6 +276,7 @@
     </script>
     </div>
     <div class="wrap userWrap">
+
 
 
 
@@ -285,6 +319,30 @@
     </div>
 </div>
 <!-- banner轮换图结束 -->
+
+                <div class="welcomeWrap">
+                    <h2 class="welcomeText">15810083779，欢迎您！</h2>
+
+                    <div class="welcomeSplit"></div>
+                    <div class="propertyWrap">
+                        <h2 class="propertyItem">
+                            <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span>0.00<span class="propertyText">元</span>
+                        </h2>
+                        <h2 class="propertyItem">
+                            <span class="propertyText">账户余额:</span>0.00<span class="propertyText">元</span>
+                        </h2>
+                    </div>
+                    <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
+                </div>
+    </div>
+</div>
+<!-- banner轮换图结束 -->
+
+
+
+
+
+
 <!-- 首页内容部分开始 -->
 <div class="wrap">
     <!-- 平台公告开始 -->
@@ -354,14 +412,6 @@
                                 BJ-DY-0108976
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
-
 
 
 
@@ -463,14 +513,6 @@
 
 
 
-
-
-
-
-
-
-
-
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -513,13 +555,6 @@
                                 BJ-DY-0308972
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
 
 
 
@@ -569,14 +604,6 @@
 
 
 
-
-
-
-
-
-
-
-
                             </div>
                         </div>
                         <div class="infoWrap clearfix">
@@ -619,13 +646,6 @@
                                 BJ-DY-0109015
                             </h3>
                             <div class="rightTip">
-
-
-
-
-
-
-
 
 
 
@@ -762,6 +782,14 @@
     </dl>
     <!-- 运营数据结束 -->
 
+
+
+
+</div>
+<!-- 首页内容部分结束 -->
+@endsection('content')
+
+
     <!-- 合作伙伴开始 -->
     <dl class="moduleItem">
         <dt>
@@ -877,6 +905,8 @@
 <!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
 </body>
 </html>
+
 <script>
 
 </script>
+

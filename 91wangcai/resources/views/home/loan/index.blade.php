@@ -1,3 +1,9 @@
+
+
+@extends('home.common.base')
+@section('content')
+
+
 <!doctype html>
 <html>
 <head>
@@ -184,6 +190,7 @@
 
 
 <!-- 导入头部结束 -->
+
 <!-- 标的信息 -->
 <div class="view_box">
     <div class="wrap">
@@ -371,6 +378,12 @@
     </div>
 </div>
 
+
+
+@endsection('content')
+
+
+
 <!-- 导入底部开始 -->
 <div class="footer">
     <div class="wrap clearfix footerWrap">
@@ -457,4 +470,8 @@
 <script type="text/javascript" src="http://www.91.com/v1.1.0/js/financing/tenThousand.js?t=2"></script> -->
 <script src="http://www.91.com/v1.1.0/js/financing/detail_main.js"></script>
 </body>
+
 </html>
+
+</html>
+

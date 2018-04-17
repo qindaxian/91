@@ -8,7 +8,9 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Models\user;
+
 
 /**
  * Class IndexController
@@ -23,6 +25,7 @@ class IndexController extends Controller
     public function index(){
         return view('home/index/index');
     }
+
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
@@ -96,6 +99,7 @@ class IndexController extends Controller
         $sms = $_POST['sms'];
         $user_password = $_POST['user_password'];
         $code = $_SESSION['code'];
+
         if($sms != $code) {
             echo "<script>alert('验证码不正确');location.href='home/reg'</script>";
         }else{
@@ -169,4 +173,9 @@ class IndexController extends Controller
         }
         return $obj;
     }
+
+        var_dump($code,$sms); 
+    }
+
+
 }

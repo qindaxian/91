@@ -1,3 +1,7 @@
+
+@extends('home.common.base')
+@section('content')
+
 <!doctype html>
 <html>
 <head>
@@ -572,5 +576,14 @@
 <script src="http://www.91.com/v1.1.0/js/report/index.js?t=3"></script>
  -->
 <script src="http://www.91.com/v1.1.0/js/report/index_main.js"></script>
+
 </body>
 </html>
+
+
+@endsection('content')
+
+</body>
+</html>
+
+

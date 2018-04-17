@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -198,6 +199,10 @@
 
 
 <!-- 导入头部结束 -->
+
+@extends('home.common.base')
+@section('content')
+
 <!-- banner轮换图开始 -->
 <link rel="stylesheet" type="text/css" href="http://www.91.com/css/style.css">
 <script type="text/javascript" src="http://www.91.com/js/scripts/jquery.min.js"></script>
@@ -733,11 +738,6 @@
 
 
 
-
-
-
-
-
         </dd>
     </dl>
     <!-- 媒体报道结束 -->
@@ -770,6 +770,7 @@
         </a>
     </dl>
     <!-- 运营数据结束 -->
+
 
     <!-- 合作伙伴开始 -->
     <dl class="moduleItem">
@@ -950,3 +951,7 @@
     });
 
 </script>
+
+</div>
+<!-- 首页内容部分结束 -->
+@endsection

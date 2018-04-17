@@ -12,6 +12,20 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
+
         //
+
+        //
+
+
+        //
+
+
+        'admin/creditor_upload',
+
+        //
+
+
+
     ];
 }
