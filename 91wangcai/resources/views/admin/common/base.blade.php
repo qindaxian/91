@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<LINK rel="Bookmark" href="favicon.ico" >
-<LINK rel="Shortcut Icon" href="favicon.ico" />
+<LINK rel="Bookmark" href="http://www.91.com/admin/favicon.ico" >
+<LINK rel="Shortcut Icon" href="http://www.91.com/admin/favicon.ico" />
 <!--[if lt IE 9]>
 <script type="text/javascript" src="lib/html5.js"></script>
 <script type="text/javascript" src="lib/respond.min.js"></script>
@@ -18,6 +18,7 @@
 
 <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/css/style.css" />
+<link href="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -32,9 +33,6 @@
 {{-- 继承后插入的内容 --}}
 @yield('content')
 
-
-
-
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/layer/2.4/layer.js"></script>
 
@@ -43,3 +41,7 @@
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/static/h-ui/js/H-ui.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>

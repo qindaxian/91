@@ -181,11 +181,11 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
-                    <a href="http://www.91.com/index.php/home/index" class="js_userTabLink" target="_blank">登录</a>
+                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
-                    <a href="http://www.91.com/index.php/home/reg" class="js_userTabLink" target="_blank">注册</a>
+                    <a href="/user/to_register" class="js_userTabLink" target="_blank">注册</a>
                 </li>
 
 
@@ -217,7 +217,7 @@
         <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
         <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
     </div>
-<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+
     <script type="text/javascript">
         $(function(){
             $(".carousel-content").carousel({
@@ -243,54 +243,19 @@
     </script>
     </div>
     <div class="wrap userWrap">
-
-
-
-        <div class="loginRegisterWrap">
-            <!-- 登录开始 -->
-            <div class="loginWrap js_item">
-                <!-- <span class="loginArrow"></span> -->
-                <form>
-                    <ul>
-                        <li>
-                            <label for="username" class="form_group_focus">
-                                <div class="error_tip hide" id="error_detail_message"></div>
-                                <span class="userNameIcon"></span>
-                                <input type="text" class="input userName" id="username" placeholder="请输入手机号" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="user_phone">
-                            </label>
-                        </li>
-                        <li>
-                            <label for="pwd">
-                                <span class="pwdIcon"></span>
-                                <input type="password" class="input pwd" id="pwd" placeholder="请输入密码" autocomplete="off" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="user_password">
-                            </label>
-                        </li>
-                        <li>
-                            <label for="code">
-                                <span class="codeIcon"></span>
-                                <input type="text" class="input code" id="exa" placeholder="请输入验证码" name="code">
-                                <span class="codeImgWrap">
-			  								<img src="https://www.91wangcai.com/captcha/image?t=0.6329365956769126" id="valicodeImg" alt="点击刷新" onclick="this.src='https://www.91wangcai.com/captcha/image?t='+ Math.random()">
-			  							</span>
-                                <span class="error"></span>
-                            </label>
-                        </li>
-                        <li class="forgotWrap">
-                            <a href="/user/forgot_password" class="forgotPwdLink">忘记密码</a>
-                        </li>
-                        <li>
-                            <input type="button" value="登录" class="loginBtn" id="login_btn">
-                        </li>
-                        <li class="checkProtocol">
-                            <input id="tiaokuanLogin" class="hidden" name="" type="checkbox" value="" checked=""><span class="checked_box" id="login_check"></span> 我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-            <!-- 登录结束 -->
-        </div>
-
-
+                <div class="welcomeWrap">
+                    <h2 class="welcomeText">15810083779，欢迎您！</h2>
+                    <div class="welcomeSplit"></div>
+                    <div class="propertyWrap">
+                        <h2 class="propertyItem">
+                            <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span>0.00<span class="propertyText">元</span>
+                        </h2>
+                        <h2 class="propertyItem">
+                            <span class="propertyText">账户余额:</span>0.00<span class="propertyText">元</span>
+                        </h2>
+                    </div>
+                    <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
+                </div>
     </div>
 </div>
 <!-- banner轮换图结束 -->
@@ -886,6 +851,3 @@
 <!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
 </body>
 </html>
-<script>
-
-</script>
