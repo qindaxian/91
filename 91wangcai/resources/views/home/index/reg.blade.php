@@ -181,7 +181,7 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
-                    <a href="http://www.91.com/index.php/home/index" class="js_userTabLink" target="_blank">登录</a>
+                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
@@ -206,79 +206,88 @@
 <div class="sliderWrap">
     <div class="slider-wrap">
         <div class="carousel-content">
-        <ul class="carousel">
-            <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
-        </ul>
-        <ul class="img-index"></ul>
-        <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
-        <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
-    </div>
-<!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
-    <script type="text/javascript">
-        $(function(){
-            $(".carousel-content").carousel({
-                carousel : ".carousel",//轮播图容器
-                indexContainer : ".img-index",//下标容器
-                prev : ".carousel-prev",//左按钮
-                next : ".carousel-next",//右按钮
-                timing : 3000,//自动播放间隔
-                animateTime : 800,//动画时间
-                auto : true,//是否自动播放
+            <ul class="carousel">
+                <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
+                <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
+            </ul>
+            <ul class="img-index"></ul>
+            <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
+            <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
+        </div>
+        <!--<script type="text/javascript" src="./scripts/carousel.js"></script> -->
+        <script type="text/javascript">
+            $(function(){
+                $(".carousel-content").carousel({
+                    carousel : ".carousel",//轮播图容器
+                    indexContainer : ".img-index",//下标容器
+                    prev : ".carousel-prev",//左按钮
+                    next : ".carousel-next",//右按钮
+                    timing : 3000,//自动播放间隔
+                    animateTime : 800,//动画时间
+                    auto : true,//是否自动播放
+                });
+                $(".carousel-prev").hover(function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
+                },function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
+                });
+                $(".carousel-next").hover(function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
+                },function(){
+                    $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
+                });
             });
-            $(".carousel-prev").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
-            },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
-            });
-            $(".carousel-next").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
-            },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
-            });
-        });
-    </script>
+        </script>
     </div>
     <div class="wrap userWrap">
 
 
 
         <div class="loginRegisterWrap">
-            <!-- 登录开始 -->
-            <div class="loginWrap js_item">
-                <!-- <span class="loginArrow"></span> -->
-                <form method="post" action="/login">
+            <!-- 注册开始 -->
+            <div class="registerWrap js_item">
+                <!-- <span class="registerArrow"></span> -->
+                <form action="/doreg" method="POST" name="reg">
                     {{csrf_field()}}
                     <ul>
                         <li>
-                            <label for="username" class="form_group_focus">
-                                <div class="error_tip hide" id="error_detail_message"></div>
+                            <div class="register_error_tip hide">
+                                <span id="register_error_detail_message"></span>
+                            </div>
+                            <label for="userPhone">
                                 <span class="userNameIcon"></span>
-                                <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone">
+                                <input type="text" class="input userName" id="phone" placeholder="请输入手机号" name="user_phone"  maxlength="11">
                             </label>
                         </li>
                         <li>
-                            <label for="pwd">
+                            <label for="msgCode">
+                                <span class="codeIcon"></span>
+                                <input type="text" class="input userName" id="exaReg" placeholder="请输入短信验证码" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="sms">
+                                <input id="btnSendCode" class="getCodeLink" type="button" value="发送验证码" onclick="sendMessage()" />
+                            </label>
+                            <div class="error_box">
+                                <div class="errorTip" id="send_call_verify" style="display: none;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="userPwd">
                                 <span class="pwdIcon"></span>
-                                <input type="password" class="input pwd" id="pwd" placeholder="请输入密码" autocomplete="off" name="user_password">
+                                <input type="password" class="input userName" id="pwdCode" placeholder="请输入6-16位数字或字母组合" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="user_password">
                             </label>
                         </li>
-                        <li class="forgotWrap">
-                            <a href="/user/forgot_password" class="forgotPwdLink">忘记密码</a>
-                        </li>
                         <li>
-                            <input type="submit" value="登录" class="loginBtn" id="login_btn">
+                            <input type="submit" value="注册" class="loginBtn" id="registerBtn" name="registerBtn">
                         </li>
                         <li class="checkProtocol">
-                            <input id="tiaokuanLogin" class="hidden" name="" type="checkbox" value="" checked=""><span class="checked_box" id="login_check"></span> 我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
+                            <input type="checkbox" id="tiaokuan" class="hidden" checked=""><span class="checked_box" id="register_check"></span> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
                         </li>
                     </ul>
                 </form>
             </div>
-            <!-- 登录结束 -->
+            <!-- 注册结束 -->
         </div>
 
 
@@ -878,5 +887,66 @@
 </body>
 </html>
 <script>
+    //验证码60秒
+    var InterValObj; //timer变量，控制时间
+    var count = 30; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+    function sendMessage() {
+        curCount = count;
+        //设置button效果，开始计时
+        $("#btnSendCode").attr("disabled", "true");
+        $("#btnSendCode").val(curCount + "秒后可重新发送");
+        InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        //请求后台发送验证码 TODO
+    }
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重新发送验证码");
+        }
+        else {
+            curCount--;
+            $("#btnSendCode").val(curCount + "秒后可重新发送");
+        }
+    }
+    //验证码发送
+    $('#btnSendCode').click(function(){
+        var user_phone = $("input[name = 'user_phone']").val();
+        var url = "http://www.91.com/index.php/home/registers";
+        $.ajax({
+            url:url,
+            data:{'user_phone':user_phone},
+            type:"GET",
+            success:function(msg){
+            }
+        });
+    });
+    //密码认证
+    $(function(){
+        var validate = {
+            "checkAccount":false
+        };
+        $("input[name = 'user_password']").blur(function(){
+            var account = $(this).val().trim();
+            if(account == ""){
+                alert("密码不能为空");
+                return validate.checkAccount = false;
+            }
+            var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+            if(!reg.test(account)){
+                alert("密码格式不正确");
+                return validate.checkAccount = false;
+            }
+            $(this).after("<span></span>");
+            return validate.checkAccount = true;
+        });
+        //组织提交
+        $("form[name = 'reg']").submit(function(){
+            $("input[name = 'user_password']").trigger("blur");
+            return validate.checkAccount;
+        });
+    });
 
 </script>
