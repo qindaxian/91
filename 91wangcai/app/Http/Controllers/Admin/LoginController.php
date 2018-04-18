@@ -29,6 +29,6 @@ class LoginController extends Controller
     //退出
     public function out(Request $request){
         $request->session()->forget('admin');
-        return view('admin/login/login');
+        return redirect('admin/login');
     }
 }
