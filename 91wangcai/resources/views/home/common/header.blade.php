@@ -171,11 +171,11 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
-                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
+                    <a href="/home/index" class="js_userTabLink" target="_blank">登录</a>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
-                    <a href="/user/to_register" class="js_userTabLink" target="_blank">注册</a>
+                    <a href="/home/reg" class="js_userTabLink" target="_blank">注册</a>
                 </li>
 
 

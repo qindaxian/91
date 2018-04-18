@@ -41,6 +41,26 @@ class user extends Model
 
     /**
      * @param $user_phone
+     * @return mixed
+     * 手机号搜索
+     */
+    public function phone($user_phone)
+    {
+        return DB::table($this->table)->where(['user_phone'=>$user_phone])->first();
+    }
+
+    /**
+     * @param $user_pwd
+     * @return mixed
+     * 密码搜索
+     */
+    public function pwd($user_password)
+    {
+        return DB::table($this->table)->where(['user_password'=>$user_password])->first();
+    }
+
+    /**
+     * @param $user_phone
      * @param $user_password
      * @return mixed
      * 用户登陆

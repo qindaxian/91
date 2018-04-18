@@ -8,8 +8,8 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
-
 use App\Http\Models\user;
+use Gregwar\Captcha\CaptchaBuilder;
 
 
 /**
@@ -129,14 +129,22 @@ class IndexController extends Controller
     {
         $user_phone = $_POST['user_phone'];
         $user_password = md5($_POST['user_password']);
+        $code = $_POST['code'];
+        session_start();
         $user = new user();
-        $res = $user->login($user_phone,$user_password);
-        if($res){
-            $data = $this->object_to_array($res);
+        $phone = $user->phone($user_phone);
+        $pwd = $user->pwd($user_password);
+        $login = $user->login($user_phone,$user_password);
+        if($_SESSION['milkcaptcha'] != $code){
+            echo "<script>alert('验证码错误');location.href='home/index'</script>";
+        }else if(!$phone) {
+            echo "<script>alert('手机号不存在');location.href='home/index'</script>";
+        }else if(!$pwd) {
+            echo "<script>alert('密码错误');location.href='home/index'</script>";
+        }else if($login) {
+            $data = $this->object_to_array($login);
             setcookie('user_name',$data['user_phone'],time()+3600*24);
             echo "<script>location.href='home/user'</script>";
-        }else {
-            echo "<script>alert('用户名或密码错误');location.href='home/index'</script>";
         }
     }
 
@@ -174,5 +182,17 @@ class IndexController extends Controller
         return $obj;
     }
 
-        //var_dump($code,$sms);
+    public function captcha()
+    {
+        $builder = new CaptchaBuilder();
+        $builder->build(150,32);
+        //获取验证码内容
+        $phrase = $builder->getPhrase();
+
+        //把内容存到session
+        session_start();
+        $_SESSION['milkcaptcha'] = $phrase;
+        ob_clean();//清楚缓存;
+        return response($builder->output())->header('content-type','image/jpeg');
     }
+}
