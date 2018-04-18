@@ -36,26 +36,10 @@
 
 <div class="none">
     <!-- www.91wangcai.com的统计代码 -->
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+   
     <!-- www.91wangcai.com的统计代码 -->
     <!-- www.91wangcai.com的最新https的统计代码 -->
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+  
     <!-- www.91wangcai.com的最新https的统计代码 -->
     <!-- wangcai.91jinrong.com的统计代码结束 -->
     <script>
