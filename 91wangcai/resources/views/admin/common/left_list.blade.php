@@ -2,10 +2,11 @@
 
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 旺财日记资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="article-list.html" title="资讯管理">资讯管理</a></li>
+					<li><a href="article-list.html" title="财主见面会资讯管理">财主见面会资讯管理</a></li>
+					<li><a href="article-list.html" title="旺财日记管理">旺财日记管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -27,29 +28,28 @@
 				</ul>
 			</dd>
 		</dl>
+		<!-- 普通用户功能开始 -->
 		<dl id="menu-comments">
-			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe622;</i>业务申请<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="http://h-ui.duoshuo.com/admin/" title="评论列表">评论列表</a></li>
-					<li><a href="feedback-list.html" title="意见反馈">意见反馈</a></li>
+					<li><a href="http://www.91.com/admin/business-qua" title="贷款资格申请">贷款资格申请</a></li>
+					<li><a href="http://h-ui.duoshuo.com/admin/" title="项目贷款申请">项目贷款申请</a></li>
+					<li><a href="feedback-list.html" title="债权转让申请">债权转让申请</a></li>
 				</ul>
 			</dd>
 		</dl>
 		<dl id="menu-member">
-			<dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe60d;</i>业务记录<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="member-list.html" title="会员列表">会员列表</a></li>
-					<li><a href="member-del.html" title="删除的会员">删除的会员</a></li>
-					<li><a href="member-level.html" title="等级管理">等级管理</a></li>
-					<li><a href="member-scoreoperation.html" title="积分管理">积分管理</a></li>
-					<li><a href="member-record-browse.html" title="浏览记录">浏览记录</a></li>
-					<li><a href="member-record-download.html" title="下载记录">下载记录</a></li>
-					<li><a href="member-record-share.html" title="分享记录">分享记录</a></li>
+					<li><a href="member-list.html" title="会员列表">申请列表</a></li>
+					<li><a href="member-list.html" title="项目交易记录">项目交易记录</a></li>
+					<li><a href="member-list.html" title="债权交易记录">债权交易记录</a></li>
 				</ul>
 			</dd>
 		</dl>
+		<!-- 普通用户功能结束 -->
 		<dl id="menu-admin">
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
