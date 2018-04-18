@@ -22,13 +22,13 @@ Route::group(['namespace' => 'Admin'], function(){
 
    	Route::get('admin/product-creditor','ProductController@creditor');
     Route::get('admin/login','LoginController@login');
+    Route::get('admin/out','LoginController@out');
     Route::post('admin/login','LoginController@login');
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditor_add');
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
-    Route::get('admin/business-qua','BusinessController@business_qua');
 });
 
 
