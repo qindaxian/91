@@ -172,14 +172,13 @@
     <div class="wrap userWrap" id="user_box">
                 <div class="loginRegisterWrap">
                     <!-- 登录开始 -->
-                    <div class="loginWrap js_item">
+                    <div class="loginWrap js_item" id="logins">
                         <!-- <span class="loginArrow"></span> -->
-                        <form method="post" action="/login">
+                        {{--<form method="post" action="/login">--}}
                     {{csrf_field()}}
                     <ul>
                         <li>
                             <label for="username" class="form_group_focus">
-                                <div class="error_tip hide" id="error_detail_message" style="display: block;"></div>
                                 <span class="userNameIcon"></span>
                                 <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone">
                             </label>
@@ -204,20 +203,20 @@
                             <a href="/user/forgot_password" class="forgotPwdLink">忘记密码</a>
                         </li>
                         <li>
-                            <input type="submit" value="登录" class="loginBtn" id="login_btn">
+                            <input type="button" value="登录" class="loginBtn" id="login_btn">
                         </li>
                         <li class="checkProtocol">
                             <input id="tiaokuanLogin" class="hidden" name="" type="checkbox" value="" checked=""><span class="checked_box" id="login_check"></span> 我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
                         </li>
                     </ul>
-                </form>
+                {{--</form>--}}
                     </div>
                     <!-- 登录结束 -->
 
                     <!-- 注册开始 -->
-                    <div class="registerWrap js_item">
+                    <div class="registerWrap js_item" style="display:none" id="regs">
                         <!-- <span class="registerArrow"></span> -->
-                        <form action="/doreg" method="POST" name="reg">
+                        {{--<form action="/doreg" method="POST" name="reg">--}}
                             {{csrf_field()}}
                             <ul>
                                 <li>
@@ -233,7 +232,7 @@
                                     <label for="msgCode">
                                         <span class="codeIcon"></span>
                                         <input type="text" class="input userName" id="exaReg" placeholder="请输入短信验证码" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="sms">
-                                        <input id="btnSendCode" class="getCodeLink" type="button" value="发送验证码" onclick="sendMessage()" />
+                                        <input id="btnSendCode" class="getCodeLink" type="button" value="发送验证码" onclick="sendMessage()" style="text-decoration:none"/>
                                     </label>
                                     <div class="error_box">
                                         <div class="errorTip" id="send_call_verify" style="display: none;"></div>
@@ -252,7 +251,7 @@
                                     <input type="checkbox" id="tiaokuan" class="hidden" checked=""><span class="checked_box" id="register_check"></span> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
                                 </li>
                             </ul>
-                        </form>
+                        {{--</form>--}}
                     </div>
                     <!-- 注册结束 -->
                 </div>
@@ -731,6 +730,29 @@
 <script src="http://www.91.com/js/jquery-3.2.1.min.js"></script>
 <script>
     $(document).on('click','#register', function() {
-        alert(1);
+        $("#logins").hide();
+        $("#regs").show();
+    });
+    $(document).on('click','#login', function() {
+        $("#logins").show();
+        $("#regs").hide();
+    });
+    $(document).on('click','#login_btn', function() {
+        var user_phone = $("input[name = 'user_phone']").val();
+        var user_password = $("input[name = 'user_password']").val();
+        var code = $("input[name = 'code']").val();
+        var error = $("#error_detail_message");
+        $.ajax({
+            url:'/login',
+            data:{user_phone:user_phone,user_password:user_password,code:code},
+            type:'post',
+            headers: { 'X-CSRF-TOKEN' : '{{ csrf_token() }}' },
+            dateType:'json',
+            success:function (check) {
+                if(check.state == 0) {
+
+                }
+            }
+        });
     });
 </script>
