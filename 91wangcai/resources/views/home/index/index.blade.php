@@ -213,6 +213,48 @@
                 </form>
                     </div>
                     <!-- 登录结束 -->
+
+                    <!-- 注册开始 -->
+                    <div class="registerWrap js_item">
+                        <!-- <span class="registerArrow"></span> -->
+                        <form action="/doreg" method="POST" name="reg">
+                            {{csrf_field()}}
+                            <ul>
+                                <li>
+                                    <div class="register_error_tip hide">
+                                        <span id="register_error_detail_message"></span>
+                                    </div>
+                                    <label for="userPhone">
+                                        <span class="userNameIcon"></span>
+                                        <input type="text" class="input userName" id="phone" placeholder="请输入手机号" name="user_phone"  maxlength="11">
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="msgCode">
+                                        <span class="codeIcon"></span>
+                                        <input type="text" class="input userName" id="exaReg" placeholder="请输入短信验证码" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="sms">
+                                        <input id="btnSendCode" class="getCodeLink" type="button" value="发送验证码" onclick="sendMessage()" />
+                                    </label>
+                                    <div class="error_box">
+                                        <div class="errorTip" id="send_call_verify" style="display: none;"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="userPwd">
+                                        <span class="pwdIcon"></span>
+                                        <input type="password" class="input userName" id="pwdCode" placeholder="请输入6-16位数字或字母组合" style="background-color: rgb(250, 255, 189) !important; box-shadow: none; color: rgb(0, 0, 0);" name="user_password">
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="submit" value="注册" class="loginBtn" id="registerBtn" name="registerBtn">
+                                </li>
+                                <li class="checkProtocol">
+                                    <input type="checkbox" id="tiaokuan" class="hidden" checked=""><span class="checked_box" id="register_check"></span> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <!-- 注册结束 -->
                 </div>
     </div>
 </div>
@@ -686,8 +728,9 @@
 </div>
 </body>
 </html>
+<script src="http://www.91.com/js/jquery-3.2.1.min.js"></script>
 <script>
-    $(document).on('click','#login_btn', function () {
-        alert("点击了");
+    $(document).on('click','#register', function() {
+        alert(1);
     });
 </script>
