@@ -8,13 +8,13 @@
 <div class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-article-add">
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>债权发起人：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权年利率：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品规格：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权规格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" name="" id="" placeholder="输入长度" value="" class="input-text" style=" width:25%">
 				MM
@@ -88,13 +88,13 @@
 				</span> </div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权重量：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
 				kg</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权展示价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
 				元</div>
@@ -129,14 +129,14 @@
 				<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}'})" id="datemax" class="input-text Wdate" style="width:180px;">
 			</div>
 		</div>
+<!-- 		<div class="row cl">
+	<label class="form-label col-xs-4 col-sm-2">债权关键字：</label>
+	<div class="formControls col-xs-8 col-sm-9">
+		<input type="text" name="" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
+	</div>
+</div> -->
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品关键字：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品摘要：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)"></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
@@ -153,7 +153,7 @@
 			</div>
 		</div> -->
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+			<label class="form-label col-xs-4 col-sm-2">项目拥有者证件照片上传：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<div class="uploader-list-container">
 					<div class="queueList">
@@ -174,9 +174,9 @@
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
+			<label class="form-label col-xs-4 col-sm-2">债权详细内容：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
 			</div>
 		</div>
 		{{ csrf_field() }}
@@ -189,26 +189,26 @@
 		</div>
 	</form>
 </div>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+
+
+
+
+<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/static/h-ui/js/H-ui.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
-
-
-
-
-
+<script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
 
 <script>
 $(function(){
@@ -217,7 +217,7 @@ $(function(){
 		radioClass: 'iradio-blue',
 		increaseArea: '20%'
 	});
-	
+
 	$list = $("#fileList"),
 	$btn = $("#btn-star"),
 	state = "pending",
@@ -226,14 +226,14 @@ $(function(){
 	var uploader = WebUploader.create({
 		auto: true,
 		swf: 'lib/webuploader/0.1.5/Uploader.swf',
-	
+
 		// 文件接收服务端。
 		server: 'http://www.91.com/admin/creditor_upload',
-	
+
 		// 选择文件的按钮。可选。
 		// 内部根据当前运行是创建，可能是input元素，也可能是flash.
 		pick: '#filePicker',
-	
+
 		// 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
 		resize: false,
 		// 只允许选择图片文件。
@@ -253,7 +253,7 @@ $(function(){
 		),
 		$img = $li.find('img');
 		$list.append( $li );
-	
+
 		// 创建缩略图
 		// 如果为非图片文件，可以不用调用此方法。
 		// thumbnailWidth x thumbnailHeight 为 100 x 100
@@ -262,7 +262,7 @@ $(function(){
 				$img.replaceWith('<span>不能预览</span>');
 				return;
 			}
-	
+
 			$img.attr( 'src', src );
 		}, thumbnailWidth, thumbnailHeight );
 	});
@@ -277,17 +277,14 @@ $(function(){
 		$li.find(".state").text("上传中");
 		$percent.css( 'width', percentage * 100 + '%' );
 	});
-	
 	// 文件上传成功，给item添加成功class, 用样式标记上传成功。
 	uploader.on( 'uploadSuccess', function( file ) {
 		$( '#'+file.id ).addClass('upload-state-success').find(".state").text("已上传");
 	});
-	
 	// 文件上传失败，显示上传出错。
 	uploader.on( 'uploadError', function( file ) {
 		$( '#'+file.id ).addClass('upload-state-error').find(".state").text("上传出错");
 	});
-	
 	// 完成上传完了，成功或者失败，先删除进度条。
 	uploader.on( 'uploadComplete', function( file ) {
 		$( '#'+file.id ).find('.progress-box').fadeOut();
