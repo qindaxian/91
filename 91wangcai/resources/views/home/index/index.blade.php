@@ -190,6 +190,16 @@
                                 <input type="password" class="input pwd" id="pwd" placeholder="请输入密码" autocomplete="off" name="user_password">
                             </label>
                         </li>
+                        <li>
+                            <label for="code" class="form_group_focus">
+                                <span class="codeIcon"></span>
+                                <input type="text" class="input code" id="exa" placeholder="请输入验证码" name="code">
+                                <span class="codeImgWrap">
+			  								<img src="{{ URL('home/captcha') }}" id="valicodeImg" alt="点击刷新" onclick="this.src='{{ URL('home/captcha') }}?t='+ Math.random()">
+			  							</span>
+                                <span class="error"></span>
+                            </label>
+                        </li>
                         <li class="forgotWrap">
                             <a href="/user/forgot_password" class="forgotPwdLink">忘记密码</a>
                         </li>

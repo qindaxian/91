@@ -65,5 +65,6 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('/login','IndexController@login');
     //登陆成功
     Route::get('home/user','IndexController@user');
-
+    //验证码
+    Route::get('home/captcha', 'IndexController@captcha');
 });
