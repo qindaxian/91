@@ -6,28 +6,11 @@ ul{
 .carousel-content{
 	position: relative;
 	display: inline-block;
-
-	margin-left:261px;
-
-
-	margin-left:261px;
-
-
-	margin-left:261px;
-
-
 	margin-left: 17%;
-
-	margin-left:17%;
-
-
-
-
 }
 .carousel{
 	width: 1000px;
-	height: 350px;
-	margin-top:10px;
+	height: 380px;
 	position: relative;
 	overflow: hidden;
 }
@@ -63,7 +46,7 @@ ul{
 .img-index li.index{
 	background-color: rgba(0,0,0,0.6);
 }
-.img-index li:hover{
+.img-index li.hover{
 	background-color: rgba(0,0,0,0.6);
 }
 .carousel-prev,.carousel-next{
@@ -77,15 +60,10 @@ ul{
 }
 .carousel-next{
 	right: 0;
-
-
-
 	z-index: 1000;
-
-
-	z-index: 1000;
-
-
-	z-index: 1000;
-
+}
+#user_box{
+	margin-right: 20%;
+	height: 350px;
+	padding-top: 10px;
 }

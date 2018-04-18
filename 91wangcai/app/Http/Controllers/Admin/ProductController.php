@@ -1,98 +1,26 @@
 <?php
-/**
-
- * User: Feng Yikai
- * Date: 2018/4/16
- * Time: 9:10
-
-
- * User: Feng Yikai
- * Date: 2018/4/16
- * Time: 9:10
-
-
- * User: Feng Yikai
- * Date: 2018/4/16
- * Time: 9:10
-
-
- * User: Feng Yikai
- * Date: 2018/4/16
- * Time: 9:10
-
- * User: Qin Daxian
- * Date: 2018/4/17
- * Time: 10:18
-
-
-
-
- */
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Http\Controllers\Controller;
-
-
-
-use App\Http\Controllers\Controller;
-
-
-
-use App\Http\Controllers\Controller;
-
-
-use App\Http\Models\CreditorModel;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-
-
-/**
- * Class IndexController
- * @package App\Http\Controllers
- */
-
-
-
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Models\ProjectModel;
-
-/*
- * Class IndexController
- * @package App\Http\Controllers
- */
-
-
-
-
+use App\Http\Models\CreditorModel;
+//产品管理
 class ProductController extends Controller
 {
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
-
-     * 前台首页
-     */
     public function project(){
+
+        $obj = new ProjectModel;
+        $data = $obj->getfind(1);
         return view('admin/product/project_list');
     }
 
-
-    public function creditor(){
-    	return view('admin/product/creditor_list');
+    public function project_add(){
+        return view('admin/product/project_add');
     }
-
-
-    public function creditor(){
-    	return view('admin/product/creditor_list');
-    }
-
-
-    public function creditor(){
-    	return view('admin/product/creditor_list');
-    }
+    //债权转让管理
 
     public function creditor_add(){
         return view('admin/product/creditor_add');
@@ -103,7 +31,7 @@ class ProductController extends Controller
         $creditor=$creditorModel
             ->get()
             ->toArray();
-    	return view('admin/product/creditor_list');
+        return view('admin/product/creditor_list');
     }
 
     public function creditor_upload(Request $request)
@@ -116,28 +44,6 @@ class ProductController extends Controller
 
             return response()->json(array('msg' => $path));
         }
-    }
-
-     * 产品管理
-     */
-    //项目管理
-    public function project(){
-
-        $obj = new ProjectModel;
-        $data = $obj->getfind(1);
-        // print_r($data);die;
-        
-        
-        return view('admin/product/project_list');
-    }
-
-    public function project_add(){
-        return view('admin/product/project_add');
-    }
-    
-    //债权转让管理
-    public function creditor(){
-    	return view('admin/product/creditor_list');
     }
 
 

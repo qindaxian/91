@@ -8,15 +8,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-
-
-
-
-
 use APP\Http\Models;
-
-
 
 
 /**
@@ -25,16 +17,7 @@ use APP\Http\Models;
  */
 class IndexController extends Controller
 {
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
-     * 前台首页
-     */
     public function index(){
         return view('admin/index/index');
     }
-
-
-
-
-
 }

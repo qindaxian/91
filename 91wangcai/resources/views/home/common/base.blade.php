@@ -8,35 +8,6 @@
 
 
 <!-- 底部 -->
-    <!-- 合作伙伴开始 -->
-    <dl class="moduleItem">
-        <dt>
-            <h3 class="moduleTitle">合作机构</h3>
-        </dt>
-        <dd class="partnerList clearfix">
-            <div class="list">
-                <a href="/about/cooperation/#haitong">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner1.png" alt="海通证券">
-                </a>
-            </div>
-            <div class="list">
-                <a href="/about/cooperation/#kuandai">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner3.png" alt="宽带资本" >
-                </a>
-            </div>
-            <div class="list">
-                <a href="/about/cooperation/#jingwei">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner2.png" alt="经纬中国" >
-                </a>
-            </div>
-            <div class="list lastList">
-                <a href="/about/cooperation/#xiamen">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner4.png" alt="厦门银行" >
-                </a>
-            </div>
-        </dd>
-    </dl>
-    <!-- 合作伙伴结束 -->
 <div class="footer">
     <div class="wrap clearfix footerWrap">
         <dl class="footer_item addressWrap">
@@ -119,6 +90,6 @@
     </script>
 </div>
 <!-- 导入底部结束 -->
-<script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script>
+<!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
 </body>
 </html>

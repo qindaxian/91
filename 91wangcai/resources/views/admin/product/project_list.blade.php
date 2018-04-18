@@ -22,17 +22,6 @@
 				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜项目</button>
 			</div>
 
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
-
-
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
-
-
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
-
-
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
-
 			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="project_add('添加项目','http://www.91.com/admin/product-project_add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 
 
@@ -73,16 +62,6 @@
 
 @endsection
 
-
-@endsection
-
-
-@endsection
-
-
-@endsection
-
-@endsection
 <script type="text/javascript">
 var setting = {
 	view: {

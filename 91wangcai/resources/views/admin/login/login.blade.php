@@ -45,7 +45,7 @@
 <div class="loginWraper">
 	<div id="loginform" class="loginBox">
 
-		<form class="form form-horizontal" action="" method=post">
+		<form class="form form-horizontal" action="" method="post">
 			<div class="row cl">
 				<label class="form-label col-xs-3"></label>
 				<div class="formControls col-xs-8">
@@ -61,12 +61,6 @@
 				<div class="formControls col-xs-8">
 					<input id="" name="a_name" type="text" placeholder="账户" class="input-text size-L">
 
-		<form class="form form-horizontal" action="index.html" method="post">
-			<div class="row cl">
-				<label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
-				<div class="formControls col-xs-8">
-					<input id="" name="" type="text" placeholder="账户" class="input-text size-L">
-
 				</div>
 			</div>
 			<div class="row cl">
@@ -74,11 +68,6 @@
 				<div class="formControls col-xs-8">
 
 					<input id="" name="a_password" type="password" placeholder="密码" class="input-text size-L">
-				</div>
-			</div>
-			
-
-					<input id="" name="" type="password" placeholder="密码" class="input-text size-L">
 				</div>
 			</div>
 
@@ -90,15 +79,12 @@
 					<input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
 				</div>
 			</div>
+			{{ csrf_field() }}
 		</form>
 	</div>
 </div>
 
 <div class="footer">91旺财 管理员登录</div>
-
-
-<div class="footer">91旺财   2018-04-16 / 版本号1.0</div>
-
 
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
