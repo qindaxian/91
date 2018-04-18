@@ -179,7 +179,7 @@
                     <ul>
                         <li>
                             <label for="username" class="form_group_focus">
-                                <div class="error_tip hide" id="error_detail_message"></div>
+                                <div class="error_tip hide" id="error_detail_message" style="display: block;"></div>
                                 <span class="userNameIcon"></span>
                                 <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone">
                             </label>
@@ -213,54 +213,6 @@
                 </form>
                     </div>
                     <!-- 登录结束 -->
-                    <!-- 注册开始 -->
-                    <div class="registerWrap hide js_item">
-                        <!-- <span class="registerArrow"></span> -->
-                        <form>
-                            <ul>
-                                <li>
-                                    <div class="register_error_tip hide">
-                                            <span id="register_error_detail_message"></span>
-                                    </div>
-                                    <label for="userPhone">
-                                        <span class="userNameIcon"></span>
-                                        <input type="text" class="input userName" id="phone" placeholder="请输入手机号">
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="codeVal">
-                                        <span class="codeIcon"></span>
-                                        <input type="text" class="input " id="exaCode" placeholder="请输入验证码">
-                                        <img src="https://www.91wangcai.com/captcha/image?t=0.0842152391157649" alt="验证码" class="codeImg" onclick="this.src='https://www.91wangcai.com/captcha/image?t='+ Math.random()" id="valicodeImg">
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="msgCode">
-                                        <span class="codeIcon"></span>
-                                        <input type="text" class="input userName" id="exaReg" placeholder="请输入短信验证码" data-form-un="1524022925035.219">
-                                        <a href="javascript:void(0)" class="getCodeLink" id="getRegisterCode">获取验证码</a>
-                                    </label>
-                                    <div class="error_box">
-                                        <div class="errorTip" id="send_call_verify" style="display: none;"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <label for="userPwd">
-                                        <span class="pwdIcon"></span>
-                                        <input type="password" class="input userName" id="pwdCode" placeholder="请输入6-16位数字或字母组合" data-form-pw="1524022925035.219">
-                                        <div class="regEye">显示</div>
-                                    </label>
-                                </li>
-                                <li>
-                                    <input type="button" value="注册" class="loginBtn" id="registerBtn" data-form-sbm="1524022925035.219" style="pointer-events: auto;">
-                                </li>
-                                <li class="checkProtocol">
-                                    <input type="checkbox" id="tiaokuan" class="hidden" checked=""><span class="checked_box" id="register_check"></span> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
-                    <!-- 注册结束 -->
                 </div>
     </div>
 </div>
@@ -731,5 +683,11 @@
 @endsection('content')
 
 <!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
+</div>
 </body>
 </html>
+<script>
+    $(document).on('click','#login_btn', function () {
+        alert("点击了");
+    });
+</script>

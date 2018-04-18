@@ -26,7 +26,6 @@ class IndexController extends Controller
         return view('home/index/index');
     }
 
-
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
      * 用户注册页面
