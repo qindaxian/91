@@ -55,15 +55,19 @@ Route::group(['namespace' => 'Home'], function(){
     //前台旺财记事
     Route::get('home/chronicle', 'ChronicleController@index');
 
+
+	//用户注册
+//    Route::get('home/reg', 'IndexController@reg');
+
     //用户注册
     Route::get('home/reg', 'IndexController@reg');
+
     //短信验证码
     Route::get('home/registers','IndexController@loginDo');
     //注册账号
     Route::post('/doreg','IndexController@doReg');
     //用户登陆
     Route::post('/login','IndexController@login');
-    Route::get('/login','IndexController@login');
     //登陆成功
     Route::get('home/user','IndexController@user');
 

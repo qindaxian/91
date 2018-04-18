@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Http\Models\user;
 use Gregwar\Captcha\CaptchaBuilder;
+use Illuminate\Support\Facades\Input;
 
 
 /**
@@ -126,25 +127,21 @@ class IndexController extends Controller
      */
     public function login()
     {
-        $user_phone = $_POST['user_phone'];
-        $user_password = md5($_POST['user_password']);
-        $code = $_POST['code'];
         session_start();
+        $user_phone = Input::get('user_phone');
+        $user_password = md5(Input::get('user_password'));
+        $code = Input::get('code');
         $user = new user();
         $phone = $user->phone($user_phone);
         $pwd = $user->pwd($user_password);
         $login = $user->login($user_phone,$user_password);
-        if($_SESSION['milkcaptcha'] != $code){
-            echo "<script>alert('验证码错误');location.href='home/index'</script>";
-        }else if(!$phone) {
-            echo "<script>alert('手机号不存在');location.href='home/index'</script>";
-        }else if(!$pwd) {
-            echo "<script>alert('密码错误');location.href='home/index'</script>";
-        }else if($login) {
-            $data = $this->object_to_array($login);
-            setcookie('user_name',$data['user_phone'],time()+3600*24);
-            echo "<script>location.href='home/user'</script>";
+        if($_SESSION['milkcaptcha'] != $code) {
+            $arr = ['state'=>0];
+            return json_encode($arr);
         }
+//        $data = $this->object_to_array($login);
+//        setcookie('user_name',$data['user_phone'],time()+3600*24);
+//        echo "<script>location.href='home/user'</script>";
     }
 
     /**
