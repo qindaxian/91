@@ -41,12 +41,6 @@
 				MM </div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产地：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div>
-		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">材质：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" name="" id="" placeholder="" value="" class="input-text">
