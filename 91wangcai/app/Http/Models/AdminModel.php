@@ -19,4 +19,11 @@ class AdminModel extends Model
         return DB::table($this->table)->where(['a_name'=>$a_name,'a_password'=>$a_password])->first();
     }
 
+    public function getAll()  
+    {  
+        return $this->get()->toArray();
+    }  
+
+    
+
 }
