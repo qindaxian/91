@@ -101,6 +101,14 @@ Route::group(['namespace' => 'Home'], function(){
     //验证码
     Route::get('home/captcha','IndexController@captcha');
 
+
+  //前台个人中心
+  Route::get('home/info', 'InfoController@index');
+    Route::get('/account', 'InfoController@account');  
+    Route::get('/islogin', 'InfoController@islogin');  
+
+
     //退出登陆删除cookie
     Route::get('home/cookies','IndexController@cookies');
+
 });
