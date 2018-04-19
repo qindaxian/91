@@ -19,9 +19,17 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/index','IndexController@index');
     Route::get('admin/product-project','ProductController@project');
     Route::get('admin/product-project_add','ProductController@project_add');
+    //旺财记事
+    Route::get('admin/diary','DiaryController@diary');
+    Route::get('admin/diary_add','DiaryController@diary_add');
+    Route::get('admin/diary_upload','DiaryController@diary_upload');
+    Route::post('admin/diary_upload','DiaryController@diary_upload');
 
     Route::get('admin/product-creditor','ProductController@creditor');
+    //登录
     Route::get('admin/login','LoginController@login');
+    //退出登录
+    Route::get('admin/out','LoginController@out');
     Route::post('admin/login','LoginController@login');
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditor_add');
