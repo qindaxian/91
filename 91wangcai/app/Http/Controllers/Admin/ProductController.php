@@ -17,12 +17,12 @@ class ProductController extends Controller
         return view('admin/product/project_list');
     }
 
-    public function project_add(){
+    public function projectAdd(){
         return view('admin/product/project_add');
     }
     //债权转让管理
 
-    public function creditor_add(){
+    public function creditorAdd(){
         return view('admin/product/creditor_add');
     }
 
@@ -33,19 +33,4 @@ class ProductController extends Controller
             ->toArray();
         return view('admin/product/creditor_list');
     }
-
-    public function creditor_upload(Request $request)
-    {
-        if ($pic=$request->file('file')) {
-            $ext=$pic->getClientOriginalExtension();//得到图片后缀
-            $file = $request->file('file');
-            // 第一个参数代表目录, 第二个参数代表我上方自己定义的一个存储媒介
-            $path = $file->storeAs('image',rand().'.'.$ext);
-
-            return response()->json(array('msg' => $path));
-        }
-    }
-
-
-
 }

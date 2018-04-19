@@ -11,30 +11,39 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 Route::group(['namespace' => 'Admin'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
     Route::get('admin/index','IndexController@index');
     Route::get('admin/product-project','ProductController@project');
-    Route::get('admin/product-project_add','ProductController@project_add');
+    Route::get('admin/product-project_add','ProductController@projectAdd');
 
     Route::get('admin/product-creditor','ProductController@creditor');
     Route::get('admin/login','LoginController@login');
     Route::post('admin/login','LoginController@login');
+    Route::get('admin/out','LoginController@out');
     //债权添加
-    Route::get('admin/creditor-add','ProductController@creditor_add');
-    //债权图片上传
-    Route::get('admin/creditor_upload','ProductController@creditor_upload');
-    Route::post('admin/creditor_upload','ProductController@creditor_upload');
-    Route::get('admin/business-qua','BusinessController@business_qua');
+    Route::get('admin/creditor-add','ProductController@creditorAdd');
+    //贷款资格申请
+    Route::get('admin/business-qua','BusinessController@businessQua');
+    Route::get('admin/business-qua-list','BusinessController@businessQuaList');
 });
 
 
 //中间件
 Route::group(['middleware' => ['web','admin.login']], function () {
     Route::get('/admin/index','Admin\IndexController@index');
+    Route::get('admin/index','Admin\IndexController@index');
+    Route::get('admin/product-project','Admin\ProductController@project');
+    Route::get('admin/product-project_add','Admin\ProductController@project_add');
+
+    Route::get('admin/product-creditor','Admin\ProductController@creditor');
+    //债权添加
+    Route::get('admin/creditor-add','Admin\ProductController@creditor_add');
+    //贷款资格申请
+    Route::get('admin/business-qua','Admin\BusinessController@businessQua');
+    Route::get('admin/business-qua-list','Admin\BusinessController@businessQuaList');
 });
 
 

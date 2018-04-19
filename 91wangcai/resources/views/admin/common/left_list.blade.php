@@ -43,7 +43,7 @@
 			<dt><i class="Hui-iconfont">&#xe60d;</i>业务记录<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="member-list.html" title="会员列表">申请列表</a></li>
+					<li><a href="http://www.91.com/admin/business-qua-list" title="会员列表">申请列表</a></li>
 					<li><a href="member-list.html" title="项目交易记录">项目交易记录</a></li>
 					<li><a href="member-list.html" title="债权交易记录">债权交易记录</a></li>
 				</ul>
