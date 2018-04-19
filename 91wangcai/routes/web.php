@@ -29,6 +29,11 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
     Route::get('admin/business-qua','BusinessController@business_qua');
+
+    //管理员退出
+    Route::get('admin/out','LoginController@out');
+
+
     Route::get('admin/out','LoginController@out');
     //后台登陆用户退出
     Route::get('admin/out','LoginController@out');
@@ -37,6 +42,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/admin_list','PowerController@adminList');
     Route::get('admin/power','PowerController@index');
     
+
 });
 
 
@@ -64,19 +70,20 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/chronicle', 'ChronicleController@index');
 
 
-	//用户注册
-//    Route::get('home/reg', 'IndexController@reg');
+
+    //用户登陆
+    Route::post('/login','IndexController@login');
+    Route::get('/user','IndexController@user');
 
     //用户注册
-    Route::get('home/reg', 'IndexController@reg');
+    Route::post('/register','IndexController@register');
+
+    //验证码
+    Route::get('home/captcha','IndexController@captcha');
 
     //短信验证码
     Route::get('home/registers','IndexController@loginDo');
-    //注册账号
-    Route::post('/doreg','IndexController@doReg');
-    //用户登陆
-    Route::post('/login','IndexController@login');
-    //登陆成功
-    Route::get('home/user','IndexController@user');
 
+    //退出登陆删除cookie
+    Route::get('home/cookies','IndexController@cookies');
 });
