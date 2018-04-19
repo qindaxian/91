@@ -23,6 +23,9 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/product-creditor','ProductController@creditor');
     Route::get('admin/login','LoginController@login');
     Route::post('admin/login','LoginController@login');
+    //管理员退出
+    Route::get('admin/out','LoginController@out');
+
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditor_add');
     //债权图片上传
@@ -68,7 +71,10 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/projectlist', 'ProjectlistController@index');
     //前台旺财记事
     Route::get('home/chronicle', 'ChronicleController@index');
-
+    //前台旺财日记
+    Route::get('home/notes', 'ChronicleController@meeting_diary');
+    //前台财主见面会
+    Route::get('home/caizhu', 'ChronicleController@meeting');
 
 
     //用户登陆
@@ -83,6 +89,9 @@ Route::group(['namespace' => 'Home'], function(){
 
     //短信验证码
     Route::get('home/registers','IndexController@loginDo');
+
+    //验证码
+    Route::get('home/captcha','IndexController@captcha');
 
     //退出登陆删除cookie
     Route::get('home/cookies','IndexController@cookies');
