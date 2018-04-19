@@ -2,11 +2,10 @@
 
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 旺财日记资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 旺财资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="article-list.html" title="财主见面会资讯管理">财主见面会资讯管理</a></li>
-					<li><a href="article-list.html" title="旺财日记管理">旺财日记管理</a></li>
+					<li><a href="http://www.91.com/admin/diary" title="旺财日记管理">旺财记事管理</a></li>
 				</ul>
 			</dd>
 		</dl>
