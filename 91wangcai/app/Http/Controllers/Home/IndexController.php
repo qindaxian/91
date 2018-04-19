@@ -28,12 +28,109 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
-     * 用户注册页面
+     * 用户登陆
      */
-    public function reg()
+    public function login()
     {
-        return view('home/index/reg');
+        session_start();
+        $user_phone = Input::get('user_phone');
+        $user_password = md5(Input::get('user_password'));
+        $code = Input::get('code');
+        $user = new user();
+        $phone = $user->phone($user_phone);
+        $login = $user->login($user_phone,$user_password);
+        if($_SESSION['milkcaptcha'] != $code) {
+            return json_encode(0);
+        }
+        if(!$phone) {
+            return json_encode(1);
+        }
+        if($phone) {
+            $res = object_to_arrays($phone);
+            if($res['user_error'] == 0) {
+                return ['state'=>3,'text'=>'账号已被冻结,请联系管理员!'];
+            }
+            $res = object_to_arrays($phone);
+            if($user_password != $res['user_password']) {
+                $error = ['user_error'=>$res['user_error']];
+                $errors = $error['user_error'] - 1;
+                $user_error = ['user_error'=>$errors];
+                $user->pwd_error($user_phone,$user_error);
+                return ['state'=>2,'text'=>$user_error['user_error']];
+            }
+        }
+        if($login) {
+            $data = object_to_arrays($login);
+            setcookie('user_name',$data['user_phone'],time()+3600*24);
+            return json_encode(4);
+        }
+    }
+
+    /**
+     * 登陆成功
+     */
+    public function user()
+    {
+        if(empty($_COOKIE['user_name'])){
+            echo "<script>alert('您好！您还没有登陆');</script>";
+            die;
+        }
+        $user = new user();
+        $data = $user->selOne($_COOKIE['user_name']);
+        return view('home/index/user',['data'=>$data]);
+    }
+
+    /**
+     * 注册账号
+     */
+    public function register()
+    {
+        session_start();
+        $user_phone = Input::get('user_phone');
+        $code = Input::get('code');
+        $sms = Input::get('sms');
+        $user_password = Input::get('user_password');
+        $message = $_SESSION['code'];
+        if($_SESSION['milkcaptcha'] != $code) {
+            return json_encode(0);
+        }
+        if($sms != $message) {
+            return json_encode(1);
+        }else{
+            $pwd = md5($user_password);
+            $data = ['user_phone'=>$user_phone,'user_password'=>$pwd];
+            $user = new user();
+            $result = $user->selOne($user_phone);
+            if($result) {
+                return json_encode(2);
+            }else {
+                $res = $user->add($data);
+                if($res) {
+                    unset($_SESSION);
+                    session_destroy();
+                    setcookie('user_name',$user_phone,time()+3600*24);
+                    return json_encode(3);
+                }
+            }
+        }
+    }
+
+    /**
+     * @return $this
+     * 验证码
+     */
+    public function captcha()
+    {
+        $builder = new CaptchaBuilder();
+        $builder->build(150,32);
+        //获取验证码内容
+        $phrase = $builder->getPhrase();
+
+        //把内容存到session
+        session_start();
+        $_SESSION['milkcaptcha'] = $phrase;
+        ob_clean();//清楚缓存;
+        return response($builder->output())->header('content-type','image/jpeg');
     }
 
     /**
@@ -42,7 +139,7 @@ class IndexController extends Controller
     public function loginDo()
     {
         header("Content-Type:text/html;charset=UTF-8");
-        $user_phone = $_GET['user_phone'];
+        $user_phone = Input::get('user_phone');
         $code = rand(1000,9999);
         function nowapi_call($a_parm){
             if(!is_array($a_parm)){
@@ -86,109 +183,12 @@ class IndexController extends Controller
         nowapi_call($nowapi_parm);
         session_start();
         $_SESSION['code']=$code;
-        echo json_encode(['state'=>1]);
+        return json_encode(1);
     }
 
-    /**
-     * 注册账号
-     */
-    public function doReg()
+    public function cookies()
     {
-        session_start();
-        $user_phone = $_POST['user_phone'];
-        $sms = $_POST['sms'];
-        $user_password = $_POST['user_password'];
-        $code = $_SESSION['code'];
-
-        if($sms != $code) {
-            echo "<script>alert('验证码不正确');location.href='home/reg'</script>";
-        }else{
-            $pwd = md5($user_password);
-            $data = ['user_phone'=>$user_phone,'user_password'=>$pwd];
-            $user = new user();
-            $result = $user->selOne($user_phone);
-            if($result) {
-                echo "<script>alert('手机号已被注册');location.href='home/reg'</script>";
-            }else {
-                $res = $user->add($data);
-                if($res) {
-                    echo "<script>location.href='home/index'</script>";
-                    unset($_SESSION);
-                    session_destroy();
-                }else {
-                    echo "<script>alert('注册失败');location.href='home/reg'</script>";
-                }
-            }
-        }
-    }
-
-    /**
-     * 用户登陆
-     */
-    public function login()
-    {
-        session_start();
-        $user_phone = Input::get('user_phone');
-        $user_password = md5(Input::get('user_password'));
-        $code = Input::get('code');
-        $user = new user();
-        $phone = $user->phone($user_phone);
-        $pwd = $user->pwd($user_password);
-        $login = $user->login($user_phone,$user_password);
-        if($_SESSION['milkcaptcha'] != $code) {
-            $arr = ['state'=>0];
-            return json_encode($arr);
-        }
-//        $data = $this->object_to_array($login);
-//        setcookie('user_name',$data['user_phone'],time()+3600*24);
-//        echo "<script>location.href='home/user'</script>";
-    }
-
-    /**
-     * 登陆成功
-     */
-    public function user()
-    {
-        if(empty($_COOKIE['user_name'])){
-            echo "<script>alert('您好！您还没有登陆');</script>";
-            die;
-        }
-        $user = new user();
-        $data = $user->selOne($_COOKIE['user_name']);
-//        $data = ['user_phone'=>$array['user_phone'],'user_total_assets'=>$array['user_total_assets'],'user_balance'=>$array['user_balance']];
-        return view('home/index/user',['data'=>$data]);
-    }
-
-    /**
-     * 对象 转 数组
-     *
-     * @param object $obj 对象
-     * @return array
-     */
-    function object_to_array($obj) {
-        $obj = (array)$obj;
-        foreach ($obj as $k => $v) {
-            if (gettype($v) == 'resource') {
-                return;
-            }
-            if (gettype($v) == 'object' || gettype($v) == 'array') {
-                $obj[$k] = (array)object_to_array($v);
-            }
-        }
-        return $obj;
-    }
-
-    public function captcha()
-    {
-        $builder = new CaptchaBuilder();
-        $builder->build(150,32);
-        //获取验证码内容
-        $phrase = $builder->getPhrase();
-
-        //把内容存到session
-        session_start();
-        $_SESSION['milkcaptcha'] = $phrase;
-        ob_clean();//清楚缓存;
-        return response($builder->output())->header('content-type','image/jpeg');
+        setcookie("user_name","");
+        return redirect('home/index');
     }
 }
