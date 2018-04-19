@@ -180,12 +180,40 @@
 
 
 
-                <li id="nav_login_link" class="loginUrlLink">
-                    <a href="http://www.91.com/index.php/home/index" class="js_userTabLink" target="_blank">登录</a>
+                <li class="userHover">
+                    <!-- <a href="/user/account/get">13522413326</a> -->
+                    <div class="userInfoLink">
+                        <span class="userInfoIcon"></span>
+                        <a href="/user/account/get?code=0.8123531011945572">我的账户</a>
+                    </div>
+
+                    <ul class="hideSlideMain hide">
+                        <i class="top-arrow2 top-arrow"></i>
+                        <li>
+                            <a href="/user/account/get?code=0.8123531011945572">账户概况</a>
+                        </li>
+                        <li>
+                            <a href="/user/recharge/to?code=0.8123531011945572" class="checkStatusBtn">充值提现</a>
+                        </li>
+                        <li>
+                            <a href="/user/financial/chart?code=0.8123531011945572">借贷管理</a>
+                        </li>
+                        <li>
+                            <a href="/user/commission?code=0.8123531011945572">我的佣金</a>
+                        </li>
+                        <li>
+                            <a href="/user/redbonus?code=0.8123531011945572">红包礼券</a>
+                        </li>
+                        <li>
+                            <a href="/user/setup?code=0.8123531011945572">账户设置</a>
+                        </li>
+                        <li>
+                            <a href="/user/riskTest?code=0.8123531011945572">风险测评</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="centerLine"><span>|</span></li>
-                <li>
-                    <a href="http://www.91.com/index.php/home/reg" class="js_userTabLink" target="_blank">注册</a>
+                <li class="loginOutWrap">
+                    <a href="javascript:void(0)" id="exitUser">退出</a>
                 </li>
 
 
@@ -858,5 +886,7 @@
 </body>
 </html>
 <script>
-
+    $(document).on('click','#exitUser', function () {
+        location.href = "home/cookies";
+    });
 </script>
