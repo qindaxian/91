@@ -29,6 +29,14 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
     Route::get('admin/business-qua','BusinessController@business_qua');
+    Route::get('admin/out','LoginController@out');
+    //后台登陆用户退出
+    Route::get('admin/out','LoginController@out');
+    //后台管理员管理
+    Route::get('admin/role','RoleController@index');
+    Route::get('admin/admin_list','PowerController@adminList');
+    Route::get('admin/power','PowerController@index');
+    
 });
 
 
