@@ -41,6 +41,16 @@ class user extends BaseModel
 
     /**
      * @param $user_phone
+     * @return mixed
+     * 手机号密码搜索
+     */
+    public function phone($user_phone)
+    {
+        return DB::table($this->table)->where(['user_phone'=>$user_phone])->first();
+    }
+
+    /**
+     * @param $user_phone
      * @param $user_password
      * @return mixed
      * 用户登陆
@@ -48,5 +58,10 @@ class user extends BaseModel
     public function login($user_phone,$user_password)
     {
         return DB::table($this->table)->where(['user_phone'=>$user_phone,'user_password'=>$user_password])->first();
+    }
+
+    public function pwd_error($user_phone,$user_error)
+    {
+        return DB::table($this->table)->where(['user_phone'=>$user_phone])->update($user_error);
     }
 }
