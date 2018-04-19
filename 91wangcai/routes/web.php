@@ -66,4 +66,9 @@ Route::group(['namespace' => 'Home'], function(){
     //登陆成功
     Route::get('home/user','IndexController@user');
 
+  //前台个人中心
+  Route::get('home/info', 'InfoController@index');
+    Route::get('/account', 'InfoController@account');  
+    Route::get('/islogin', 'InfoController@islogin');  
+
 });
