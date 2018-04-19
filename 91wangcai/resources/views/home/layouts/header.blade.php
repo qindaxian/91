@@ -165,9 +165,7 @@
                         </li>
                         <li class="loginOutWrap">
                               <a href="javascript:void(0)" id="exitUser" >退出</a>
-                        </li>
-                    
-                    
+                        </li>                
                 
             </ul>
         </div>
