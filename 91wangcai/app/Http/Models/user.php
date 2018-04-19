@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
  * Class user
  * @package App\Http\Models
  */
-class user extends Model
+class user extends BaseModel
 {
     protected $table = 'user'; //表明
     public $timestamps = false;
