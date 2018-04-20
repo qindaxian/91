@@ -180,11 +180,11 @@
 
 
                 <li id="nav_login_link" class="loginUrlLink">
-                    <a href="javascript:void(0)" class="js_userTabLink" target="_blank" id="login">登录</a>
+                    <span class="js_userTabLink" target="_blank" id="login" style="cursor:pointer;">登录</span>
                 </li>
                 <li class="centerLine"><span>|</span></li>
                 <li>
-                    <a href="javascript:void(0)" class="js_userTabLink" target="_blank" id="register">注册</a>
+                    <span class="js_userTabLink" target="_blank" id="register" style="cursor:pointer;">注册</span>
                 </li>
 
 
