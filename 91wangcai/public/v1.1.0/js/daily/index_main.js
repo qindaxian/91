@@ -1612,8 +1612,8 @@ function autoPlay(){
     }
 }
 /*description：旺财日记
-author:liqian;
-update：yangzhangbo 2017:08:11 10:55:11;
+author:LiHoulong;
+update：Feng Yikai 2018:04:19;
 */
 var Diary = function () {
     this.pageSize = 12;
@@ -1629,7 +1629,10 @@ Diary.prototype = {
     },
     initBind: function () {
         // 滑过显示阴影框
+        //mouseenter 当鼠标指针进入（穿过）元素时，改变元素的背景色：
+        //该事件大多数时候会与 mouseleave 事件一起使用
         $(document).on('mouseenter', '.timeline li', function () {
+            // animate 改变 "div" 元素的高度：
             $(this).stop().animate({"margin-top":"-5px","margin-bottom":"25px",}, 300).find(".shade").stop().animate({"opacity":"1"},300);
         });
         $(document).on('mouseleave', '.timeline li', function () {
@@ -1638,9 +1641,11 @@ Diary.prototype = {
     },
     //获取tab
     getData: function () {
+        //当前操作
         var _that = this;
         var obj = {};
-        obj.url = "/mobile/v3/meeting_diary";
+
+        obj.url = "home/notes";
         obj.params = {
             "type": 1,
             "page_size": _that.page_size,
@@ -1650,6 +1655,7 @@ Diary.prototype = {
             obj.type = "get";
         obj.success = function (data) {
             var _data = data.data;
+            //根据原始布尔值或者 booleanObject 对象的值返回字符串 "true" 或 "false"
             var _status = data.status.toString();
             var _data = data.data;
             if (_status == '200') {

@@ -272,13 +272,12 @@ Deposit.Core={
 		obj.success=function(data){
             var _data=data.data;         
             	if(_data==false){
-            		
 	            	WC.Core.Dialog({
 								"content":"你还没有登录，请先登录!",
 								"btnValue":"立即登录",
 								"icon":'error',
 								"btnFn":function(){
-										window.location.href="/home/index";//跳转到风险测评页面
+										window.location.href="/home/index";//跳转到首页
 									}
 							});
 							return;
@@ -1831,9 +1830,9 @@ UsrInfo.prototype = {
 				WC.Core.Dialog({"icon":"error","content":json.message});
 			}
 		};
-		obj.error=function(){
-			WC.Core.Dialog({"icon":"error","content":"获取信息出现网络异常"});
-		}
+		// obj.error=function(){
+		// 	WC.Core.Dialog({"icon":"error","content":"获取信息出现网络异常"});
+		// }
 		WC.Core.ajax(obj);
 	}
 };

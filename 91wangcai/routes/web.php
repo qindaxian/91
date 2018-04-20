@@ -19,16 +19,41 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/index','IndexController@index');
     Route::get('admin/product-project','ProductController@project');
     Route::get('admin/product-project_add','ProductController@project_add');
+    //旺财记事
+    Route::get('admin/diary','DiaryController@diary');
+    Route::get('admin/diary_add','DiaryController@diary_add');
+    Route::get('admin/diary_upload','DiaryController@diary_upload');
+    Route::post('admin/diary_upload','DiaryController@diary_upload');
 
     Route::get('admin/product-creditor','ProductController@creditor');
+    //登录
     Route::get('admin/login','LoginController@login');
+    //退出登录
+    Route::get('admin/out','LoginController@out');
     Route::post('admin/login','LoginController@login');
+    //管理员退出
+    Route::get('admin/out','LoginController@out');
+
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditor_add');
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
     Route::get('admin/business-qua','BusinessController@business_qua');
+
+    //管理员退出
+    Route::get('admin/out','LoginController@out');
+
+
+    Route::get('admin/out','LoginController@out');
+    //后台登陆用户退出
+    Route::get('admin/out','LoginController@out');
+    //后台管理员管理
+    Route::get('admin/role','RoleController@index');
+    Route::get('admin/admin_list','PowerController@adminList');
+    Route::get('admin/power','PowerController@index');
+    
+
 });
 
 
@@ -54,22 +79,28 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/projectlist', 'ProjectlistController@index');
     //前台旺财记事
     Route::get('home/chronicle', 'ChronicleController@index');
+    //前台旺财日记
+    Route::get('home/notes', 'ChronicleController@meeting_diary');
+    //前台财主见面会
+    Route::get('home/caizhu', 'ChronicleController@meeting');
 
 
-	//用户注册
-//    Route::get('home/reg', 'IndexController@reg');
+    //用户登陆
+    Route::post('/login','IndexController@login');
+    Route::get('/user','IndexController@user');
 
     //用户注册
-    Route::get('home/reg', 'IndexController@reg');
+    Route::post('/register','IndexController@register');
+
+    //验证码
+    Route::get('home/captcha','IndexController@captcha');
 
     //短信验证码
     Route::get('home/registers','IndexController@loginDo');
-    //注册账号
-    Route::post('/doreg','IndexController@doReg');
-    //用户登陆
-    Route::post('/login','IndexController@login');
-    //登陆成功
-    Route::get('home/user','IndexController@user');
+
+    //验证码
+    Route::get('home/captcha','IndexController@captcha');
+
 
   //前台个人中心
   Route::get('home/info', 'InfoController@index');
@@ -77,6 +108,13 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
     Route::get('/account', 'InfoController@account');  
+
     //获取理财列表数据  
     Route::get('/capital_detail_priority', 'InfoController@capital_detail_priority');
+    Route::get('/islogin', 'InfoController@islogin');  
+
+
+    //退出登陆删除cookie
+    Route::get('home/cookies','IndexController@cookies');
+
 });

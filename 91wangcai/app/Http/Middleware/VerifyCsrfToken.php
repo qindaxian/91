@@ -21,7 +21,7 @@ class VerifyCsrfToken extends BaseVerifier
         //
 
 
-        'admin/creditor_upload',
+        'admin/diary_upload',
 
         //
 
