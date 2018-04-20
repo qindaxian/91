@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
  * Class user
  * @package App\Http\Models
  */
-class user extends Model
+class user extends BaseModel
 {
     protected $table = 'user'; //表明
     public $timestamps = false;
@@ -42,21 +42,11 @@ class user extends Model
     /**
      * @param $user_phone
      * @return mixed
-     * 手机号搜索
+     * 手机号密码搜索
      */
     public function phone($user_phone)
     {
         return DB::table($this->table)->where(['user_phone'=>$user_phone])->first();
-    }
-
-    /**
-     * @param $user_pwd
-     * @return mixed
-     * 密码搜索
-     */
-    public function pwd($user_password)
-    {
-        return DB::table($this->table)->where(['user_password'=>$user_password])->first();
     }
 
     /**
@@ -68,5 +58,10 @@ class user extends Model
     public function login($user_phone,$user_password)
     {
         return DB::table($this->table)->where(['user_phone'=>$user_phone,'user_password'=>$user_password])->first();
+    }
+
+    public function pwd_error($user_phone,$user_error)
+    {
+        return DB::table($this->table)->where(['user_phone'=>$user_phone])->update($user_error);
     }
 }

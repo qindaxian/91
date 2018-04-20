@@ -4,6 +4,13 @@
     <meta name="keywords" content="91旺财，91旺财官网，91金融，网络借贷,互联网金融，借贷平台">
     <meta name="description" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航">
     <meta name="baidu-site-verification" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航" />
+
+    <!-- 导入右侧[联系我们]  js效果 -->
+    <script src="http://www.91.com/v1.1.0/js/daily/index_main.js"></script>
+    {{--导入右侧[联系我们]  js效果--}}
+    <!-- 导入旺财日记样式开始 -->
+    <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/daily/daily_style.css?t=2">
+    <!-- 导入旺财日记样式结束 -->
     <!-- 导入首页样式开始 -->
     <link href="http://www.91.com/v1.1.0/css/homepage/homepage_style.css" rel="stylesheet" type="text/css">
     <!-- 导入首页样式结束 -->
@@ -129,10 +136,10 @@
                         </div>
                         <ul class="diary">
                             <li>
-                                <a href="/daily/caizhu">财主见面会</a>
+                                <a href="/home/caizhu">财主见面会</a>
                             </li>
                             <li>
-                                <a href="/daily/index">旺财日记</a>
+                                <a href="/home/notes">旺财日记</a>
                             </li>
                         </ul>
                     </div>
@@ -164,6 +171,8 @@
                 <li class=""><a href="/home/helpcenter">帮助中心</a></li>
                 <li class=""><a href="/home/informationdisclosure">信息披露</a></li>
             </ul>
+
+
         </div>
         <div class="userNav">
             <ul class="loginWrapRight clearfix">

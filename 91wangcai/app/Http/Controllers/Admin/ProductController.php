@@ -14,6 +14,7 @@ class ProductController extends Controller
 
         $obj = new ProjectModel;
         $data = $obj->getfind(1);
+        print_r($data);die;
         return view('admin/product/project_list');
     }
 
@@ -22,9 +23,14 @@ class ProductController extends Controller
     }
     //债权转让管理
 
+
     public function creditorAdd(){
         return view('admin/product/creditor_add');
     }
+
+   
+                                                                                
+
 
     public function creditor(){
         $creditorModel = new CreditorModel();
@@ -32,5 +38,6 @@ class ProductController extends Controller
             ->get()
             ->toArray();
         return view('admin/product/creditor_list');
+        
     }
 }
