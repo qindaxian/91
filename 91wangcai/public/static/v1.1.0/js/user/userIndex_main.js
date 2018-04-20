@@ -1598,7 +1598,7 @@ UsrInfo.prototype = {
 	getFinancial:function(type,pageNum,pageSize){
 		var _that=this;
 		var obj = {};
-		obj.url = "/mobile/v4/capital_detail_priority";
+		obj.url = "/capital_detail_priority";
 		obj.params={
 			type:type,
 			pageNum:pageNum,//当前页码
