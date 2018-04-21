@@ -20,12 +20,15 @@ Route::group(['namespace' => 'Admin'], function(){
 
     Route::get('admin/product-project_add','ProductController@projectAdd');
 
-    Route::get('admin/product-project_add','ProductController@project_add');
     //旺财记事
     Route::get('admin/diary','DiaryController@diary');
     Route::get('admin/diary_add','DiaryController@diary_add');
     Route::get('admin/diary_upload','DiaryController@diary_upload');
     Route::post('admin/diary_upload','DiaryController@diary_upload');
+    Route::get('admin/diary_stop','DiaryController@diary_stop');
+    Route::get('admin/diary_start','DiaryController@diary_start');
+    Route::get('admin/diary_del','DiaryController@diary_del');
+    Route::get('admin/diary_update','DiaryController@diary_update');
 
 
     Route::get('admin/product-creditor','ProductController@creditor');
@@ -35,30 +38,17 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/out','LoginController@out');
     Route::post('admin/login','LoginController@login');
 
-    Route::get('admin/out','LoginController@out');
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditorAdd');
     //贷款资格申请
     Route::get('admin/business-qua','BusinessController@businessQua');
     Route::get('admin/business-qua-list','BusinessController@businessQuaList');
 
-    //管理员退出
-    Route::get('admin/out','LoginController@out');
-
-    //债权添加
-    Route::get('admin/creditor-add','ProductController@creditor_add');
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
     Route::get('admin/business-qua','BusinessController@business_qua');
 
-    //管理员退出
-    Route::get('admin/out','LoginController@out');
-
-
-    Route::get('admin/out','LoginController@out');
-    //后台登陆用户退出
-    Route::get('admin/out','LoginController@out');
     //后台管理员管理
     Route::get('admin/role','RoleController@index');
     Route::get('admin/admin_list','PowerController@adminList');
