@@ -127,10 +127,6 @@ Route::group(['namespace' => 'Home'], function(){
   //前台个人中心
   Route::get('home/info', 'InfoController@index');
     Route::get('/account', 'InfoController@account');  
-    Route::get('/islogin', 'InfoController@islogin');  
-
-
-    //退出登陆删除cookie
-    Route::get('home/cookies','IndexController@cookies');
+    Route::get('/islogin', 'InfoController@islogin');
 
 });
