@@ -18,29 +18,44 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/index','IndexController@index');
     Route::get('admin/product-project','ProductController@project');
     Route::get('admin/product-project_add','ProductController@projectAdd');
+
     //旺财记事
     Route::get('admin/diary','DiaryController@diary');
     Route::get('admin/diary_add','DiaryController@diary_add');
     Route::get('admin/diary_upload','DiaryController@diary_upload');
     Route::post('admin/diary_upload','DiaryController@diary_upload');
+
     Route::get('admin/product-creditor','ProductController@creditorAdd');
+
+    Route::get('admin/diary_stop','DiaryController@diary_stop');
+    Route::get('admin/diary_start','DiaryController@diary_start');
+    Route::get('admin/diary_del','DiaryController@diary_del');
+    Route::get('admin/diary_update','DiaryController@diary_update');
+
+
+    Route::get('admin/product-creditor','ProductController@creditor');
+    //登录
+    Route::get('admin/login','LoginController@login');
+
     //退出登录
     Route::get('admin/out','LoginController@out');
     Route::post('admin/login','LoginController@login');
 
-    Route::get('admin/out','LoginController@out');
     //债权添加
     Route::get('admin/creditor-add','ProductController@creditorAdd');
     //贷款资格申请
     Route::get('admin/business-qua','BusinessController@businessQua');
     Route::get('admin/business-qua-list','BusinessController@businessQuaList');
+
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
     Route::get('admin/business-qua','BusinessController@business_qua');
+
     //后台登陆用户退出
     Route::get('admin/out','LoginController@out');
     Route::get('admin/login','LoginController@login');
+
     //后台管理员管理
     Route::get('admin/role','RoleController@index');
     Route::get('admin/admin_list','PowerController@adminList');
@@ -111,19 +126,27 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/captcha','IndexController@captcha');
 
 
-  //前台个人中心
-  Route::get('home/info', 'InfoController@index');
+    //前台个人中心
+    Route::get('home/info', 'InfoController@index');
     //验证登录
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
     Route::get('/account', 'InfoController@account');
 
+
     //获取理财列表数据
+
+    Route::get('/islogin', 'InfoController@islogin');
+
+
+    //获取理财列表数据  
+
     Route::get('/capital_detail_priority', 'InfoController@capital_detail_priority');
     Route::get('/islogin', 'InfoController@islogin');
 
 
     //退出登陆删除cookie
     Route::get('home/cookies','IndexController@cookies');
+
 
 });

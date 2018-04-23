@@ -53,4 +53,29 @@ class DiaryController extends Controller
         $filePath = asset($destinationPath.$fileName);
         session(['diary_upload' => $filePath]);
     }
+
+    public function diary_stop(){
+        $id = Input::get('id');
+        $diary = new DiaryModel;
+        $res = $diary->disry_status($id,0);
+        return $res;
+    }
+
+    public function diary_start(){
+        $id = Input::get('id');
+        $diary = new DiaryModel;
+        $res = $diary->disry_status($id,1);
+        return $res;
+    }
+
+    public function diary_del(){
+        $id = Input::get('id');
+        $diary = new DiaryModel;
+        $res = $diary->delRow($id);
+        return $res;
+    }
+
+    // public function diary_update(){
+    //     return view('admin/diary/diary_update',['data'=>$data]);
+    // }
 }

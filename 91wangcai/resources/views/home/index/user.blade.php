@@ -887,6 +887,6 @@
 </html>
 <script>
     $(document).on('click','#exitUser', function () {
-        location.href = "home/cookies";
+        location.href = "home/index";
     });
 </script>
