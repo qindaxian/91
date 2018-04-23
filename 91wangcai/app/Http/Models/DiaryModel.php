@@ -20,12 +20,6 @@ class DiaryModel extends Model
 
     protected $table='diary';//表名称
 
-
-    public function add($data){
-        //添加数据
-        return $id = DB::table($this->table)->insertGetId($data);
-
-    }
     public function showInfo(){
         //查询所有数据
         return DB::table($this->table)->get();

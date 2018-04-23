@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-container" style="margin-left: 200px; ">
 	<h1 style="border: 2px solid black; border-radius: 50px; text-align: center;margin-bottom:20px; background-color: #DCDCDC;">贷款资格申请</h1>
-	<form action="" method="get" class="form form-horizontal" id="form-article-add">
+	<form action="" method="post" class="form form-horizontal" id="form-article-add">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>申请人：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -36,4 +36,7 @@
 <script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
+<script>
+</script>
 

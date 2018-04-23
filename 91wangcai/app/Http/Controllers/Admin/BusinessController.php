@@ -22,9 +22,10 @@ class BusinessController extends Controller
 {
     public function businessQua(Request $request)
     {
-    	if (Input::get('id_card')&&Input::get('real_name')){
-    		$idCard = Input::get('id_card');
-    		$realName = Input::get('real_name');
+        $all=Input::all();
+    	if (!empty($all)){
+    		$idCard = $all['id_card'];
+    		$realName = $all['real_name'];
     		$curlPath='http://apis.juhe.cn/idcard/index';
 		    $data=['cardno'=>$idCard,'key'=>'d24a00abb03b729c3738b8b89febc435'];
 		    $curl=new curl();
@@ -32,21 +33,25 @@ class BusinessController extends Controller
 		    $arrContent=json_decode($content,true);
 		    $arrContent['error_code']?$applyStatus=0:$applyStatus=1;
 		    $bus=new BusinessModel();
-            //print_r(session('admin'));die;
-		    $insertData=['apply_status'=>$applyStatus,'apply_name'=>$realName,'apply_idcard'=>$idCard,'user_id'=>session('admin')->a_id,"apply_time"=>date('Y-m-d H:i:s')];
+		    $insertData=[
+            'apply_status'=>$applyStatus,
+            'apply_name'=>$realName,
+            'apply_idcard'=>$idCard,
+            'user_id'=>session('admin')->a_id,
+            "apply_time"=>date('Y-m-d H:i:s')
+            ];
 		    $insertRes=$bus->insert($insertData);
-            //echo $insertRes;die;
             if ($insertRes) {
-                return redirect('admin/business-qua-list');
+                return redirect('admin/business_qualification_list');
             }
 		}
-        return view('admin/business/qua');
+        return view('admin/business/qualification');
     }
 
     public function businessQuaList(Request $request)
     {
         $bus=new BusinessModel();
         $list=$bus->all()->toarray();
-        return view('admin/business/qualist',['list'=>$list]);
+        return view('admin/business/qualification_list',['list'=>$list]);
     }
 }
