@@ -25,7 +25,7 @@
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-				<a class="btn btn-primary radius" data-title="添加旺财记事" _href="article-add.html" onclick="article_add('添加旺财记事','{{url('admin/diary-add')}}','500px','500px')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加旺财记事</a>
+				<a class="btn btn-primary radius" data-title="添加旺财记事" _href="article-add.html" onclick="article_add('添加旺财记事','{{url('admin/diary_add')}}','500px','500px')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加旺财记事</a>
 				</span>
 				<span class="r">共有数据：<strong>54</strong> 条</span>
 			</div>
@@ -122,7 +122,7 @@ $('.article_del').click(function(){
 	if(res){
 		var id = $(this).attr('id');
 		$.ajax({
-			url: "{{url('admin/diary-del')}}",
+			url: "{{url('admin/diary_del')}}",
 			type: "get",
 			data:{
 				id:id,
@@ -141,26 +141,6 @@ $('.article_del').click(function(){
 		});
 	}
 });
-// function article_del(obj,id){
-// 	layer.confirm('确认要删除吗？',function(index){
-// 		var ajax = new XMLHttpRequest();
-// 		ajax.open('get','http://www.91.com/admin/diary-del?id='+id);
-// 		ajax.send();
-// 		ajax.onreadystatechange = function()
-// 		{
-// 			if(ajax.readyState == 4 && ajax.status == 200)
-// 			{
-// 				if(ajax.responseText == 1){
-// 					$(obj).parents("tr").remove();
-// 					layer.msg('已删除!',{icon:1,time:1000});
-// 				}
-// 				else{
-// 					alert('删除失败');
-// 				}
-// 			}
-// 		}
-// 	});
-// }
 
 /*资讯-审核*/
 function article_shenhe(obj,id){
@@ -189,7 +169,7 @@ $('.article_stop').click(function(){
 	if(res){
 		var id = $(this).attr('id');
 		$.ajax({
-			url: "{{url('admin/diary-stop')}}",
+			url: "{{url('admin/diary_stop')}}",
 			type: "get",
 			data:{
 				id:id,
@@ -218,7 +198,7 @@ $('.article_start').click(function(){
 	if(res){
 		var id = $(this).attr('id');
 		$.ajax({
-			url: "{{url('admin/diary-start')}}",
+			url: "{{url('admin/diary_start')}}",
 			type: "get",
 			data:{
 				id:id,

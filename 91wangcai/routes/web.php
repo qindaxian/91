@@ -22,13 +22,13 @@ Route::group(['namespace' => 'Admin'], function(){
 
     //旺财记事
     Route::get('admin/diary','DiaryController@diary');
-    Route::get('admin/diary-add','DiaryController@diaryAdd');
-    Route::get('admin/diary-upload','DiaryController@diaryUpload');
-    Route::post('admin/diary-upload','DiaryController@diaryUpload');
-    Route::get('admin/diary-stop','DiaryController@diaryStop');
-    Route::get('admin/diary-start','DiaryController@diaryStart');
-    Route::get('admin/diary-del','DiaryController@diaryDel');
-    Route::get('admin/diary-update','DiaryController@diaryUpdate');
+    Route::get('admin/diary_add','DiaryController@diaryAdd');
+    Route::get('admin/diary_upload','DiaryController@diaryUpload');
+    Route::post('admin/diary_upload','DiaryController@diaryUpload');
+    Route::get('admin/diary_stop','DiaryController@diaryStop');
+    Route::get('admin/diary_start','DiaryController@diaryStart');
+    Route::get('admin/diary_del','DiaryController@diaryDel');
+    Route::get('admin/diary_update','DiaryController@diaryUpdate');
 
 
     Route::get('admin/product-creditor','ProductController@creditor');
