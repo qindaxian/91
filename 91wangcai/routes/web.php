@@ -131,6 +131,9 @@ Route::group(['namespace' => 'Home'], function(){
     //获取账户信息
     Route::get('/account', 'InfoController@account');  
 
+    Route::get('/islogin', 'InfoController@islogin');
+
+
     //获取理财列表数据  
     Route::get('/capital_detail_priority', 'InfoController@capital_detail_priority');
     Route::get('/islogin', 'InfoController@islogin');  
@@ -138,5 +141,6 @@ Route::group(['namespace' => 'Home'], function(){
 
     //退出登陆删除cookie
     Route::get('home/cookies','IndexController@cookies');
+
 
 });
