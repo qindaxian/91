@@ -21,19 +21,14 @@ Route::group(['namespace' => 'Admin'], function(){
 
     //旺财记事
     Route::get('admin/diary','DiaryController@diary');
-    Route::get('admin/diary_add','DiaryController@diary_add');
-    Route::get('admin/diary_upload','DiaryController@diary_upload');
-    Route::post('admin/diary_upload','DiaryController@diary_upload');
+    Route::get('admin/diary_add','DiaryController@diaryAdd');
+    Route::get('admin/diary_upload','DiaryController@diaryUpload');
+    Route::post('admin/diary_upload','DiaryController@diaryUpload');
+    Route::get('admin/diary_stop','DiaryController@diaryStop');
+    Route::get('admin/diary_start','DiaryController@diaryStart');
+    Route::get('admin/diary_del','DiaryController@diaryDel');
+    Route::get('admin/diary_update','DiaryController@diaryUpdate');
 
-    Route::get('admin/product-creditor','ProductController@creditorAdd');
-
-    Route::get('admin/diary_stop','DiaryController@diary_stop');
-    Route::get('admin/diary_start','DiaryController@diary_start');
-    Route::get('admin/diary_del','DiaryController@diary_del');
-    Route::get('admin/diary_update','DiaryController@diary_update');
-
-
-    Route::get('admin/product-creditor','ProductController@creditor');
     //登录
     Route::get('admin/login','LoginController@login');
 

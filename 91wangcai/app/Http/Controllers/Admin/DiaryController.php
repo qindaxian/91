@@ -17,7 +17,7 @@ class DiaryController extends Controller
         return view('admin/diary/diary',['data'=>$data]);
     }
 
-    public function diary_add(Request $request){
+    public function diaryAdd(Request $request){
         if(Input::all()){
             $arr = Input::all();
             $data['d_title'] = $arr['d_title'];
@@ -39,7 +39,7 @@ class DiaryController extends Controller
         return view('admin/diary/diary_add');
     }
 
-    public function diary_upload(Request $request)
+    public function diaryUpload(Request $request)
     {
         $file = $request->file('file');
         $allowed_extensions = ["png", "jpg", "gif","jpeg"];
@@ -54,21 +54,21 @@ class DiaryController extends Controller
         session(['diary_upload' => $filePath]);
     }
 
-    public function diary_stop(){
+    public function diaryStop(){
         $id = Input::get('id');
         $diary = new DiaryModel;
         $res = $diary->disry_status($id,0);
         return $res;
     }
 
-    public function diary_start(){
+    public function diaryStart(){
         $id = Input::get('id');
         $diary = new DiaryModel;
         $res = $diary->disry_status($id,1);
         return $res;
     }
 
-    public function diary_del(){
+    public function diaryDel(){
         $id = Input::get('id');
         $diary = new DiaryModel;
         $res = $diary->delRow($id);
