@@ -1,7 +1,7 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
+|__------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -16,8 +16,8 @@
 Route::group(['namespace' => 'Admin'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
     Route::get('admin/index','IndexController@index');
-    Route::get('admin/product-project','ProductController@project');
-    Route::get('admin/product-project_add','ProductController@projectAdd');
+    Route::get('admin/product_project','ProductController@project');
+    Route::get('admin/product_project_add','ProductController@projectAdd');
 
     //旺财记事
     Route::get('admin/diary','DiaryController@diary');
@@ -28,7 +28,10 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/diary_start','DiaryController@diaryStart');
     Route::get('admin/diary_del','DiaryController@diaryDel');
     Route::get('admin/diary_update','DiaryController@diaryUpdate');
+  
+    Route::get('admin/product_creditor','ProductController@creditorAdd');
 
+  
     //登录
     Route::get('admin/login','LoginController@login');
 
@@ -37,15 +40,15 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::post('admin/login','LoginController@login');
 
     //债权添加
-    Route::get('admin/creditor-add','ProductController@creditorAdd');
+    Route::get('admin/creditor_add','ProductController@creditorAdd');
     //贷款资格申请
-    Route::get('admin/business-qua','BusinessController@businessQua');
-    Route::get('admin/business-qua-list','BusinessController@businessQuaList');
+    Route::get('admin/business_qualification','BusinessController@businessQua');
+    Route::post('admin/business_qualification','BusinessController@businessQua');
+    Route::get('admin/business_qualification_list','BusinessController@businessQuaList');
 
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
-    Route::get('admin/business-qua','BusinessController@business_qua');
 
     //后台登陆用户退出
     Route::get('admin/out','LoginController@out');
@@ -66,15 +69,14 @@ Route::group(['namespace' => 'Admin'], function(){
 Route::group(['middleware' => ['web','admin.login']], function () {
     Route::get('/admin/index','Admin\IndexController@index');
     Route::get('admin/index','Admin\IndexController@index');
-    Route::get('admin/product-project','Admin\ProductController@project');
-    Route::get('admin/product-project_add','Admin\ProductController@project_add');
+    Route::get('admin/product_project','Admin\ProductController@project');
+    Route::get('admin/product_project_add','Admin\ProductController@project_add');
 
-    Route::get('admin/product-creditor','Admin\ProductController@creditor');
+    Route::get('admin/product_creditor','Admin\ProductController@creditor');
     //债权添加
-    Route::get('admin/creditor-add','Admin\ProductController@creditorAdd');
+    Route::get('admin/creditor_add','Admin\ProductController@creditorAdd');
     //贷款资格申请
-    Route::get('admin/business-qua','Admin\BusinessController@businessQua');
-    Route::get('admin/business-qua-list','Admin\BusinessController@businessQuaList');
+    Route::get('admin/business_qua','Admin\BusinessController@businessQua');
     //后台管理员管理
     Route::get('admin/role','Admin\RoleController@index');
     Route::get('admin/admin_list','Admin\PowerController@adminList');
