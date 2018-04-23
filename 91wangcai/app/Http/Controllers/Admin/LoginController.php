@@ -29,6 +29,7 @@ class LoginController extends Controller
     //退出
     public function out(Request $request){
         $request->session()->forget('admin');
+        $request->session()->forget('powerArr');
         return redirect('admin/login');
     }
 }

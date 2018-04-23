@@ -47,8 +47,6 @@
 					</thead>
 					<tbody>
 						<?php for($i=0;$i<count($data);$i++){ ?>
-							
-						
 							<tr class="text-c">
 								<td><input type="checkbox" value="" name=""></td>
 								<td><?= $i+1 ?></td>
