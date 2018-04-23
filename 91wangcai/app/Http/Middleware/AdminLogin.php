@@ -26,7 +26,6 @@ class AdminLogin
         $userId = $adminInfo->a_id;//获取当前用户id
         $adminPowerModel = new AdminPowerModel();
         $powerArr = $adminPowerModel->getPower($userId);
-        //dd($powerArr);
         $parentArr = $adminPowerModel->getParentPower();
         //判断如果是无权限就什么都没有
         if (empty($powerArr)) {

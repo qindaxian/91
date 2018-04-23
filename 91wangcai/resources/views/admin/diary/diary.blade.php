@@ -91,7 +91,6 @@
 <script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <!-- <script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> -->
 <script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
 <script>
 

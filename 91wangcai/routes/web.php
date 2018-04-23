@@ -28,10 +28,8 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/diary_start','DiaryController@diaryStart');
     Route::get('admin/diary_del','DiaryController@diaryDel');
     Route::get('admin/diary_update','DiaryController@diaryUpdate');
-  
     Route::get('admin/product_creditor','ProductController@creditorAdd');
 
-  
     //登录
     Route::get('admin/login','LoginController@login');
 
@@ -45,7 +43,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/business_qualification','BusinessController@businessQua');
     Route::post('admin/business_qualification','BusinessController@businessQua');
     Route::get('admin/business_qualification_list','BusinessController@businessQuaList');
-
+    Route::post('admin/qualification_ajax','BusinessController@qualificationAjax');
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
