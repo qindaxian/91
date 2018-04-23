@@ -25,7 +25,7 @@
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
 				<span class="l">
 				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-				<a class="btn btn-primary radius" data-title="添加旺财记事" _href="article-add.html" onclick="article_add('添加旺财记事','http://www.91.com/admin/diary_add','500px','500px')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加旺财记事</a>
+				<a class="btn btn-primary radius" data-title="添加旺财记事" _href="article-add.html" onclick="article_add('添加旺财记事','{{url('admin/diary-add')}}','500px','500px')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加旺财记事</a>
 				</span>
 				<span class="r">共有数据：<strong>54</strong> 条</span>
 			</div>
@@ -66,18 +66,18 @@
 								<td><?= $data[$i]->d_num ?></td>
 								<td class="f-14 td-manage">
 									<?php if($data[$i]->d_status == 1){ ?>
-									<a style="text-decoration:none" onClick="article_stop(this,<?= $data[$i]->d_id ?>)" href="javascript:;" title="下架">
+									<a style="text-decoration:none" class="article_stop" id="{{$data[$i]->d_id}}" href="javascript:;" title="下架">
 										<i class="Hui-iconfont">&#xe6de;</i>
 									</a>
 									<?php }else{ ?>
-									<a style="text-decoration:none" onClick="article_start(this,<?= $data[$i]->d_id ?>)" href="javascript:;" title="发布">
+									<a style="text-decoration:none" class="article_start" id="{{$data[$i]->d_id}}" href="javascript:;" title="发布">
 										<i class="Hui-iconfont">&#xe603;</i>
 									</a>
 									<?php } ?>
 									<!-- <a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','http://www.91.com/admin/diary_update','<?= $data[$i]->d_id ?>')" href="javascript:;" title="编辑">
 										<i class="Hui-iconfont">&#xe6df;</i>
 									</a> -->
-									<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'<?= $data[$i]->d_id ?>')" href="javascript:;" title="删除">
+									<a style="text-decoration:none" class="article_del" id='{{$data[$i]->d_id}}' href="javascript:;" title="删除">
 										<i class="Hui-iconfont">&#xe6e2;</i>
 									</a>
 								</td>
@@ -90,12 +90,12 @@
 	</div>
 </section>
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<!-- <script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> -->
+<script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-
+<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+<script>
 
 /*资讯-添加*/
 function article_add(title,url,w,h){
@@ -116,26 +116,51 @@ function article_add(title,url,w,h){
 // 	layer.full(index);
 // }
 /*资讯-删除*/
-function article_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		var ajax = new XMLHttpRequest();
-		ajax.open('get','http://www.91.com/admin/diary_del?id='+id);
-		ajax.send();
-		ajax.onreadystatechange = function()
-		{
-			if(ajax.readyState == 4 && ajax.status == 200)
-			{
-				if(ajax.responseText == 1){
-					$(obj).parents("tr").remove();
+$('.article_del').click(function(){
+	var res = confirm('确认要删除吗？');
+	var obj = $(this);
+	if(res){
+		var id = $(this).attr('id');
+		$.ajax({
+			url: "{{url('admin/diary-del')}}",
+			type: "get",
+			data:{
+				id:id,
+				_token:"{{csrf_token()}}"
+			},
+			dataType: 'json',
+			success:function(data){
+				if(data == 1){
+					obj.parents("tr").remove();
 					layer.msg('已删除!',{icon:1,time:1000});
 				}
 				else{
-					console.log(data.msg);
+					alert('下架失败');
 				}
 			}
-		}
-	});
-}
+		});
+	}
+});
+// function article_del(obj,id){
+// 	layer.confirm('确认要删除吗？',function(index){
+// 		var ajax = new XMLHttpRequest();
+// 		ajax.open('get','http://www.91.com/admin/diary-del?id='+id);
+// 		ajax.send();
+// 		ajax.onreadystatechange = function()
+// 		{
+// 			if(ajax.readyState == 4 && ajax.status == 200)
+// 			{
+// 				if(ajax.responseText == 1){
+// 					$(obj).parents("tr").remove();
+// 					layer.msg('已删除!',{icon:1,time:1000});
+// 				}
+// 				else{
+// 					alert('删除失败');
+// 				}
+// 			}
+// 		}
+// 	});
+// }
 
 /*资讯-审核*/
 function article_shenhe(obj,id){
@@ -158,53 +183,62 @@ function article_shenhe(obj,id){
 	});	
 }
 /*资讯-下架*/
-function article_stop(obj,id){
-	layer.confirm('确认要下架吗？',function(index){
-		var ajax = new XMLHttpRequest();
-		ajax.open('get','http://www.91.com/admin/diary_stop?id='+id);
-		ajax.send();
-		ajax.onreadystatechange = function()
-		{
-			if(ajax.readyState == 4 && ajax.status == 200)
-			{
-				if(ajax.responseText == 1){
-					$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-					$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-					$(obj).remove();
+$('.article_stop').click(function(){
+	var res = confirm('确认要下架吗？');
+	var obj = $(this);
+	if(res){
+		var id = $(this).attr('id');
+		$.ajax({
+			url: "{{url('admin/diary-stop')}}",
+			type: "get",
+			data:{
+				id:id,
+				_token:"{{csrf_token()}}"
+			},
+			dataType: 'json',
+			success:function(data){
+				if(data == 1){
+					obj.parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="article_start" id="'+id+'" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+					obj.parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+					obj.remove();
 					layer.msg('已下架!',{icon: 5,time:1000});
 				}
 				else{
 					alert('下架失败');
 				}
 			}
-		}			
-	});
-}
+		});
+	}
+});
 
 /*资讯-发布*/
-function article_start(obj,id){
-	layer.confirm('确认要发布吗？',function(index){
-		var ajax = new XMLHttpRequest();
-		ajax.open('get','http://www.91.com/admin/diary_start?id='+id);
-		ajax.send();
-		ajax.onreadystatechange = function()
-		{
-			if(ajax.readyState == 4 && ajax.status == 200)
-			{
-				if(ajax.responseText == 1){
-					$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-					$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-					$(obj).remove();
+$('.article_start').click(function(){
+	var res = confirm('确认要发布吗？');
+	var obj = $(this);
+	if(res){
+		var id = $(this).attr('id');
+		$.ajax({
+			url: "{{url('admin/diary-start')}}",
+			type: "get",
+			data:{
+				id:id,
+				_token:"{{csrf_token()}}"
+			},
+			dataType: 'json',
+			success:function(data){
+				if(data == 1){
+					obj.parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="article_stop" id="'+id+'" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+					obj.parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+					obj.remove();
 					layer.msg('已发布!',{icon: 6,time:1000});
 				}
 				else{
 					alert('发布失败');
 				}
 			}
-		}
-					
-	});
-}
+		});
+	}
+});
 /*资讯-申请上线*/
 function article_shenqing(obj,id){
 	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
