@@ -17,34 +17,40 @@ class DiaryModel extends Model
      *
      * @var string
      */
-    
 
-    protected $tableName='diary';//表名称
+    protected $table='diary';//表名称
+
 
     public function add($data){
         //添加数据
-        return DB::table($this->tableName)->insert($data);
-        // return $id = DB::table($this->tableName)->insertGetId($data);
+        return $id = DB::table($this->table)->insertGetId($data);
+
     }
     public function showInfo(){
         //查询所有数据
-        return DB::table($this->tableName)->get();
+        return DB::table($this->table)->get();
     }
     public function delRow($id){
         //删除
-        return DB::table($this->tableName)->where(['d_id'=>$id])->delete();
+        return DB::table($this->table)->where(['d_id'=>$id])->delete();
     }
     public function getRow($id){
         //查询一条数据
-        return DB::table($this->tableName)->where(['d_id'=>$id])->first();
+
+        $row=DB::table($this->table)->where(['d_id'=>$id])->first();
+        return $row;
+
+    }
+    public function add($data){
+        return DB::table($this->table)->insert($data);
     }
     public function saveRow($post){
         //修改数据
-        return DB::table($this->tableName)->where(['d_id'=>$id])->update($data);
+        return DB::table($this->table)->where(['d_id'=>$id])->update($data);
     }
     public function disry_status($id,$d_status){
         //修改状态
-        return DB::table($this->tableName)->where(['d_id' => $id])->update(['d_status' => $d_status]);
+        return DB::table($this->table)->where(['d_id' => $id])->update(['d_status' => $d_status]);
     }
 
 

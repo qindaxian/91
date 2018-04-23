@@ -28,16 +28,11 @@ class ProductController extends Controller
         return view('admin/product/creditor_add');
     }
 
-   
-                                                                                
-
-
     public function creditor(){
         $creditorModel = new CreditorModel();
         $creditor=$creditorModel
             ->get()
             ->toArray();
         return view('admin/product/creditor_list');
-        
     }
 }
