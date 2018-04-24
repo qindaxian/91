@@ -74,6 +74,16 @@ function file_exists_case($filename) {
     return false;
 }
 
+/**
+ * 二次封装 dumps
+ *
+ * 浏览器友好的变量输出
+ */
+function dump($data)
+{
+    dumps($data);die;
+}
+
 
 /**
  * 浏览器友好的变量输出
@@ -83,7 +93,7 @@ function file_exists_case($filename) {
  * @param boolean $strict 是否严谨 默认为true
  * @return void|string
  */
-function dump($var, $echo=true, $label=null, $strict=true) {
+function dumps($var, $echo=true, $label=null, $strict=true) {
     $label = ($label === null) ? '' : rtrim($label) . ' ';
     if (!$strict) {
         if (ini_get('html_errors')) {

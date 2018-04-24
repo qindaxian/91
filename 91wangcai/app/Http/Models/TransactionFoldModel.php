@@ -1,6 +1,7 @@
 <?php
 /**
  * User: Feng Yikai
+ * Update:Li Houlong
  * Date: 2018/4/23
  * Time: 11:05
  */
@@ -25,7 +26,7 @@ class TransactionFoldModel extends Model
     public function sel()
     {
         $obj = DB::table($this->table)->get(); //查询表中数据
-        $res = object_to_arrays($obj); //将返回回来的对面转换为数组
+        $res = object_to_arrays($obj); //将返回的值对象转换为数组
         return $res; //返回数据;
     }
 
@@ -47,7 +48,7 @@ class TransactionFoldModel extends Model
     public function theSum()
     {
         $obj = DB::table($this->table)->select('t_month',DB::raw('sum(t_amount)'))->groupBy('t_month')->get(); //查询表中数据分组
-        $res = object_to_arrays($obj); //将返回回来的对面转换为数组
+        $res = object_to_arrays($obj); //将返回的值(对象转换为数组)
         return $res;
     }
 }
