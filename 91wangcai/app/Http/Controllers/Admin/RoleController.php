@@ -26,8 +26,6 @@ class RoleController extends Controller
     	
     	$a_id = array_column($data,'a_id','a_name');
 
-    	// print_r($a_id);die;
-    	
     	
     	 
     	foreach ($a_id as $ke => $val) {

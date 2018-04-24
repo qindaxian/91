@@ -9,6 +9,7 @@
 <!-- 导入用户中心样式开始 -->
 <link href="/static/v1.1.0/css/user/user_style.css?t=1" rel="stylesheet" type="text/css">
 <!-- 导入用户中心样式结束 -->
+<!-- 分页样式 -->
 </head>
 <body>
 
@@ -32,7 +33,7 @@
         <li>
             <p>
                 <span class="icon icon1"></span>
-                <a href="/user/account/get?code=0.7536430006859203" class= active>账户概况</a>
+                <a href="/home/info" class= active>账户概况</a>
             </p>            
         </li>
         <!-- 账户概况结束 -->
@@ -51,7 +52,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a href="/user/financial/chart?code=0.7536430006859203" class=>借贷记录</a></li>
-                <li><a href="/user/financial/detail?code=0.7536430006859203" class=>交易明细</a></li>
+                <li><a href="/detailAll" class=>交易明细</a></li>
                 <li><a id="autotender" href="/user/financial/autotender?code=0.7536430006859203" class=>自动出借</a></li>
             </ul>
         </li>
@@ -225,62 +226,10 @@
                 <div class="bd">
                     <div id="recovering">
                         <table class="tableA">
-                            <!-- <thead>
-                                <tr>
-                                    <th width="250">项目</th>
-                                    <th>出借金额</th>
-                                    <th width="70">到期收益</th>
-                                    <th width="70">待回款</th>
-                                    <th width="70">到期还款时间</th>
-                                </tr>
-                            </thead>
-                            <tbody> -->
-                                  
-                             <!-- </tbody>  -->
-                            <!-- <tfoot>
-                                <tr>
-                                    <td><a href="/user/financial/chart" class="link">查看更多>></a></td>
-                                </tr>
-                            </tfoot> -->
-                            <!-- <thead>
-                                <tr>
-                                    <th width='160'>项目</th>
-                                    <th width='110'>出借金额</th>
-                                    <th width='100'>本期利息</th>
-                                    <th width='40'>期数</th>
-                                    <th width='110'>本期回款时间</th>
-                                    <th width='70'></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>BJ-DY-企业2-710第5期</td>
-                                    <td>2000000.00</td>
-                                    <td>0.08</td>
-                                    <td>1/1</td>
-                                    <td>2017-05-19</td>
-                                    <td><a href="">协议书</a></td>
-                                </tr>
-                                 <tr>
-                                    <td>BJ-DY-企业2-710第5期</td>
-                                    <td>2000000.00</td>
-                                    <td>0.08</td>
-                                    <td>1/1</td>
-                                    <td>2017-05-19</td>
-                                    <td><a href="">协议书</a></td>
-                                </tr>
-                                 <tr>
-                                    <td>BJ-DY-企业2-710第5期</td>
-                                    <td>2000000.00</td>
-                                    <td>0.08</td>
-                                    <td>1/1</td>
-                                    <td>2017-05-19</td>
-                                    <td><a href="">协议书</a></td>
-                                </tr>
-                            </tbody> -->
-                        </table>
+                             
+                        </table>                       
                     </div>
-                    <form id="accountForm" action="/user/account/detail" method="POST">
+                    <form id="accountForm" action="detail" method="POST">
                         <div id="tendered">
                             <table class="tableB">
 
@@ -307,9 +256,132 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-53638773-1', 'auto');
 ga('send', 'pageview');
 </script>
+
+
+<!-- 数据展示 -->
+<script src="/static/v1.1.0/js/user/jquery.js"></script> 
+<script type="text/javascript">
+    //最近待收  回款中
+    $(function(){
+        $.ajax({
+            url:'/capital_detail_priority',
+            type:'get',
+            data:{pagenum:5},  //查询条数
+            dataType:'json',
+            success:function(json){
+                var _data=json.data;
+                if(json.status==200){
+                    var _item_str="";
+                    var _tz_middle=[];
+                    var tableA="<thead><tr><th width='120'>项目</th><th width='130'>出借金额（元）</th><th width='130'>持有金额（元）</th><th width='80'>本期利息</th><th width='60'>期数</th><th width='120'>本期回款时间</th><th width='60' class='opera_qb'></th><th width='50'></th></tr></thead>";
+                        _tz_middle.push(tableA);
+                    if(_data.product.length==0){
+                        var noneDate='<tr class="noneData"><td colspan="8">暂无数据</td></tr>';
+                        _tz_middle.push(noneDate);
+                    }
+
+                for(var i=0;i<_data.product.length;i++) {
+                    _tz_middle.push(noneDate);
+                    var sj_bl = _data.product[i];
+                    var _status = _data.product[i].tender_status;//投资 回款 已回款状态
+                    var pro_style = _data.product[i].product_style;//判断类型
+
+                    // 展示产品来源 0 散标；1 债权
+                    if (sj_bl.show_product_from == 0) {
+                        //回款中——待回款 已回款（出借金额+到期收益）
+                        //加息券利息
+                        var _all_money = Number(sj_bl.recover_account_interest) + Number(sj_bl.coupon_interest);//审核中-利息  回款中-本期利息  已回款-获得收益
+                        var all_money = Number(_all_money).toFixed(2);//保留2位小数
+                        switch (_status) {
+                            case 2://回款中  end不显示期数
+                                switch (pro_style) {
+                                    case "end":
+                                        //是否允许债转
+                                        if (sj_bl.allow_credit == 0 && sj_bl.selling_status != 1) {//允许债权
+                                            var _allow_credit = "<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='" + sj_bl.buy_nid + "'>转让</a></td>";
+                                        } else {//不允许债权
+                                            var _allow_credit = "<td></td>";
+                                        }
+
+                                        //项目 出借金额 到期收益 待回款 到期回款时间 操作
+                                        _item_str = "<tr><td class='text'><a href='/view/borrow/" + sj_bl.product_nid + "'>" + sj_bl.name + "</a></td><td class='green'>" + sj_bl.origin_account + "</td><td class='green'>" + sj_bl.account + "</td><td>" + all_money + "</td><td>1/1</td><td>" + sj_bl.redeem_account_time + "</td><td><a href='/user/protocol/" + sj_bl.buy_nid + "'>协议书</a></td>" + _allow_credit + "</tr>";
+                                        _tz_middle.push(_item_str);
+
+                                        break;
+
+                                    case "tid":
+                                        //是否允许债转
+                                        if (sj_bl.allow_credit == 0 && sj_bl.selling_status != 1) {//允许债权
+                                            var _allow_credit = "<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='" + sj_bl.buy_nid + "'>转让</a></td>";
+                                        } else {//不允许债权
+                                            var _allow_credit = "<td></td>";
+                                        }
+
+                                        //项目 出借金额 到期收益 待回款 到期回款时间 操作
+                                        _item_str = "<tr><td class='text'><a href='/view/borrow/" + sj_bl.product_nid + "'>" + sj_bl.name + "</a></td><td class='green'>" + sj_bl.origin_account + "</td><td class='green'>" + sj_bl.account + "</td><td>" + all_money + "</td><td>" + sj_bl.repay_account_times + "/" + sj_bl.product_period + "</td><td>" + sj_bl.redeem_account_time + "</td><td><a href='/user/protocol/" + sj_bl.buy_nid + "'>协议书</a></td>" + _allow_credit + "</tr>";
+                                        _tz_middle.push(_item_str);
+                                        break;
+                                }
+                                break;
+
+                        }
+                    } else {
+                            //是否允许债转
+                            if (sj_bl.allow_credit == 0 && sj_bl.selling_status != 1) {//允许债权
+                                var _allow_credit = "<td><a href='javascript:void(0);' class='transferId' attrType='1' attrId='" + sj_bl.buy_nid + "'>转让</a></td>";
+                            } else {//不允许债权
+                                var _allow_credit = "<td></td>";
+                            }
+
+                            _item_str = "<tr><td class='text'><a href='/view/credit_assignment/" + sj_bl.id + "'>" + sj_bl.name + "</a></td><td class='green'>" + sj_bl.origin_account + "</td><td class='green'>" + sj_bl.account + "</td><td>" + sj_bl.recover_account_interest + "</td><td>1/1</td><td>" + sj_bl.redeem_account_time + "</td><td><a href='/user/protocol/credit_assignment/" + sj_bl.buy_nid + "'>协议书</a></td>" + _allow_credit + "</tr>";
+                            _tz_middle.push(_item_str);
+                        }
+                }
+                 _tz_middle.push("<tfoot><tr><td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>");
+                //设置存本取息理财数据
+                $(".tableA").html(_tz_middle.join(""));
+                }
+            }
+        })
+    })
+
+    //点击最近交易
+    $(document).on('click','#tenderedIndex',function(){
+        $.ajax({
+            url:'/detail',
+            type:'get',
+            data:{},
+            dataType:'json',
+            success:function(json){
+                var _data=json.data;
+                if(json.status==200){
+                    var _item_str="";
+                    var _tz_middle=[];
+                    var tableB="<thead><tr><th width='90'>交易日期</th><th width='100'>交易金额（元）</th><th width='100'>账户余额（元）</th><th width='90'>交易类型</th><th width='120'>所属项目</th></tr></thead>";
+                        _tz_middle.push(tableB);
+                    if(_data.transaction.length==0){
+                        var noneDate='<tr class="noneData"><td colspan="8">暂无数据</td></tr>';
+                        _tz_middle.push(noneDate);
+                    }
+                    for (var i=0; i<_data.transaction.length; i++) {
+
+                        var sj_bl = _data.transaction[i];
+
+                        _item_str = "<tr><td class='text'>"+sj_bl.t_time+"</td><td class='green'>" + sj_bl.t_amount + "</td><td class='green'>" + sj_bl.t_balance + "</td><td>" + sj_bl.t_type + "</td><td>" + sj_bl.p_name + "</td></tr>";
+                        _tz_middle.push(_item_str);
+                    }
+                    _tz_middle.push("<tfoot><tr><td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>");
+
+                    $(".tableB").html(_tz_middle.join(""));
+                }
+            }
+        })
+    })
+</script>
 </div>
 <!-- 导入用户中心对应js开始 -->
-<script src="/static/v1.1.0/js/user/userIndex_main.js?t=5"></script> 
+<script src="/static/v1.1.0/js/user/userIndex_main.js?t=5"></script>
+
 <!-- 导入用户中心对应js结束 -->
 
 @endsection

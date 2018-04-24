@@ -13,7 +13,6 @@ class DiaryController extends Controller
     public function diary(){
         $diary = new DiaryModel;
         $data = $diary->showInfo();
-        // print_r($data[0]->d_title);die;
         return view('admin/diary/diary',['data'=>$data]);
     }
 

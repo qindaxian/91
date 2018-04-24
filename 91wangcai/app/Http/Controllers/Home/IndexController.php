@@ -8,6 +8,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Http\Models\SlideShowModel;
 use App\Http\Models\UserModel;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Support\Facades\Input;
@@ -23,7 +24,9 @@ class IndexController extends Controller
      * 前台首页
      */
     public function index(){
-        return view('home/index/index');
+        $slideModel=new SlideShowModel();
+        $slideArr=$slideModel->getSlideShow();
+        return view('home/index/index',['slideArr'=>$slideArr]);
     }
 
     /**

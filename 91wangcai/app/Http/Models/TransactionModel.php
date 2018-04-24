@@ -30,4 +30,14 @@ class TransactionModel extends Model
         $res = object_to_arrays($obj); //将返回回来的对面转换为数组
         return $res; //返回数组
     }
+
+     /**
+     * 条件查询
+     * 
+     */
+    public function showTransaction($where=''){
+
+        $res =  DB::table($this->table)->where($where)->get();
+        return $res;
+    }
 }
