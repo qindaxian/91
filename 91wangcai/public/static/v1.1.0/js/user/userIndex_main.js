@@ -270,8 +270,8 @@ Deposit.Core={
 		obj.type="get";
 		obj.params={};
 		obj.success=function(data){
-            var _data=data.data;         
-            	if(_data==false){
+            var _data=data;         
+            	if(_data==0){
 	            	WC.Core.Dialog({
 								"content":"你还没有登录，请先登录!",
 								"btnValue":"立即登录",
@@ -970,9 +970,12 @@ CommonObj.prototype = {
 		    };
 	    }
 
-	    //验证登录
+	    //首页自动加载
 	    $(function(){	
+	    	//验证登录
 	    	Deposit.Core.islogin();
+	    	// //理财类表数据
+	    	// Deposit.Core.getFinancial();
 	    });
 
 	  	//右侧	回到顶部动画
@@ -1374,9 +1377,11 @@ UsrInfo.prototype = {
 		var _that=this;
 		//初始化事件绑定
 		this.initBind();
+		//最近交易
 		this.getAccount_all();
 		// this.getAccount("recovering");
-		_that.getFinancial("recovering",_that.pageNum,_that.pageSize);
+		// 最近待收
+		// _that.getFinancial("recovering",_that.pageNum,_that.pageSize);
 		$(".tableB").hide();
 	    $(".tableA").show();
 	    // this.slideSwitch();//轮播
@@ -1402,14 +1407,14 @@ UsrInfo.prototype = {
 		$("#recoveringIndex").click(function(){
 			$(".tableB").hide();
 	    	$(".tableA").show();
-			_that.getFinancial("recovering",_that.pageNum,_that.pageSize);
+			// _that.getFinancial("recovering",_that.pageNum,_that.pageSize);
 		});
 		//最近交易
 		$("#tenderedIndex").click(function(){
 			$(".tableA").hide();
 	    	$(".tableB").show();
 			// _that.getFinancial("tendered",_that.pageNum,_that.pageSize);
-			_that.getAccount("tendered");
+			// _that.getAccount("tendered");
 		});
 
 		// 转让债权
@@ -1564,167 +1569,168 @@ UsrInfo.prototype = {
 	 * 最近待收   最近交易 数据获取
 	 * @param {String} param recovering：最近待收 tendered：最近交易
 	 */
-	getAccount:function(param){
-		var url = document.getElementById("accountForm").action;
-		var ajaxObj = {
-			url: url,
-			params: "status=" + param,
-			success: function(data){
-	            document.getElementById("recovering").innerHTML = "";
-				document.getElementById("recovering").innerHTML = data.message;//表头 数据信息
-				$("#recovering tfoot td").attr("colspan", 5);
-				$("#recovering tfoot td").css("border", "none");
-				//console.log($("#recovering tbody").html())
-				var tbodyCont=$("#recovering tbody").html()
-				if(tbodyCont==null || tbodyCont.length==0){
-					$("#recovering tbody").append("<tr><td colspan='5'>暂无数据</td></tr>");
-				}
-	        },
-	        error:function(data){
-	            art.Dialog({
-	                content: '<div class="layer"><div class="layer_ok_a"><div class="l pic"><img src="/images/icons/layer_wrong.jpg" width="80" height="80"></div><div class="l"><h2>'+data.message+'</h2></div></div></div>',padding:0,lock:true,height:'200px',width:'450px'
-	            });
-	        }
-		};
-	    WC.Core.ajax(ajaxObj);
-	    return false;
-	},
+	// getAccount:function(param){
+	// 	var url = document.getElementById("accountForm").action;
+	// 	var ajaxObj = {
+	// 		url: url,
+	// 		params: "status=" + param,
+	// 		success: function(data){
+	//             document.getElementById("recovering").innerHTML = "";
+	// 			document.getElementById("recovering").innerHTML = data.message;//表头 数据信息
+	// 			$("#recovering tfoot td").attr("colspan", 5);
+	// 			$("#recovering tfoot td").css("border", "none");
+	// 			//console.log($("#recovering tbody").html())
+	// 			var tbodyCont=$("#recovering tbody").html()
+	// 			if(tbodyCont==null || tbodyCont.length==0){
+	// 				$("#recovering tbody").append("<tr><td colspan='5'>暂无数据</td></tr>");
+	// 			}
+	//         },
+	//         error:function(data){
+	//             art.Dialog({
+	//                 content: '<div class="layer"><div class="layer_ok_a"><div class="l pic"><img src="/images/icons/layer_wrong.jpg" width="80" height="80"></div><div class="l"><h2>'+data.message+'</h2></div></div></div>',padding:0,lock:true,height:'200px',width:'450px'
+	//             });
+	//         }
+	// 	};
+	//     WC.Core.ajax(ajaxObj);
+	//     return false;
+	// },
+
+	
 	/**
 	 * 获取理财列表数据
 	 * @param {String} data tendering：投标中 recovering：回款中 tendered：已结束
 	 * @param {Number} page 当前页数
 	 */
-	getFinancial:function(type,pageNum,pageSize){
-		var _that=this;
-		var obj = {};
-		obj.url = "/capital_detail_priority";
-		obj.params={
-			type:type,
-			pageNum:pageNum,//当前页码
-			pageSize:pageSize,//每页个数
-			// business_line:2,//1 ：钱包 2 ：旺财
-			device:"pc"
-		};
-		obj.type="get";
-		obj.beforeSend=function(){
+	// getFinancial:function(type,pageNum,pageSize){
+	// 	var _that=this;
+	// 	var obj = {};
+	// 	obj.url = "/capital_detail_priority";
+	// 	obj.params={
+	// 		type:type,
+	// 		pageNum:pageNum,//当前页码
+	// 		pageSize:pageSize,//每页个数
+	// 		// business_line:2,//1 ：钱包 2 ：旺财
+	// 		device:"pc"
+	// 	};
+	// 	obj.type="get";
+	// 	obj.beforeSend=function(){
 	    	
-	    };
-	    obj.success=function(json){
-	    	var _data=json.data;
-	    	if(json.status==200){//成功
-				var _item_str="";
-				var _tz_middle=[];
-				var tableA="<thead><tr><th width='120'>项目</th><th width='130'>出借金额（元）</th><th width='130'>持有金额（元）</th><th width='80'>本期利息</th><th width='60'>期数</th><th width='120'>本期回款时间</th><th width='60' class='opera_qb'></th><th width='50'></th></tr></thead>";
-                	_tz_middle.push(tableA);
-                if(_data.product.length==0){
-                 	var noneDate='<tr class="noneData"><td colspan="8">暂无数据</td></tr>';
-                 	_tz_middle.push(noneDate);
-                }
-				for(var i=0;i<_data.product.length;i++){
-					_tz_middle.push(noneDate);
-					var sj_bl=_data.product[i];
-					var _status=_data.product[i].tender_status;//投资 回款 已回款状态
-					var pro_style=_data.product[i].product_style;//判断类型
-					var _business_line=_data.product[i].business_line;//判断产品线 1 ：钱包 2 ：旺财
+	//     };
+	//     obj.success=function(json){
+	//     	var _data=json.data;
+	//     	if(json.status==200){//成功
+	// 			var _item_str="";
+	// 			var _tz_middle=[];
+	// 			var tableA="<thead><tr><th width='120'>项目</th><th width='130'>出借金额（元）</th><th width='130'>持有金额（元）</th><th width='80'>本期利息</th><th width='60'>期数</th><th width='120'>本期回款时间</th><th width='60' class='opera_qb'></th><th width='50'></th></tr></thead>";
+ //                	_tz_middle.push(tableA);
+ //                if(_data.product.length==0){
+ //                 	var noneDate='<tr class="noneData"><td colspan="8">暂无数据</td></tr>';
+ //                 	_tz_middle.push(noneDate);
+ //                }
+	// 			for(var i=0;i<_data.product.length;i++){
+	// 				_tz_middle.push(noneDate);
+	// 				var sj_bl=_data.product[i];
+	// 				var _status=_data.product[i].tender_status;//投资 回款 已回款状态
+	// 				var pro_style=_data.product[i].product_style;//判断类型
+	// 				var _business_line=_data.product[i].business_line;//判断产品线 1 ：钱包 2 ：旺财
 
-					// 展示产品来源 0 散标；1 债权
-					if(sj_bl.show_product_from==0){
-						//旺财与金融理财记录字段不同，所以先校验旺财与金融
-						if(_business_line==1){//钱包
-							switch(_status){
-								case 3://已回款
-								switch(pro_style){
-							        case "end":
-							        //项目 出借金额 到期收益 已回款 收款时间
-									_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
-									_tz_middle.push(_item_str);
-							        break;
+	// 				// 展示产品来源 0 散标；1 债权
+	// 				if(sj_bl.show_product_from==0){
+	// 					//旺财与金融理财记录字段不同，所以先校验旺财与金融
+	// 					if(_business_line==1){//钱包
+	// 						switch(_status){
+	// 							case 3://已回款
+	// 							switch(pro_style){
+	// 						        case "end":
+	// 						        //项目 出借金额 到期收益 已回款 收款时间
+	// 								_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
+	// 								_tz_middle.push(_item_str);
+	// 						        break;
 
-							        case "tad":
-							        //项目 出借金额 到期收益 已回款 收款时间
-									_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
-									_tz_middle.push(_item_str);	
-							        break;
+	// 						        case "tad":
+	// 						        //项目 出借金额 到期收益 已回款 收款时间
+	// 								_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
+	// 								_tz_middle.push(_item_str);	
+	// 						        break;
 
-							        case "tid":
-					              	//项目 出借金额 到期收益 已回款 收款时间
-					        		_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
-					        		_tz_middle.push(_item_str);		
-							        break;
-						      	}
-								break;
-							}
-						}else if(_business_line==2){//旺财
-							//回款中——待回款 已回款（出借金额+到期收益）
-							//加息券利息
-							var _all_money=Number(sj_bl.recover_account_interest)+Number(sj_bl.coupon_interest);//审核中-利息  回款中-本期利息  已回款-获得收益
-							var all_money=Number(_all_money).toFixed(2);//保留2位小数
-							switch(_status){
-								case 2://回款中  end不显示期数
-									switch(pro_style){
-								        case "end": 
-								        	//是否允许债转
-								        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
-												var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
-											}else{//不允许债权
-												var _allow_credit="<td></td>";
-											}
+	// 						        case "tid":
+	// 				              	//项目 出借金额 到期收益 已回款 收款时间
+	// 				        		_item_str="<tr><td class='text'><a href='javascript:void(0);' class='buy_qianbao'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.money+"</td><td>"+sj_bl.redeem_account_yes+"</td><td>"+sj_bl.end_time+"</td></tr>";
+	// 				        		_tz_middle.push(_item_str);		
+	// 						        break;
+	// 					      	}
+	// 							break;
+	// 						}
+	// 					}else if(_business_line==2){//旺财
+	// 						//回款中——待回款 已回款（出借金额+到期收益）
+	// 						//加息券利息
+	// 						var _all_money=Number(sj_bl.recover_account_interest)+Number(sj_bl.coupon_interest);//审核中-利息  回款中-本期利息  已回款-获得收益
+	// 						var all_money=Number(_all_money).toFixed(2);//保留2位小数
+	// 						switch(_status){
+	// 							case 2://回款中  end不显示期数
+	// 								switch(pro_style){
+	// 							        case "end": 
+	// 							        	//是否允许债转
+	// 							        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
+	// 											var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
+	// 										}else{//不允许债权
+	// 											var _allow_credit="<td></td>";
+	// 										}
 
-								        	//项目 出借金额 到期收益 待回款 到期回款时间 操作
-											_item_str="<tr><td class='text'><a href='/view/borrow/"+sj_bl.product_nid+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+all_money+"</td><td>1/1</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
-											_tz_middle.push(_item_str); 
+	// 							        	//项目 出借金额 到期收益 待回款 到期回款时间 操作
+	// 										_item_str="<tr><td class='text'><a href='/view/borrow/"+sj_bl.product_nid+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+all_money+"</td><td>1/1</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
+	// 										_tz_middle.push(_item_str); 
 									        
-								        break;
+	// 							        break;
 
-								        case "tid":
-								        	//是否允许债转
-								        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
-												var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
-											}else{//不允许债权
-												var _allow_credit="<td></td>";
-											}
+	// 							        case "tid":
+	// 							        	//是否允许债转
+	// 							        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
+	// 											var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='0' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
+	// 										}else{//不允许债权
+	// 											var _allow_credit="<td></td>";
+	// 										}
 									       
-									        //项目 出借金额 到期收益 待回款 到期回款时间 操作
-											_item_str="<tr><td class='text'><a href='/view/borrow/"+sj_bl.product_nid+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+all_money+"</td><td>"+sj_bl.repay_account_times+"/"+sj_bl.product_period+"</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
-											_tz_middle.push(_item_str); 	
-								        break;
-							      	}
-								break;
-							}
-						}
-					}else{
-			        	//是否允许债转
-			        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
-							var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='1' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
-						}else{//不允许债权
-							var _allow_credit="<td></td>";
-						}
+	// 								        //项目 出借金额 到期收益 待回款 到期回款时间 操作
+	// 										_item_str="<tr><td class='text'><a href='/view/borrow/"+sj_bl.product_nid+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+all_money+"</td><td>"+sj_bl.repay_account_times+"/"+sj_bl.product_period+"</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
+	// 										_tz_middle.push(_item_str); 	
+	// 							        break;
+	// 						      	}
+	// 							break;
+	// 						}
+	// 					}
+	// 				}else{
+	// 		        	//是否允许债转
+	// 		        	if(sj_bl.allow_credit==0 && sj_bl.selling_status!=1){//允许债权
+	// 						var _allow_credit="<td><a href='javascript:void(0);' class='transferId' attrType='1' attrId='"+sj_bl.buy_nid+"'>转让</a></td>";
+	// 					}else{//不允许债权
+	// 						var _allow_credit="<td></td>";
+	// 					}
 
-			        	_item_str="<tr><td class='text'><a href='/view/credit_assignment/"+sj_bl.id+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.recover_account_interest+"</td><td>1/1</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/credit_assignment/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
-						_tz_middle.push(_item_str); 
-					}
-				}
-				_tz_middle.push("<tfoot><tr><td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>");
-				//设置存本取息理财数据
-				$(".tableA").html(_tz_middle.join(""));
-				$("#recovering tbody tr td:last-child").addClass("last");
-				$(".buy_qianbao").click(function(){
-					WC.Core.Dialog({
-						"content": "查看标的详情，请拨打服务电话 400-000-0091",
-						"btnValue": "确定",
-						"icon": "ok",
-						"btnFn": function () {
-							WC.Core.DialogClose();
-						}
-					});
-				})
-	    	}
-	    };
-	    obj.error=function(){
+	// 		        	_item_str="<tr><td class='text'><a href='/view/credit_assignment/"+sj_bl.id+"'>"+sj_bl.name+"</a></td><td class='green'>"+sj_bl.origin_account+"</td><td class='green'>"+sj_bl.account+"</td><td>"+sj_bl.recover_account_interest+"</td><td>1/1</td><td>"+sj_bl.redeem_account_time+"</td><td><a href='/user/protocol/credit_assignment/"+sj_bl.buy_nid+"'>协议书</a></td>"+_allow_credit+"</tr>";
+	// 					_tz_middle.push(_item_str); 
+	// 				}
+	// 			}
+	// 			//设置存本取息理财数据
+	// 			$(".tableA").html(_tz_middle.join(""));
+	// 			$("#recovering tbody tr td:last-child").addClass("last");
+	// 			$(".buy_qianbao").click(function(){
+	// 				WC.Core.Dialog({
+	// 					"content": "查看标的详情，请拨打服务电话 400-000-0091",
+	// 					"btnValue": "确定",
+	// 					"icon": "ok",
+	// 					"btnFn": function () {
+	// 						WC.Core.DialogClose();
+	// 					}
+	// 				});
+	// 			})
+	//     	}
+	//     };
+	//     obj.error=function(){
 	    	
-	    };
-		WC.Core.ajax(obj);
-	},
+	//     };
+	// 	WC.Core.ajax(obj);
+	// },
 	// 转让债权
 	openChange:function(type,buyId){
 		var _that=this;
@@ -1746,7 +1752,7 @@ UsrInfo.prototype = {
 					"btnValue":"确认",
 					"icon":'ok',
 					"btnFn":function(){
-						_that.getFinancial("recovering",_that.pageNum,_that.pageSize);
+						// _that.getFinancial("recovering",_that.pageNum,_that.pageSize);
 						WC.Core.DialogClose();
 					}
 				});
