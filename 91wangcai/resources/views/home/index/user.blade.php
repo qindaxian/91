@@ -184,7 +184,7 @@
                     <!-- <a href="/user/account/get">13522413326</a> -->
                     <div class="userInfoLink">
                         <span class="userInfoIcon"></span>
-                        <a href="/user/account/get?code=0.8123531011945572">我的账户</a>
+                        <a href="{{url('home/info')}}">我的账户</a>
                     </div>
 
                     <ul class="hideSlideMain hide">

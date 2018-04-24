@@ -28,10 +28,8 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/diary_start','DiaryController@diaryStart');
     Route::get('admin/diary_del','DiaryController@diaryDel');
     Route::get('admin/diary_update','DiaryController@diaryUpdate');
-  
     Route::get('admin/product_creditor','ProductController@creditorAdd');
 
-  
     //登录
     Route::get('admin/login','LoginController@login');
 
@@ -45,7 +43,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/business_qualification','BusinessController@businessQua');
     Route::post('admin/business_qualification','BusinessController@businessQua');
     Route::get('admin/business_qualification_list','BusinessController@businessQuaList');
-
+    Route::post('admin/qualification_ajax','BusinessController@qualificationAjax');
     //债权图片上传
     Route::get('admin/creditor_upload','ProductController@creditor_upload');
     Route::post('admin/creditor_upload','ProductController@creditor_upload');
@@ -62,6 +60,11 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/noPower',function(){
         return view('admin/login/nopower');
     });
+    
+    //折线图
+    Route::get('admin/fold', 'FoldController@index');
+    Route::get('admin/conformity', 'FoldController@conformity'); //交易记录折线表数据更新
+    Route::get('admin/creditor', 'FoldController@creditor'); //债权记录折现表更新
 });
 
 
@@ -129,6 +132,8 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
     Route::get('/account', 'InfoController@account');
+    //用户设置
+    Route::get('info/setup', 'InfoController@setup');
 
 
     //获取理财列表数据
