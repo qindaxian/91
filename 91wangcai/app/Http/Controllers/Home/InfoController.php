@@ -16,6 +16,7 @@ use App\Http\Models\LoanModel;
 use App\Http\Models\ProjectModel;
 use App\Http\Models\VolumeModel;
 use App\Http\Models\CreditorModel;
+use App\Http\Models\TransactionModel;
 use Cookie;
 use Redirect;
 
@@ -231,8 +232,82 @@ class InfoController extends Controller
      * @DateTime 2018-04-24
      * @param
      * @return 
+     * @t_time: 交易时间
+     * @t_amount:交易数额
+     * @t_balance:账户余额
+     * @T_type:交易类型 0:购买项目  1:出售项目  2购买债权
+     * @p_name:项目名称
      */
     public function detail(){
-       
+       // $data = ['status'=>200,'message'=>'请求成功','data'=>['transaction'=>[['t_time'=>'2018-9-9','t_amount'=>1000,'t_balance'=>100,'t_type'=>1,'p_name'=>'BJ-xs-1781']]]];
+        $data=[];
+        $user_name = Cookie::get('user_name');  
+        $user_name = 1; //测试用
+        
+        if ($user_name!='') {
+
+        	$data['status']=200;
+
+            $data['message']='请求成功';
+
+            //交易记录表
+            $transaction = new TransactionModel;
+            //项目
+            $project = new ProjectModel;
+            //债权表
+            $creditor = new CreditorModel;
+
+            $t_val = $transaction->showTransaction(['user_id'=>$user_name]);
+
+            $t_val = object_to_arrays($t_val);
+            
+            for($i=0; $i<count($t_val); $i++){
+                
+                //交易时间
+                $data['data']['transaction'][$i]['t_time']=$t_val[$i]['t_time'];
+                //交易金额
+                $data['data']['transaction'][$i]['t_amount']=$t_val[$i]['t_amount'];
+                //账户余额
+                $data['data']['transaction'][$i]['t_balance']=$t_val[$i]['t_balance'];
+                //交易类型
+                switch($t_val[$i]['t_type']){
+                	case 0:
+                	    $data['data']['transaction'][$i]['t_type']='购买项目';
+                	break;
+
+                	case 1:
+                	    $data['data']['transaction'][$i]['t_type']='转让项目';  
+                	break;
+
+                	case 2:
+                	    $data['data']['transaction'][$i]['t_type']='购买债权';
+                	break;
+                }
+                // 项目名
+                switch($t_val[$i]['p_type']){
+                	//项目
+                	case 0:
+                       $p_val=$project->showProject(['p_id'=>$t_val[$i]['p_id']]);
+                       $p_val = object_to_arrays($p_val);
+                       $data['data']['transaction'][$i]['p_name']=$p_val['p_name'];
+                    break;
+                    //债权
+                    case 1:
+                       $c_val=$creditor->showCreditor(['c_id'=>$t_val[$i]['p_id']]);
+                       $c_val = object_to_arrays($c_val);
+                       $p_val=$project->showProject(['p_id'=>$c_val[0]['p_id']]);
+                       $p_val = object_to_arrays($p_val);
+                       $data['data']['transaction'][$i]['p_name']=$p_val['p_name'];
+                    break;
+                }
+            }
+
+        } else {
+
+        	$data['status']=300;
+
+            $data['message']='请求失败';
+        }
+       echo json_encode($data);
     }
 }

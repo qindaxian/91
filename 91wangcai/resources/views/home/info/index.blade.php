@@ -33,7 +33,7 @@
         <li>
             <p>
                 <span class="icon icon1"></span>
-                <a href="/user/account/get?code=0.7536430006859203" class= active>账户概况</a>
+                <a href="/home/info" class= active>账户概况</a>
             </p>            
         </li>
         <!-- 账户概况结束 -->
@@ -52,7 +52,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a href="/user/financial/chart?code=0.7536430006859203" class=>借贷记录</a></li>
-                <li><a href="/user/financial/detail?code=0.7536430006859203" class=>交易明细</a></li>
+                <li><a href="/detailAll" class=>交易明细</a></li>
                 <li><a id="autotender" href="/user/financial/autotender?code=0.7536430006859203" class=>自动出借</a></li>
             </ul>
         </li>
@@ -228,9 +228,7 @@
                     <div id="recovering">
                         <table class="tableA">
                              
-                        </table>
-                        
-                        <tfoot><tr><td><div id="page" class="page_div"></div></td> <td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>
+                        </table>                       
                     </div>
                     <form id="accountForm" action="detail" method="POST">
                         <div id="tendered">
@@ -269,7 +267,7 @@ ga('send', 'pageview');
         $.ajax({
             url:'/capital_detail_priority',
             type:'get',
-            data:{pagenum:3},  //显示条数
+            data:{pagenum:5},  //查询条数
             dataType:'json',
             success:function(json){
                 var _data=json.data;
@@ -340,7 +338,7 @@ ga('send', 'pageview');
                             _tz_middle.push(_item_str);
                         }
                 }
-                 _tz_middle.push("");
+                 _tz_middle.push("<tfoot><tr><td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>");
                 //设置存本取息理财数据
                 $(".tableA").html(_tz_middle.join(""));
                 }
@@ -355,8 +353,28 @@ ga('send', 'pageview');
             type:'get',
             data:{},
             dataType:'json',
-            success:function(){
+            success:function(json){
+                var _data=json.data;
+                if(json.status==200){
+                    var _item_str="";
+                    var _tz_middle=[];
+                    var tableB="<thead><tr><th width='90'>交易日期</th><th width='100'>交易金额（元）</th><th width='100'>账户余额（元）</th><th width='90'>交易类型</th><th width='120'>所属项目</th></tr></thead>";
+                        _tz_middle.push(tableB);
+                    if(_data.transaction.length==0){
+                        var noneDate='<tr class="noneData"><td colspan="8">暂无数据</td></tr>';
+                        _tz_middle.push(noneDate);
+                    }
+                    for (var i=0; i<_data.transaction.length; i++) {
 
+                        var sj_bl = _data.transaction[i];
+
+                        _item_str = "<tr><td class='text'>"+sj_bl.t_time+"</td><td class='green'>" + sj_bl.t_amount + "</td><td class='green'>" + sj_bl.t_balance + "</td><td>" + sj_bl.t_type + "</td><td>" + sj_bl.p_name + "</td></tr>";
+                        _tz_middle.push(_item_str);
+                    }
+                    _tz_middle.push("<tfoot><tr><td colspan='8' class='last'><a href='/user/financial/chart' class='link'>查看更多>></a></td></tr></tfoot>");
+
+                    $(".tableB").html(_tz_middle.join(""));
+                }
             }
         })
     })
