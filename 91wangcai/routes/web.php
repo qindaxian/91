@@ -52,6 +52,16 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/out','LoginController@out');
     Route::get('admin/login','LoginController@login');
 
+    //业务申请-项目贷款申请列表
+    Route::get('admin/ApplyProject','ApplyProjectController@index');
+    Route::post('admin/ApplyProject','ApplyProjectController@index');
+    Route::post('admin/ApplyProject_add','ApplyProjectController@ajaxAdd');
+    
+    //业务申请-项目贷款申请列表展示
+
+    Route::get('admin/applyProject_list','ApplyProjectController@list');
+
+
     //后台管理员管理
     Route::get('admin/role','RoleController@index');
     Route::get('admin/admin_list','PowerController@adminList');
@@ -60,14 +70,30 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/noPower',function(){
         return view('admin/login/nopower');
     });
-    
     //折线图
     Route::get('admin/fold', 'FoldController@index');
     Route::get('admin/conformity', 'FoldController@conformity'); //交易记录折线表数据更新
     Route::get('admin/creditor', 'FoldController@creditor'); //债权记录折现表更新
 
+
     //时间轴折线图
     Route::get('admin/time','TimebaseController@index');
+
+
+        //图片管理
+    Route::get('admin/slideshow', 'PictureController@slideShow');
+    Route::post('admin/slideshowinsert', 'PictureController@slideShowInsert');
+    Route::post('admin/picture_upload','PictureController@pictureUpload');
+
+    //波浪图
+    Route::get('admin/wave', 'WaveController@index');
+
+    //柱状图
+    Route::get('admin/columnar', 'ColumnarController@index');
+
+    //饼状图
+    Route::get('admin/pancake', 'PancakeController@index');
+
 
 });
 
@@ -135,20 +161,13 @@ Route::group(['namespace' => 'Home'], function(){
     //验证登录
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
-    Route::get('/account', 'InfoController@account');
-
-
-    //获取理财列表数据
-
-    Route::get('/islogin', 'InfoController@islogin');
-
-
+    Route::get('/account', 'InfoController@account');  
     //获取理财列表数据  
-
     Route::get('/capital_detail_priority', 'InfoController@capital_detail_priority');
-    Route::get('/islogin', 'InfoController@islogin');
-
-
+    //获取交易记录
+    Route::get('/detail', 'InfoController@detail'); 
+    //获取全部交易
+    Route::get('/detailAll', 'InfoController@detailAll'); 
     //退出登陆删除cookie
     Route::get('home/cookies','IndexController@cookies');
 

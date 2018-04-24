@@ -141,11 +141,9 @@
 				<ul>
 					<li><a href="charts-1.html" title="折线图">折线图</a></li>
 					<li class="current"><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
-					<li><a href="charts-3.html" title="区域图">区域图</a></li>
+					<li><a href="charts-3.html" title="波浪图">波浪图</a></li>
 					<li><a href="charts-4.html" title="柱状图">柱状图</a></li>
 					<li><a href="charts-5.html" title="饼状图">饼状图</a></li>
-					<li><a href="charts-6.html" title="3D柱状图">3D柱状图</a></li>
-					<li><a href="charts-7.html" title="3D饼状图">3D饼状图</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -194,7 +192,7 @@ $(function () {
             x: -20 //center
         },
         subtitle: {
-            text: '用户充值记录',
+            text: '记录每月金额总和',
             x: -20
         },
         xAxis: {

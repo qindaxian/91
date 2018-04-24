@@ -24,6 +24,10 @@ class UserModel extends Model
         return DB::table($this->table)->where(['user_phone'=>$a_name,'user_password'=>$a_password])->first();
     }
 
+    //查询
+    public function showUser($where=''){
+        return DB::table($this->table)->where($where)->get()->toArray();
+
     /**
      * @param $data
      * @return int
@@ -68,5 +72,6 @@ class UserModel extends Model
     public function pwd_error($user_phone,$user_error)
     {
         return DB::table($this->table)->where(['user_phone'=>$user_phone])->update($user_error);
+
     }
 }

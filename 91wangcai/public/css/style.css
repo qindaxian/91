@@ -6,11 +6,10 @@ ul{
 .carousel-content{
 	position: relative;
 	display: inline-block;
-	margin-left: 17%;
 }
 .carousel{
-	width: 1000px;
-	height: 380px;
+	width: 1500px;
+	height: 370px;
 	position: relative;
 	overflow: hidden;
 }
@@ -57,10 +56,11 @@ ul{
 }
 .carousel-prev{
 	left: 0;
+	z-index: 1;
 }
 .carousel-next{
 	right: 0;
-	z-index: 1000;
+	z-index: 1;
 }
 #user_box{
 	margin-right: 20%;

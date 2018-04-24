@@ -3,6 +3,7 @@
 namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 	
 
@@ -97,4 +98,12 @@ class ProjectModel extends Model
             return [];  
         }  
     }  
+
+    /**
+     * 条件查询
+     * @where
+     */
+    public function showProject($where=''){
+        return DB::table($this->table)->where($where)->first();
+    }
 }
