@@ -67,12 +67,11 @@
            <p><a href="/user/redbonus?code=0.7536430006859203" class=><span class="icon icon4"></span>红包礼券</a></p>
         </li>
         <!-- 红包奖励结束 -->
-        
         <!-- 账户设置开始 -->
         <li>
             <p>
                 <span class="icon icon5"></span>
-                <a href="/user/setup?code=0.7536430006859203" class=>账户设置</a>
+                <a href="{{url('info/setup')}}" class=>账户设置</a>
             </p>
         </li>
         <!-- 账户设置结束 -->

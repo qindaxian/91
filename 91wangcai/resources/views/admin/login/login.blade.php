@@ -12,7 +12,7 @@
 
 
 <base href="http://www.91.com/">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
 <script type="text/javascript" src="lib/html5.js"></script>
@@ -59,7 +59,7 @@
 			<div class="row cl">
 				<label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
 				<div class="formControls col-xs-8">
-					<input id="" name="a_name" type="text" placeholder="账户" class="input-text size-L">
+					<input id="name" name="a_name" type="text" placeholder="账户" class="input-text size-L">
 
 				</div>
 			</div>
@@ -67,19 +67,19 @@
 				<label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
 				<div class="formControls col-xs-8">
 
-					<input id="" name="a_password" type="password" placeholder="密码" class="input-text size-L">
+					<input id="password" name="a_password" type="password" placeholder="密码" class="input-text size-L">
 				</div>
 			</div>
 
 
-
+			{{ csrf_field() }}
 			<div class="row cl">
 				<div class="formControls col-xs-8 col-xs-offset-3">
-					<input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+					<input name="" id="sub" type="button" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
 					<input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
 				</div>
 			</div>
-			{{ csrf_field() }}
+			
 		</form>
 	</div>
 </div>
@@ -88,6 +88,7 @@
 
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="{{url('js/jquery-3.2.1.min.js')}}"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -96,6 +97,34 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+</script>
+<script type="text/javascript">
+	$("#sub").click(function(){
+		$.ajaxSetup({
+		    headers: {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		    }
+		});
+		var name = $("#name").val();
+		var password = $("#password").val();
+		$.ajax({
+			url: "{{url('admin/login')}}",
+			type: 'post',
+			data: {
+				name: name,
+				password: password
+			},
+			dataType: 'json',
+			success:function(data){
+				if(data == 1){
+					window.location.href = "{{url('admin/index')}}";
+				}else{
+					alert(data);
+					false;
+				}
+			}
+		});
+	})
 </script>
 </body>
 </html>

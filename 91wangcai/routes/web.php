@@ -132,6 +132,8 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
     Route::get('/account', 'InfoController@account');
+    //用户设置
+    Route::get('info/setup', 'InfoController@setup');
 
 
     //获取理财列表数据
