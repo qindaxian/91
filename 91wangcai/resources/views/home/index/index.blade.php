@@ -134,11 +134,9 @@
     <div class="slider-wrap">
         <div class="carousel-content">
         <ul class="carousel">
-            <li><img src="http://www.91.com/images/lbt/1.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/2.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/3.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/4.jpg"></li>
-            <li><img src="http://www.91.com/images/lbt/5.jpg"></li>
+            @foreach ($slideArr as $v)
+               <li><img src="{{$v['url']}}"></li>
+            @endforeach
         </ul>
         <ul class="img-index"></ul>
         <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
