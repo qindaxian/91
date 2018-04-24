@@ -23,7 +23,7 @@
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>折线图 - 系统统计 - H-ui.admin v3.0</title>
+<title>波浪图 - 系统统计 - H-ui.admin v3.0</title>
 <meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -140,8 +140,8 @@
 			<dd style="display:block">
 				<ul>
 					<li><a href="charts-1.html" title="折线图">折线图</a></li>
-					<li class="current"><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
-					<li><a href="charts-3.html" title="波浪图">波浪图</a></li>
+					<li><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
+					<li class="current"><a href="charts-3.html" title="波浪图">波浪图</a></li>
 					<li><a href="charts-4.html" title="柱状图">柱状图</a></li>
 					<li><a href="charts-5.html" title="饼状图">饼状图</a></li>
 				</ul>
@@ -165,10 +165,9 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 统计管理 <span class="c-gray en">&gt;</span> 折线图 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 统计管理 <span class="c-gray en">&gt;</span> 波浪图 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
-			<div class="f-14 c-error"></div>
 			<div id="container" style="min-width:700px;height:400px"></div>
 		</article>
 	</div>
@@ -187,49 +186,64 @@
 <script type="text/javascript">
 $(function () {
     $('#container').highcharts({
+        chart: {
+            type: 'area'
+        },
         title: {
-            text: '交易记录',
-            x: -20 //center
+            text: '波浪图'
         },
         subtitle: {
-            text: '记录每月金额总和',
-            x: -20
+            text: '金钱记录波浪形式'
         },
         xAxis: {
-            categories: ['一月', '二月', '三月', '四月', '五月', '六月','七月', '八月', '九月', '十月', '十一月', '十二月']
+            labels: {
+                formatter: function() {
+                    return this.value; // clean, unformatted number for year
+                }
+            }
         },
         yAxis: {
             title: {
-                text: '折线图'
+                text: '波浪图'
             },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
+            labels: {
+                formatter: function() {
+                    return this.value / 1000 +'k';
+                }
+            }
         },
         tooltip: {
-            valueSuffix: '￥'
+            pointFormat: '{series.name} 总额 <b>{point.y:,.0f}</b>'
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+        plotOptions: {
+            area: {
+                // pointStart: 1940,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
         },
         series: [{
             name: '交易记录统计',
-            data: [{{$tf}}]
+            data: [{{$tf}}
+            ]
         }, {
             name: '转让价格统计',
-            data: [{{ $cr->arr1 }}]
-        }, {
+            data: [{{ $cr->arr1 }}
+            ]
+        },{
             name: '出借金额统计',
-            data: [{{ $cr->arr2 }}]
-        }, /*{
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-        }*/]
+            data: [{{ $cr->arr2 }}
+            ]
+        }
+		]
     });
 });
 </script>

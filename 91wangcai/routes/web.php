@@ -65,6 +65,15 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/fold', 'FoldController@index');
     Route::get('admin/conformity', 'FoldController@conformity'); //交易记录折线表数据更新
     Route::get('admin/creditor', 'FoldController@creditor'); //债权记录折现表更新
+
+    //波浪图
+    Route::get('admin/wave', 'WaveController@index');
+
+    //柱状图
+    Route::get('admin/columnar', 'ColumnarController@index');
+
+    //饼状图
+    Route::get('admin/pancake', 'PancakeController@index');
 });
 
 
