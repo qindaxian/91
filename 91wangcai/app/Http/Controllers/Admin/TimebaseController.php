@@ -38,7 +38,7 @@ class TimebaseController extends Controller
         }
         //数组转换成字符串  时间
 //        $Tra_time=json_encode($Tra_time);
-        dump($Tra_time);
+        //dump($Tra_time);
 
         //获取 债权记录折线表数据
         $Cre=(new CreditorFoldModel)->theSum();

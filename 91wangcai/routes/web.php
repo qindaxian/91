@@ -56,7 +56,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/ApplyProject','ApplyProjectController@index');
     Route::post('admin/ApplyProject','ApplyProjectController@index');
     Route::post('admin/ApplyProject_add','ApplyProjectController@ajaxAdd');
-    
+
     //业务申请-项目贷款申请列表展示
 
     Route::get('admin/applyProject_list','ApplyProjectController@list');
@@ -80,7 +80,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/time','TimebaseController@index');
 
 
-        //图片管理
+    //图片管理
     Route::get('admin/slideshow', 'PictureController@slideShow');
     Route::post('admin/slideshowinsert', 'PictureController@slideShowInsert');
     Route::post('admin/picture_upload','PictureController@pictureUpload');

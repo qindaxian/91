@@ -20,9 +20,9 @@ class PictureController extends Controller
 {
 	//轮播图
     public function slideShow(Request $request){
-    	$slideModel=new SlideShowModel();
-    	$slideArr=$slideModel->getSlideShow();
-        return view('admin/picture/slideshow',['slideArr'=>$slideArr]);
+    	$slideModel = new SlideShowModel();
+    	$slideArr = $slideModel->getSlideShow();
+        return view('admin/picture/slideshow',['slideArr' => $slideArr]);
     }
 
     public function pictureUpload(Request $request){
