@@ -225,6 +225,13 @@ class InfoController extends Controller
         }
         return $data;
 	}
+
+
+	//账户设置
+	public function setup(){
+		return view('home/info/setup'); 
+	}
+
     
     /**
      * 最近交易
@@ -310,4 +317,5 @@ class InfoController extends Controller
         }
        echo json_encode($data);
     }
+
 }

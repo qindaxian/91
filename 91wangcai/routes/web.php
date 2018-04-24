@@ -161,7 +161,13 @@ Route::group(['namespace' => 'Home'], function(){
     //验证登录
     Route::get('/islogin', 'InfoController@islogin');
     //获取账户信息
+
+    Route::get('/account', 'InfoController@account');
+    //用户设置
+    Route::get('info/setup', 'InfoController@setup');
+    Route::get('/islogin', 'InfoController@islogin');
     Route::get('/account', 'InfoController@account');  
+
     //获取理财列表数据  
     Route::get('/capital_detail_priority', 'InfoController@capital_detail_priority');
     //获取交易记录
