@@ -23,7 +23,7 @@
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>折线图 - 系统统计 - H-ui.admin v3.0</title>
+<title>柱状图统计 - 系统统计 - H-ui.admin v3.0</title>
 <meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -140,9 +140,9 @@
 			<dd style="display:block">
 				<ul>
 					<li><a href="charts-1.html" title="折线图">折线图</a></li>
-					<li class="current"><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
-					<li><a href="charts-3.html" title="波浪图">波浪图</a></li>
-					<li><a href="charts-4.html" title="柱状图">柱状图</a></li>
+					<li><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
+					<li><a href="charts-3.html" title="区域图">区域图</a></li>
+					<li class="current"><a href="charts-4.html" title="柱状图">柱状图</a></li>
 					<li><a href="charts-5.html" title="饼状图">饼状图</a></li>
 				</ul>
 			</dd>
@@ -165,10 +165,9 @@
 <!--/_menu 作为公共模版分离出去-->
 
 <section class="Hui-article-box">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 统计管理 <span class="c-gray en">&gt;</span> 折线图 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 统计管理 <span class="c-gray en">&gt;</span> 柱状图统计 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 	<div class="Hui-article">
 		<article class="cl pd-20">
-			<div class="f-14 c-error"></div>
 			<div id="container" style="min-width:700px;height:400px"></div>
 		</article>
 	</div>
@@ -187,51 +186,66 @@
 <script type="text/javascript">
 $(function () {
     $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
         title: {
-            text: '交易记录',
-            x: -20 //center
+            text: '柱状图'
         },
         subtitle: {
-            text: '记录每月金额总和',
-            x: -20
+            text: '金钱记录交易柱状图 '
         },
         xAxis: {
-            categories: ['一月', '二月', '三月', '四月', '五月', '六月','七月', '八月', '九月', '十月', '十一月', '十二月']
+            categories: [
+                '一月',
+                '二月',
+                '三月',
+                '四月',
+                '五月',
+                '六月',
+                '七月',
+                '八月',
+                '九月',
+                '十月',
+                '十一月',
+                '十二月'
+            ]
         },
         yAxis: {
+            min: 0,
             title: {
-                text: '折线图'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
+                text: '柱状图'
+            }
         },
         tooltip: {
-            valueSuffix: '￥'
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} ￥</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
         },
         series: [{
             name: '交易记录统计',
             data: [{{$tf}}]
+
         }, {
             name: '转让价格统计',
             data: [{{ $cr->arr1 }}]
+
         }, {
             name: '出借金额统计',
             data: [{{ $cr->arr2 }}]
-        }, /*{
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-        }*/]
+
+        }]
     });
-});
+});	
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
