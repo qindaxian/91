@@ -60,11 +60,16 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/noPower',function(){
         return view('admin/login/nopower');
     });
-    
     //折线图
     Route::get('admin/fold', 'FoldController@index');
     Route::get('admin/conformity', 'FoldController@conformity'); //交易记录折线表数据更新
     Route::get('admin/creditor', 'FoldController@creditor'); //债权记录折现表更新
+
+
+        //图片管理
+    Route::get('admin/slideshow', 'PictureController@slideShow');
+    Route::post('admin/slideshowinsert', 'PictureController@slideShowInsert');
+    Route::post('admin/picture_upload','PictureController@pictureUpload');
 
     //波浪图
     Route::get('admin/wave', 'WaveController@index');
@@ -74,6 +79,7 @@ Route::group(['namespace' => 'Admin'], function(){
 
     //饼状图
     Route::get('admin/pancake', 'PancakeController@index');
+
 });
 
 

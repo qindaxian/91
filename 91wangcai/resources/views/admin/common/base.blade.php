@@ -74,6 +74,3 @@
 <script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
-
-
-

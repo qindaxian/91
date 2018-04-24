@@ -14,7 +14,7 @@ class ProductController extends Controller
 
         $obj = new ProjectModel;
         $data = $obj->getfind(1);
-        print_r($data);die;
+        //print_r($data);die;
         return view('admin/product/project_list');
     }
 
