@@ -3,6 +3,7 @@
 namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class CreditorModel extends Model
 {
@@ -11,8 +12,9 @@ class CreditorModel extends Model
     public $timestamps = false;
 
 
-    public function getCreditorAll()
-    {
-
+    //查询
+    public function showCreditor($where=''){
+         $res = DB::table($this->table)->where($where)->get();
+         return $res;
     }
 }

@@ -23,4 +23,9 @@ class UserModel extends Model
         //查询一条数据
         return DB::table($this->table)->where(['user_phone'=>$a_name,'user_password'=>$a_password])->first();
     }
+
+    //查询
+    public function showUser($where=''){
+        return DB::table($this->table)->where($where)->get()->toArray();
+    }
 }

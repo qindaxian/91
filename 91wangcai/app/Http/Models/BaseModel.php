@@ -20,12 +20,10 @@ class BaseModel extends Model
    *
    *return():
    */
-   public function insert($data,$id=true)
-   {
+   public function insert($data,$id=true){
 	   	if ($id==true) {
 	   		$res = DB::table($this->table)->insertGetId($data);
-	   	}
-	   	else {
+	   	}else {
 	   		$res = DB::table($this->table)->insert($data);
 	   	}
         return $res;
@@ -37,12 +35,10 @@ class BaseModel extends Model
    *
    *return():
    */
-   public function up($where='',$data)
-   { 
+   public function up($where='',$data){ 
    	 if ($where==''){
    	 	$res = DB::table($this->table)->update($data);
-   	 } 
-   	 else {
+   	 }else {
         $res = DB::table($this->table)->where(key($where),current($where))->update($data);
    	 }  
    	 return $res; 	
@@ -54,12 +50,10 @@ class BaseModel extends Model
    *
    *return():
    */
-   public function delete($where='')
-   {
+   public function delete($where=''){
       if ($where=='') {
       	$res = DB::table($this->table)->truncate();
-      }
-      else {
+      }else {
       	$res = DB::table($this->table)->where(key($where),current($where))->delete();
       }
       return $res;
@@ -71,22 +65,19 @@ class BaseModel extends Model
    *
    *return():
    */
-   public function select($where='',$order='',$limit='')
-   {
+   public function select($where='',$order='',$limit=''){
       if ($where=='' || $order=='' || $limit=''){
       	
       	if ($where!='' && $limit!='') {
             $res = DB::table($this->table)->where(key($where),current($where))->limit($limit)->get();
-      	}
-      	else{
+      	}else{
       		if($where!=''){
       			$res = DB::table($this->table)->where(key($where),current($where))->get();
       		}   		
       	}
       	if ($order!='' && $limit!='') {
            $res = DB::table($this->table)->orderBy(key($order),current($order))->limit($limit)->get();
-      	}
-      	else{
+      	}else{
       		if($order!=''){
       			$res = DB::table($this->table)->orderBy(key($order),current($order))->get();
       		} 	   
@@ -99,8 +90,7 @@ class BaseModel extends Model
       		$res = DB::table($this->table)->get();
       	}
       	
-      }
-      else{
+      }else{
       	$res = DB::table($this->table)->where(key($where),current($where))->orderBy(key($order),current($order))->get();
       }
       return $res;
