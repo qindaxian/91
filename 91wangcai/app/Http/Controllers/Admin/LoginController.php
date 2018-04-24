@@ -19,7 +19,11 @@ class LoginController extends Controller
         		$judge = Input::get('judge');
     			$admin = new AdminModel;
 	    		$data = $admin->getRow($a_name,$a_password);
-	    		if($data){
+                $a_id = $data->a_id;
+                $a_start_time = time();
+                $a_end_ip = $_SERVER["REMOTE_ADDR"];
+                $res = $admin->change($a_id,$a_start_time,$a_end_ip);
+	    		if($res){
 	    			session(['admin' => $data]);
 	    			return redirect('admin/index');
 	    		}
