@@ -24,6 +24,7 @@ class FoldController extends Controller
     {
         $transactionFold = $this->transactionFold();
         $creditorFold = $this->creditorFold();
+
         return view('admin/fold/index',['tf'=>$transactionFold,'cr'=>$creditorFold]);
     }
 

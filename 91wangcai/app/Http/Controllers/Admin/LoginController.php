@@ -48,7 +48,7 @@ class LoginController extends Controller
         return view('admin/login/login');
     }
     //获取当前用户ip
-    public function getIp(){  
+    public function getIp(){
         static $realip;
         if(isset($_SERVER)){
             if(isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
@@ -67,8 +67,8 @@ class LoginController extends Controller
                 $realip = getenv("REMOTE_ADDR");
             }
         }
-        return $realip;  
-    }  
+        return $realip;
+    }
     //获取当前用户地理位置
     public function getCity($ip = ''){
         if($ip == ''){
@@ -77,13 +77,13 @@ class LoginController extends Controller
             $data = $ip;
         }else{
             $url = "http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
-            $ip = json_decode(file_get_contents($url));   
+            $ip = json_decode(file_get_contents($url));
             if((string)$ip->code == '1'){
                return false;
             }
             $data = (array)$ip->data;
         }
-        return $data;   
+        return $data;
     }
     //退出
     public function out(Request $request){
