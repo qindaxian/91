@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Http\Models\BusinessModel;
+use App\Http\Models\ApplyQualificationModel;
 //use APP\Http\Models;
 use App\Common\curl;
 
@@ -51,7 +52,25 @@ class BusinessController extends Controller
     public function businessQuaList(Request $request)
     {
         $bus=new BusinessModel();
-        $list=$bus->all()->toarray();
+        //判断如果是普通会员只展示自己的业务申请记录
+        $arr=session('roleInfo');
+        if (in_array('4',$arr[0])) {
+            $list=$bus->where('user_id',session('admin')->a_id)->get()->toarray();
+        }else{
+            $list=$bus->all()->toarray();
+        }
         return view('admin/business/qualification_list',['list'=>$list]);
+    }
+
+    public function qualificationAjax(){
+        $idCard=Input::all();
+        $applyModel = new ApplyQualificationModel();
+        $idCardArr = $applyModel->where('apply_idcard',$idCard)->get()->toarray();
+        if (empty($idCardArr)) {
+            $arr=["msg"=>'未申请过身份证，可以使用','status'=>1];
+        }else{
+            $arr=["msg"=>'申请过身份证，不可以使用','status'=>0];
+        }
+        return json_encode($arr);
     }
 }

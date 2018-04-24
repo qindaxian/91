@@ -5,6 +5,7 @@ namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Models\Admin_a_rModel;
 use App\Http\Models\AdminRolePowerModel;
+use App\Http\Models\Admin_roleModel;
 
 class AdminPowerModel extends Model
 {
@@ -18,6 +19,10 @@ class AdminPowerModel extends Model
 		$adminRoleModel = new Admin_a_rModel();
 		$roleId=$adminRoleModel->getAdminRole($userId);
 		$r_id=array_column($roleId,'r_id');
+		//将当前登陆用户的角色信息存入ssession
+		$roleModel = new Admin_roleModel();
+		$roleInfo=$roleModel->whereIn('r_id',$r_id)->get()->toarray();
+		session(['roleInfo'=>$roleInfo]);
 		//判断是否为超级管理员
 		if (in_array(1, $r_id)){
 			$power=$this->get()->toarray();

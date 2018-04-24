@@ -61,11 +61,6 @@
 
 {{-- 继承后插入的内容 --}}
 @yield('content')
-
-
-
-
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://www.91.com/admin/lib/layer/2.4/layer.js"></script>
 
 <script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
