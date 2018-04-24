@@ -15,7 +15,10 @@
 			</nav>
 			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 				<ul class="cl">
-					<li>超级管理员</li>
+					<li>@foreach (session('roleInfo') as $v)
+						{{$v['r_name']}}
+						@endforeach
+					</li>
 					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A"><?= session('admin')->a_name; ?><i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>

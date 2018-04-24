@@ -1,5 +1,6 @@
 @extends('admin.common.base')
 @section('content')
+<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
 <section class="Hui-article-box">
 	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 		<span class="c-gray en">&gt;</span>
@@ -22,7 +23,7 @@
 			<table class="table table-border table-bordered table-bg">
 				<thead>
 					<tr>
-						<th scope="col" colspan="9">员工列表</th>
+						<th scope="col" colspan="9">申请列表</th>
 					</tr>
 					<tr class="text-c">
 						<th width="25"><input type="checkbox" name="" value=""></th>

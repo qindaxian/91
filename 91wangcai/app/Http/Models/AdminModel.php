@@ -24,6 +24,9 @@ class AdminModel extends Model
         return $this->get()->toArray();
     }  
 
+    public function change($a_id,$a_start_time,$a_end_ip){
+        return DB::table($this->table)->where(['a_id'=>$a_id])->update(['a_start_time' => $a_start_time,'a_end_ip' => $a_end_ip]);
+    }
     
 
 }
