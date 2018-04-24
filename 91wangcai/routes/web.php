@@ -76,6 +76,10 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/creditor', 'FoldController@creditor'); //债权记录折现表更新
 
 
+    //时间轴折线图
+    Route::get('admin/time','TimebaseController@index');
+
+
         //图片管理
     Route::get('admin/slideshow', 'PictureController@slideShow');
     Route::post('admin/slideshowinsert', 'PictureController@slideShowInsert');
@@ -89,6 +93,7 @@ Route::group(['namespace' => 'Admin'], function(){
 
     //饼状图
     Route::get('admin/pancake', 'PancakeController@index');
+
 
 });
 
