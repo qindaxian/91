@@ -25,17 +25,17 @@ class ApplyProjectController extends Controller{
         $admin_id = $admin_id -> a_id;
 
         $one_data = DB::select('select * from apply_qa where user_id = ?', [$admin_id]);
-        
-        foreach($one_data as $k=>$v){  
-                $one_data[$k]=(array)$v;             
-        } 
+
+        foreach($one_data as $k=>$v){
+                $one_data[$k]=(array)$v;
+        }
 
         if(empty($one_data)){ return redirect('admin/business_qualification'); }
-        
+
         //如果此用户没用贷款资格就让他返回贷款资格去申请资格
         if($one_data['apply_status'] = 0 ){
             return redirect('admin/business_qualification');
-        } else { 
+        } else {
             return view('admin/applyProject/applyProject');
         }
 
@@ -48,16 +48,15 @@ class ApplyProjectController extends Controller{
         if($data['z_money'] == ''){
             return '贷款金额不能为空';
         }
-      
-       
+
         if($data['z_rate'] == ''){
             return '年利率不能为空';
         }
         $ap_pro_rate = $data['z_rate'];
         $ap_pro_money = $data['z_money'];
         $ap_pro_state = $data['z_state'];
-        if (!preg_match('/^[6-8]+(.[0-9]{1,2})?$/', $ap_pro_rate)) {  
-            echo '请输入符合规范的年利率';   
+        if (!preg_match('/^[6-8]+(.[0-9]{1,2})?$/', $ap_pro_rate)) {
+            echo '请输入符合规范的年利率';
         }
         $ap_pro_money = (int)$ap_pro_money;
         if($ap_pro_money < 10000){
@@ -71,10 +70,10 @@ class ApplyProjectController extends Controller{
         $admin_id = $admin_id -> a_id;
 
         $one_data = DB::select('select apply_name from apply_qa where user_id = ?', [$admin_id]);
-       
-        foreach($one_data as $k=>$v){  
-                $one_data[$k]=(array)$v;             
-        } 
+
+        foreach($one_data as $k=>$v){
+                $one_data[$k]=(array)$v;
+        }
 
 
         $inter_data = [
@@ -85,7 +84,7 @@ class ApplyProjectController extends Controller{
             'user_id' => session('admin')->a_id,
             'apply_name' => $one_data[0]['apply_name'],
         ];
-        
+
 
         $res = $obj-> project_add($inter_data);
         if($res){
@@ -101,8 +100,7 @@ class ApplyProjectController extends Controller{
 
         $obj = new ApplyProjectModel();
         $res = $obj -> getAll();
-        
-        
+
         return view('admin/applyProject/applyProject_list',['res'=>$res]);
 
     }

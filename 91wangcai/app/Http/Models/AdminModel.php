@@ -19,15 +19,14 @@ class AdminModel extends Model
         return DB::table($this->table)->where(['a_name'=>$a_name,'a_password'=>$a_password])->first();
     }
 
-    public function getAll()  
-    {  
+    public function getAll()
+    {
         return $this->get()->toArray();
-    }  
+    }
 
     public function change($a_id,$a_end_time,$a_end_ip){
         return DB::table($this->table)->where(['a_id'=>$a_id])->update(['a_end_time' => $a_end_time,'a_end_ip' => $a_end_ip]);
     }
-    
     public function getName($a_name){
         //查询用户名
         return DB::table($this->table)->where(['a_name'=>$a_name])->first();

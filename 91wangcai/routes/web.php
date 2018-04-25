@@ -12,7 +12,6 @@
 */
 
 
-
 Route::group(['namespace' => 'Admin'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
     Route::get('admin/index','IndexController@index');
@@ -53,19 +52,23 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/login','LoginController@login');
 
     //业务申请-项目贷款申请列表
-    Route::get('admin/ApplyProject','ApplyProjectController@index');
-    Route::post('admin/ApplyProject','ApplyProjectController@index');
-    Route::post('admin/ApplyProject_add','ApplyProjectController@ajaxAdd');
+    Route::get('admin/applyproject','ApplyProjectController@index');
+    Route::post('admin/applyproject','ApplyProjectController@index');
+    Route::post('admin/applyproject_add','ApplyProjectController@ajaxAdd');
 
     //业务申请-项目贷款申请列表展示
 
-    Route::get('admin/applyProject_list','ApplyProjectController@list');
+    Route::get('admin/applyproject_list','ApplyProjectController@list');
 
 
     //后台管理员管理
     Route::get('admin/role','RoleController@index');
-    Route::get('admin/admin_list','PowerController@adminList');
+    Route::get('admin/admin_add','AdminController@adminAdd');
+    Route::get('admin/admin_list','AdminController@adminList');
     Route::get('admin/power','PowerController@index');
+    Route::get('admin/admin_power_add','PowerController@powerAdd');
+    Route::post('admin/admin_power_add','PowerController@powerAdd');
+    Route::post('admin/powerAddAjax','PowerController@powerAddAjax');
     //无权限
     Route::get('admin/noPower',function(){
         return view('admin/login/nopower');
@@ -112,7 +115,7 @@ Route::group(['middleware' => ['web','admin.login']], function () {
     Route::get('admin/business_qua','Admin\BusinessController@businessQua');
     //后台管理员管理
     Route::get('admin/role','Admin\RoleController@index');
-    Route::get('admin/admin_list','Admin\PowerController@adminList');
+    Route::get('admin/admin_list','Admin\AdminController@adminList');
     Route::get('admin/power','Admin\PowerController@index');
 });
 
