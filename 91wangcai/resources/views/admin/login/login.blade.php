@@ -45,7 +45,7 @@
 <div class="loginWraper">
 	<div id="loginform" class="loginBox">
 
-		<form class="form form-horizontal" action="" method="post">
+		<form class="form form-horizontal" action="" method="">
 			<div class="row cl">
 				<label class="form-label col-xs-3"></label>
 				<div class="formControls col-xs-8">

@@ -26,7 +26,7 @@ class LoginController extends Controller
                 return json_encode($res);
                 false;
             }else if(empty($admin->getName($a_name))){
-                $res = '用户名错误';
+                $res = '用户名不存在';
                 return json_encode($res);
                 false;
             }else if(empty($admin->getPwd($a_password))){
@@ -35,10 +35,17 @@ class LoginController extends Controller
                 false;
             }
     		$data = $admin->getRow($a_name,$a_password);
+            if(empty($data)){
+                $res = '用户名或密码错误';
+                return json_encode($res);
+                false;
+            }
             $a_id = $data->a_id;
+            session(['last_time' => $data->a_log_num]);
             $a_end_time = time();
             $a_end_ip = $this->getIp();
-            $res = $admin->change($a_id,$a_end_time,$a_end_ip);
+            $a_log_num = $data->a_log_num + 1;
+            $res = $admin->change($a_id,$a_end_time,$a_end_ip,$a_log_num);
     		if($res){
     			session(['admin' => $data]);
     			return json_encode($res);
