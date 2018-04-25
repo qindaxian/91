@@ -3,6 +3,7 @@
 namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 	
 
@@ -11,7 +12,7 @@ class ApplyProjectModel extends Model
 
 	protected $table = 'apply_project';
 	public $timestamps = false;
-	protected $primarykey = 'p_id';
+
 
 
     
@@ -23,10 +24,10 @@ class ApplyProjectModel extends Model
   
 //单条查找  
   
-    public function getFind($id)  
+    public function getFind($where,$id)
     {  
-        if($this->where('p_id',$id)->first()){  
-            return $this->where('p_id',$id)->first()->toArray();  
+        if($this->where($where,$id)->first()){
+            return $this->where($where,$id)->first()->toArray();
         }else{  
             return [];  
         }  
@@ -60,14 +61,8 @@ class ApplyProjectModel extends Model
      * @param $data 
      * @return bool 
      */  
-    public function upAdmin($id,$data)  
-    {  
-        if($this->find($id)){  
-            return $this->where('id',$id)->update($data);  
-        }else{  
-            return false;  
-        }  
-  
+    public function change($where,$where_id,$ziduan,$data){
+        return DB::table($this->table)->where([$where => $where_id])->update([$ziduan=>$data]);
     }  
   
 //加条件，时间  

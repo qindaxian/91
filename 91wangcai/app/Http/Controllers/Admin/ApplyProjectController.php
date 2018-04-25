@@ -13,6 +13,8 @@ use App\Http\Models\BusinessModel;
 use App\Common\curl;
 use App\Http\Models\ApplyProjectModel;
 use Illuminate\Support\Facades\DB;
+use App\Http\Models\ProjectModel;
+
 
 /**
  * Class ApplyProjectController
@@ -43,6 +45,7 @@ class ApplyProjectController extends Controller{
     }
 
     public function ajaxAdd(){
+        
         $obj = new ApplyProjectModel();
         $data = Input::All();
         if($data['z_money'] == ''){
@@ -56,15 +59,16 @@ class ApplyProjectController extends Controller{
         $ap_pro_rate = $data['z_rate'];
         $ap_pro_money = $data['z_money'];
         $ap_pro_state = $data['z_state'];
+        $ap_pro_date = $data['z_date'];
         if (!preg_match('/^[6-8]+(.[0-9]{1,2})?$/', $ap_pro_rate)) {  
-            echo '请输入符合规范的年利率';   
+            return '请输入符合规范的年利率';   
         }
         $ap_pro_money = (int)$ap_pro_money;
         if($ap_pro_money < 10000){
-            echo '最少借10000元';
+            return '最少借10000元';
         }
         if($ap_pro_money > 1000000){
-            echo '最多借1000000元';
+            return '最多借1000000元';
         }
 
         $admin_id = session('admin');
@@ -84,6 +88,7 @@ class ApplyProjectController extends Controller{
             'ap_pro_time' => date('Y-m-d H-i-s'),
             'user_id' => session('admin')->a_id,
             'apply_name' => $one_data[0]['apply_name'],
+            'ap_pro_date' => $ap_pro_date
         ];
         
 
@@ -96,14 +101,55 @@ class ApplyProjectController extends Controller{
     }
 
     public function list(){
-//        echo phpinfo();die;
-//        echo date('Y-m-d H:i:s');
 
         $obj = new ApplyProjectModel();
         $res = $obj -> getAll();
-        
-        
-        return view('admin/applyProject/applyProject_list',['res'=>$res]);
+        $num = count($res);
+
+        return view('admin/applyProject/applyProject_list',['res'=>$res,'num'=>$num]);
 
     }
+    //如若管理员同意此用户贷款
+    public function productAdd(){
+        $user_id = Input::get('user_id');
+        $ap_id = Input::get('ap_id');
+
+        $obj = new ApplyProjectModel();
+        $res = $obj -> getFind('user_id',$user_id);
+
+        $data['user_id'] = $res['user_id'];
+        $data['p_annual_interest_rate'] = $res['ap_pro_rate'];
+        $data['p_term'] = $res['ap_pro_date'];
+        $data['p_loan_amount'] = $res['ap_pro_money'];
+        $data['p_amount_investment'] = '100';
+        $data['p_loan'] = $res['ap_pro_money'];
+        $data['p_purpose'] = '经营周转';
+        $data['p_day_interest'] = time();
+        $data['p_one_source'] = '金融机构贷款';
+        $data['p_two_source'] = '自筹还款';
+        $data['p_three_source'] = '北京房产变现';
+        $data['p_status'] = '1';
+        $data['p_start_time'] = time();
+        $data['p_state'] = $res['ap_pro_state'];
+
+
+        $addRes = (new ProjectModel) -> project_add($data);
+        if($addRes){
+           $upRes = $obj ->change('ap_id',$ap_id,'ap_pro_status','2');
+           if($upRes){
+            return '您的项目已经通过申请,请继续关注网站动态';
+           }
+        }
+        
+    }
+
+    public function applyProductdel(){
+        $ap_id = Input::get('ap_id');
+        $obj = new ApplyProjectModel();
+        $upRes = $obj ->change('ap_id',$ap_id,'ap_pro_status','1');
+        if($upRes){
+            return '此项目被驳回,请用户修整';
+        }
+    }
+
 }
