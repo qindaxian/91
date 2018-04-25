@@ -131,6 +131,7 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/operationreport', 'OperationreportController@index');
     //前台项目列表
     Route::get('home/projectlist', 'ProjectlistController@index');
+
     //前台旺财记事
     Route::get('home/chronicle', 'ChronicleController@index');
     //前台旺财日记

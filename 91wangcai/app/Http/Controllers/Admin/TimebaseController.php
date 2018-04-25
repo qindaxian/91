@@ -26,31 +26,26 @@ class TimebaseController extends Controller
      */
     public function index()
     {
+        $tra = (new TransactionFoldModel)->sel();
 
-        //获取 交易记录折线表数据
-        $Tra=(new TransactionFoldModel)->sel();
-        //获取交易记录表 时间
-        $Tra_times=array_column($Tra,'t_time');
-        //循环一维数组
-        foreach ($Tra_times as $v) {
-            //定义空数组 $Tra_time   时间戳转换成日期 年-月-日
-            $Tra_time[]=date('Y-m-d',$v);
+        $tra_times = array_column($tra,'t_time');
+
+        //一维数组    时间戳转换 年-月-日
+        foreach ($tra_times as $v) {
+
+            $tra_time[] = date('Y,m,d',$v);
         }
-        //数组转换成字符串  时间
-//        $Tra_time=json_encode($Tra_time);
-        //dump($Tra_time);
 
-        //获取 债权记录折线表数据
-        $Cre=(new CreditorFoldModel)->theSum();
+        $cre = (new CreditorFoldModel)->theSum();
 
         //转让价格
-        $Transfer_price =array_column($Cre,'sum(r_price)');
+        $transfer_price = array_column($cre,'sum(r_price)');
 
         //出借金额
-        $Lend_price =array_column($Cre,'sum(r_lend)');
+        $lend_price = array_column($cre,'sum(r_lend)');
 
 
-        return view('admin/timebase/index',['tra'=>$Tra_time,'len'=>$Lend_price,'transfer'=>$Transfer_price]);
+        return view('admin/timebase/index',['tra'=>$tra_time,'len'=>$lend_price,'transfer'=>$transfer_price]);
 
     }
 
