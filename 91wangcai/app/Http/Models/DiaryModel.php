@@ -47,5 +47,16 @@ class DiaryModel extends Model
         return DB::table($this->table)->where(['d_id' => $id])->update(['d_status' => $d_status]);
     }
 
+    public function diarySum(){
+        //统计总数
+        return DB::table($this->table)->get()->count();
+    }
+
+    public function diaryTime($begin,$end){
+        //按条件查资讯数
+        $begin = date('Y-m-d',$begin);
+        $end = date('Y-m-d',$end);
+        return DB::table($this->table)->whereBetween('d_time', array($begin,$end))->get()->count();
+    }
 
 }

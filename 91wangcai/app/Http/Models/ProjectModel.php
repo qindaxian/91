@@ -106,4 +106,14 @@ class ProjectModel extends Model
     public function showProject($where=''){
         return DB::table($this->table)->where($where)->first();
     }
+
+    public function projectSum(){
+        //项目总数
+        return DB::table($this->table)->get()->count();
+    }
+
+    public function projectTime($begin,$end){
+        //按条件查产生项目数
+        return DB::table($this->table)->whereBetween('p_start_time', array($begin,$end))->get()->count();
+    }
 }

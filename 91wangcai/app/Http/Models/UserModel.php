@@ -27,7 +27,7 @@ class UserModel extends Model
     //查询
     public function showUser($where=''){
         return DB::table($this->table)->where($where)->get()->toArray();
-
+    }
     /**
      * @param $data
      * @return int
@@ -73,5 +73,15 @@ class UserModel extends Model
     {
         return DB::table($this->table)->where(['user_phone'=>$user_phone])->update($user_error);
 
+    }
+
+    public function userSum(){
+        //用户总人数统计
+        return DB::table($this->table)->get()->count();
+    }
+
+    public function userTime($begin,$end){
+        //按条件查注册用户统计
+        return DB::table($this->table)->whereBetween('user_reg_time', array($begin,$end))->get()->count();
     }
 }
