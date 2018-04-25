@@ -25,8 +25,10 @@ class UserModel extends Model
     }
 
     //查询
-    public function showUser($where=''){
+    public function showUser($where='')
+    {
         return DB::table($this->table)->where($where)->get()->toArray();
+    }
 
     /**
      * @param $data
@@ -75,3 +77,4 @@ class UserModel extends Model
 
     }
 }
+
