@@ -89,94 +89,12 @@
     <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
-    <div class="wrap navWrap clearfix">
-        <h2 class="logo">
-            <a href="/">
-                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
-            </a>
-        </h2>
-        <div class="nav">
-            <ul class="headerNav">
-                <li class="">
-                    <a href="/">首页</a>
-                </li>
-                <li class="">
-                    <a href="/list">项目列表</a>
-                </li>
-                <li id="diaryNav" class="">
-                    <a href="/daily/index" class="yunyingReportWc">旺财记事</a>
-                    <div class="hideSlideMain hide">
-                        <div class="topArrowBgWrap" >
-                            <!-- <i class="top-arrow1"></i> -->
-                            <i class="top-arrow2"></i>
-                        </div>
-                        <ul class="diary">
-                            <li>
-                                <a href="/daily/caizhu">财主见面会</a>
-                            </li>
-                            <li>
-                                <a href="/daily/index">旺财日记</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="reportNav" class=" active">
-                    <a href="/?reportData" class="yunyingReport">运营报告</a>
-                    <!-- <div class="hideSlideMain hide">
-                        <div class="topArrowBgWrap" >
-                            <i class="top-arrow1"></i>
-                            <i class="top-arrow2"></i>
-                        </div>
-                        <ul class="report">
-                            <li>
-                                <a href="/?operateReportQ1">2017年Q1季度报告</a>
-                            </li>
-                            <li>
-                                <a href="/?operateReport4">2016年Q4季度报告</a>
-                            </li>
-                            <li>
-                                <a href="/?operateReport3">2016年Q3季度报告</a>
-                            </li>
-                            <li>
-                                <a href="/?operateReport2">2016年Q2季度报告</a>
-                            </li>
-                        </ul>
-                    </div> -->
-                </li>
-                <li class=""><a href="/help/index">帮助中心</a></li>
-                <li class=""><a href="/about/index">信息披露</a></li>
-            </ul>
-        </div>
-        <div class="userNav">
-            <ul class="loginWrapRight clearfix">
-
-
-
-                <li id="nav_login_link" class="loginUrlLink">
-                    <a href="/user/to_login" class="js_userTabLink" target="_blank">登录</a>
-                </li>
-                <li class="centerLine"><span>|</span></li>
-                <li>
-                    <a href="/user/to_register" class="js_userTabLink" target="_blank">注册</a>
-                </li>
-
-
-            </ul>
-        </div>
-    </div>
 </div>
 
 
 
 
-<!-- loading开始 -->
-<div class="loadWrap">
-    <span class="loadlogo"></span>
-    <div class="loadBox"></div>
-    <span class="loadText">正在加载...</span>
-</div>
-<!-- loading结束 -->
-<div class="wrapper hidden" id="wrapper">
+<div class="wrapper" id="wrapper">
     <!-- <div class="slideBar" id="slideBar">
         <ul>
             <li class="one"><a href="#platformData">平台数据</a></li>
@@ -531,13 +449,13 @@
             </div>
 
             <div class="reportOld">
-                <div class="imgAll hidden">
+                <div class="imgAll">
                     <a href="/?operateReport1"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report4.png"></a>
                     <a href="/?operateReport2"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report1.png"></a>
                     <a href="/?operateReport3"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report2.png"></a>
                     <a href="/?operateReport4"><img src="http://www.91.com/v1.1.0/img/operateReport/index/report3.png"></a>
                 </div>
-                <div class="imgAllNew imgAllNew1 hidden" id="imgAllNewWrap1">
+                <div class="imgAllNew imgAllNew1" id="imgAllNewWrap1">
                     <script id="imgAllNew1" type="text/html">
                         <a target="_blank" href=""><img src=""></a>
                     </script>
