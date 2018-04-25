@@ -18,7 +18,7 @@
 				<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 			</div>
 			<div class="cl pd-5 bg-1 bk-gray mt-20">
-				<span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="admin_add('添加管理员','admin-add.html','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a> </span>
+				<span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="admin_add('添加管理员','{{url('admin/admin_add')}}','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a> </span>
 				<span class="r">共有数据：<strong>54</strong> 条</span>
 			</div>
 			<table class="table table-border table-bordered table-bg">
@@ -39,28 +39,25 @@
 					</tr>
 				</thead>
 				<tbody>
+					@foreach ($adminListArr as $v)
 					<tr class="text-c">
 						<td><input type="checkbox" value="1" name=""></td>
-						<td>1</td>
-						<td>admin</td>
-						<td>13000000000</td>
-						<td>admin@mail.com</td>
-						<td>超级管理员</td>
-						<td>2014-6-11 11:11:42</td>
-						<td class="td-status"><span class="label label-success radius">已启用</span></td>
+						<td>{{$v['a_id']}}</td>
+						<td>{{$v['a_name']}}</td>
+						<td>{{$v['a_phone']}}</td>
+						<td>{{$v['a_email']}}</td>
+						<td>{{$v['r_id']}}</td>
+						<td>{{date('Y-m-d H:i:s',$v['a_start_time'])}}</td>
+						<td class="td-status">
+							@if ($v['a_status'] == 1)
+						        <span class="label label-success radius">已启用</span>
+						  	@else
+						  		<span class="label radius">已停用</span>
+						    @endif
+						</td>
 						<td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 					</tr>
-					<tr class="text-c">
-						<td><input type="checkbox" value="2" name=""></td>
-						<td>2</td>
-						<td>zhangsan</td>
-						<td>13000000000</td>
-						<td>admin@mail.com</td>
-						<td>栏目编辑</td>
-						<td>2014-6-11 11:11:42</td>
-						<td class="td-status"><span class="label radius">已停用</span></td>
-						<td class="td-manage"><a style="text-decoration:none" onClick="admin_start(this,'10001')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','2','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-					</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</article>
