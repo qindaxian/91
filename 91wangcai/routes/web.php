@@ -131,12 +131,13 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/operationreport', 'OperationreportController@index');
     //前台项目列表
     Route::get('home/projectlist', 'ProjectlistController@index');
-    //前台旺财记事
-    Route::get('home/chronicle', 'ChronicleController@index');
     //前台旺财日记
-    Route::get('home/notes', 'ChronicleController@meeting_diary');
+    Route::get('/chronicle', 'ChronicleController@index');
     //前台财主见面会
-    Route::get('home/caizhu', 'ChronicleController@meeting');
+    Route::get('/caizhu', 'ChronicleController@caizhu');
+    //前台旺财日记或财主数据
+    Route::get('/meeting_diary', 'ChronicleController@meeting_diary');
+    
 
 
     //用户登陆
