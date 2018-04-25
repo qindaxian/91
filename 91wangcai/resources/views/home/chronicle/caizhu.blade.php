@@ -1,30 +1,31 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>91旺财旺财记事-记录旺财的点滴</title>
-<meta name="keywords" content="91旺财，旺财，旺财记事，旺财成长">
-<meta name="description" content="91旺财成长日记，旺财一点一滴的成长都是记录我们发展，每月定期举办财主见面会，已在北京、上海等地连续举办100期。">
-<!-- 导入旺财日记样式开始 -->
-<link rel="stylesheet" type="text/css" href="/static/v1.1.0/css/daily/daily_style.css?t=2">
-<!-- 导入旺财日记样式结束 -->
-<div class="none">
-<!-- www.91wangcai.com的统计代码 -->
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<!-- www.91wangcai.com的统计代码 -->
-</div>
+    <meta charset="utf-8">
+    <title>91旺财旺财记事-记录旺财的点滴</title>
+    <meta name="keywords" content="91旺财，旺财，旺财记事，旺财成长">
+    <meta name="description" content="91旺财成长日记，旺财一点一滴的成长都是记录我们发展，每月定期举办财主见面会，已在北京、上海等地连续举办100期。">
+    <!-- 导入财主见面会样式开始 -->
+    <link rel="stylesheet" type="text/css" href="/static/v1.1.0/css/daily/caizhu_style.css">
+    <!-- 导入财主见面会样式结束 -->
+    <div class="none">
+        <!-- www.91wangcai.com的统计代码 -->
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?a5e066626801308aabc261e863bc5ff2";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        <!-- www.91wangcai.com的统计代码 -->
+    </div>
 </head>
-<body>
 
+<body>
+    
 
 
 
@@ -182,36 +183,37 @@ var _hmt = _hmt || [];
 
 
 
-<!--header开始-->
-<div class="daily_top">
-    <div class="wrap">
-        <ul class="daily_title clearfix">
-            <li><a class="active" href="/chronicle">旺财日记</a></li>
-            <li class="middle"></li>
-            <li><a href="/caizhu">财主见面会</a></li>
-        </ul>
-        <ul id="dates" class="daily_time clearfix">
-        </ul>
+    <!--header开始-->
+    <div class="daily_top">
+        <div class="wrap">
+            <ul class="daily_title clearfix">
+                <li><a href="/chronicle">旺财日记</a></li>
+                <li class="middle"></li>
+                <li><a class="active" href="/caizhu">财主见面会</a></li>
+            </ul>
+            <ul id="dates" class="daily_time clearfix">
+            </ul>
+        </div>
     </div>
-</div>
-<!--header结束-->
-<!-- loading开始 -->
-  <div class="loadWrap">
-      <span class="loadlogo"></span>
-      <div class="loadBox"></div>
-      <span class="loadText">正在加载...</span>
-  </div>
-  <!-- loading结束 -->
-<!--main开始-->
-<div class="main hidden">
-    <div class="timeline">
-        <ul id="issues" class="clearfix">
-        </ul>
+    <div class="main">
+        <!-- loading开始 -->
+        <div class="loadWrap">
+            <span class="loadlogo"></span>
+            <div class="loadBox"></div>
+            <span class="loadText">正在加载...</span>
+        </div>
+        <!-- loading结束 -->
+        <div class="wrapper hidden">
+            <ul class="listYear clearfix" id="listYear">
+            </ul>
+            <!-- 分页信息开始 -->
+            <div class="pageBox" id="pager"></div>
+            <!-- 分页信息结束 -->
+        </div>
+        <!-- tab内容结束 -->
     </div>
-</div>
-<!--main结束-->
-<div class="footer">
-    <div class="wrap clearfix footerWrap">
+    <div class="footer">
+	<div class="wrap clearfix footerWrap">
         <dl class="footer_item addressWrap">
             <dt class="tipTitle">联系我们</dt>
             <dd>
@@ -289,7 +291,10 @@ ga('create', 'UA-53638773-1', 'auto');
 ga('send', 'pageview');
 </script>
 </div>
-<!-- 导入对应js开始 -->
- <script src="/static/v1.1.0/js/daily/index_main.js"></script>
+    <!-- 导入对应js开始 -->
+    <script src="/static/v1.1.0/js/daily/caizhu_main.js"></script>
+    <!-- 导入对应js开始 -->
+
 </body>
+
 </html>

@@ -25,9 +25,11 @@ class UserModel extends Model
     }
 
     //查询
-    public function showUser($where=''){
+    public function showUser($where='')
+    {
         return DB::table($this->table)->where($where)->get()->toArray();
     }
+
     /**
      * @param $data
      * @return int
@@ -85,3 +87,4 @@ class UserModel extends Model
         return DB::table($this->table)->whereBetween('user_reg_time', array($begin,$end))->get()->count();
     }
 }
+
