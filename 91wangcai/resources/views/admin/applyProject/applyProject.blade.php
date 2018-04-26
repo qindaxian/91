@@ -82,7 +82,7 @@
             }
             });
             $.ajax({
-                url:"{{url('admin/applyProject_add')}}",
+                url:"{{url('admin/applyproject_add')}}",
                 data:{
                      z_name:z_name,z_rate:z_rate,z_money:z_money,z_state:z_state,z_date:z_date
                 },

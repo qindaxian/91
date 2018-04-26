@@ -45,7 +45,7 @@ class ApplyProjectController extends Controller{
     }
 
     public function ajaxAdd(){
-        
+
         $obj = new ApplyProjectModel();
         $data = Input::All();
         if($data['z_money'] == ''){
@@ -58,14 +58,11 @@ class ApplyProjectController extends Controller{
         $ap_pro_rate = $data['z_rate'];
         $ap_pro_money = $data['z_money'];
         $ap_pro_state = $data['z_state'];
-<<<<<<< HEAD
+
         $ap_pro_date = $data['z_date'];
-        if (!preg_match('/^[6-8]+(.[0-9]{1,2})?$/', $ap_pro_rate)) {  
-            return '请输入符合规范的年利率';   
-=======
         if (!preg_match('/^[6-8]+(.[0-9]{1,2})?$/', $ap_pro_rate)) {
-            echo '请输入符合规范的年利率';
->>>>>>> feature/2018-4-25
+            return '请输入符合规范的年利率';
+
         }
         $ap_pro_money = (int)$ap_pro_money;
         if($ap_pro_money < 10000){
@@ -108,7 +105,7 @@ class ApplyProjectController extends Controller{
 
         $obj = new ApplyProjectModel();
         $res = $obj -> getAll();
-<<<<<<< HEAD
+
         $num = count($res);
 
         return view('admin/applyProject/applyProject_list',['res'=>$res,'num'=>$num]);
@@ -145,12 +142,7 @@ class ApplyProjectController extends Controller{
             return '您的项目已经通过申请,请继续关注网站动态';
            }
         }
-        
-    }
-=======
-
-        return view('admin/applyProject/applyProject_list',['res'=>$res]);
->>>>>>> feature/2018-4-25
+}
 
     public function applyProductdel(){
         $ap_id = Input::get('ap_id');

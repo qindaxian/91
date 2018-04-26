@@ -52,27 +52,19 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/login','LoginController@login');
 
     //业务申请-项目贷款申请列表
-<<<<<<< HEAD
-    Route::get('admin/applyProject','ApplyProjectController@index');
-    Route::post('admin/applyProject','ApplyProjectController@index');
-    Route::post('admin/applyProject_add','ApplyProjectController@ajaxAdd');
 
-
-    //业务申请-项目贷款申请列表展示
-
-    Route::get('admin/applyProject_list','ApplyProjectController@list');
-    Route::get('admin/ProductAdd','ApplyProjectController@productAdd');
-    
-    Route::get('admin/applyProductdel','ApplyProjectController@applyProductdel');
-=======
     Route::get('admin/applyproject','ApplyProjectController@index');
     Route::post('admin/applyproject','ApplyProjectController@index');
     Route::post('admin/applyproject_add','ApplyProjectController@ajaxAdd');
 
+
     //业务申请-项目贷款申请列表展示
 
     Route::get('admin/applyproject_list','ApplyProjectController@list');
->>>>>>> feature/2018-4-25
+    Route::get('admin/ProductAdd','ApplyProjectController@productAdd');
+    Route::get('admin/applyProductdel','ApplyProjectController@applyProductdel');
+
+
 
 
     //后台管理员管理
