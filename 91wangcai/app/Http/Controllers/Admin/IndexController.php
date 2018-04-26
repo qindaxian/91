@@ -46,14 +46,10 @@ class IndexController extends Controller
     	//项目总数
     	$project = new ProjectModel;
     	$project_sum = $project->projectSum();
-    	//资讯总数
-    	$diary = new DiaryModel;
-    	$diary_sum = $diary->diarySum();
     	$sum = [
     		'admin_sum' => $admin_sum,
     		'user_sum' => $user_sum,
-    		'project_sum' => $project_sum,
-    		'diary_sum' => $diary_sum
+    		'project_sum' => $project_sum
     	];
     	return $sum;
     }
@@ -70,14 +66,10 @@ class IndexController extends Controller
     	//今日新增项目数
     	$project = new ProjectModel;
     	$project_day = $project->projectTime($today,$tomorrow);
-    	//今日新增资讯数
-    	$diary = new DiaryModel;
-    	$diary_day = $diary->diaryTime($today,$tomorrow);
     	$day = [
     		'admin_day' => $admin_day,
     		'user_day' => $user_day,
-    		'project_day' => $project_day,
-    		'diary_day' => $diary_day
+    		'project_day' => $project_day
     	];
     	return $day;
     }
@@ -94,14 +86,10 @@ class IndexController extends Controller
     	//昨日新增项目数
     	$project = new ProjectModel;
     	$project_yesterday = $project->projectTime($yesterday,$today);
-    	//昨日新增资讯数
-    	$diary = new DiaryModel;
-    	$diary_yesterday = $diary->diaryTime($yesterday,$today);
     	$yesterday = [
     		'admin_yesterday' => $admin_yesterday,
     		'user_yesterday' => $user_yesterday,
-    		'project_yesterday' => $project_yesterday,
-    		'diary_yesterday' => $diary_yesterday
+    		'project_yesterday' => $project_yesterday
     	];
     	return $yesterday;
     }
@@ -118,14 +106,10 @@ class IndexController extends Controller
     	//本周新增项目数
     	$project = new ProjectModel;
     	$project_week = $project->projectTime($week_begin,$week_end);
-    	//本周新增资讯数
-    	$diary = new DiaryModel;
-    	$diary_week = $diary->diaryTime($week_begin,$week_end);
     	$week = [
     		'admin_week' => $admin_week,
     		'user_week' => $user_week,
-    		'project_week' => $project_week,
-    		'diary_week' => $diary_week
+    		'project_week' => $project_week
     	];
     	return $week;
     }
@@ -142,14 +126,10 @@ class IndexController extends Controller
     	//本月新增项目数
     	$project = new ProjectModel;
     	$project_month = $project->projectTime($month_begin,$month_end);
-    	//本月新增资讯数
-    	$diary = new DiaryModel;
-    	$diary_month = $diary->diaryTime($month_begin,$month_end);
     	$month = [
     		'admin_month' => $admin_month,
     		'user_month' => $user_month,
-    		'project_month' => $project_month,
-    		'diary_month' => $diary_month
+    		'project_month' => $project_month
     	];
     	return $month;
     }
