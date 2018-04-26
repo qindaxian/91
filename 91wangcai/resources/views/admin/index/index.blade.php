@@ -19,7 +19,6 @@
 					</tr>
 					<tr class="text-c">
 						<th>统计</th>
-						<th>资讯库</th>
 						<th>产品库</th>
 						<th>用户</th>
 						<th>管理员</th>
@@ -28,35 +27,30 @@
 				<tbody>
 					<tr class="text-c">
 						<td>总数</td>
-						<td>{{$sum['diary_sum']}}</td>
 						<td>{{$sum['project_sum']}}</td>
 						<td>{{$sum['user_sum']}}</td>
 						<td>{{$sum['admin_sum']}}</td>
 					</tr>
 					<tr class="text-c">
 						<td>今日</td>
-						<td>{{$day['diary_day']}}</td>
 						<td>{{$day['project_day']}}</td>
 						<td>{{$day['user_day']}}</td>
 						<td>{{$day['admin_day']}}</td>
 					</tr>
 					<tr class="text-c">
 						<td>昨日</td>
-						<td>{{$yesterday['diary_yesterday']}}</td>
 						<td>{{$yesterday['project_yesterday']}}</td>
 						<td>{{$yesterday['user_yesterday']}}</td>
 						<td>{{$yesterday['admin_yesterday']}}</td>
 					</tr>
 					<tr class="text-c">
 						<td>本周</td>
-						<td>{{$week['diary_week']}}</td>
 						<td>{{$week['project_week']}}</td>
 						<td>{{$week['user_week']}}</td>
 						<td>{{$week['admin_week']}}</td>
 					</tr>
 					<tr class="text-c">
 						<td>本月</td>
-						<td>{{$month['diary_month']}}</td>
 						<td>{{$month['project_month']}}</td>
 						<td>{{$month['user_month']}}</td>
 						<td>{{$month['admin_month']}}</td>
