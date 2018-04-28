@@ -19,16 +19,18 @@ class DiaryController extends Controller
     public function diaryAdd(Request $request){
         if(Input::all()){
             $arr = Input::all();
-            $data['d_title'] = $arr['d_title'];
-            $data['d_type'] = $arr['d_type'];
-            $data['d_content'] = $arr['editorValue'];
-            $data['d_label'] = $arr['d_label'];
-            $data['d_img'] = session('diary_upload');
-            $request->session()->forget('diary_upload');
-            if(empty($data['d_title']) || empty($data['d_type']) || empty($data['d_content']) || empty($data['d_img'])){
+            $data['title'] = $arr['title'];
+            $data['file_url'] = $arr['file_url'];
+            $data['contents'] = $arr['editorValue'];
+            $data['content_url'] = $arr['content_url'];
+            // $data['d_img'] = session('diary_upload');
+            // $request->session()->forget('diary_upload');
+            if(empty($data['title']) || empty($data['file_url']) || empty($data['contents']) || empty($data['content_url'])){
                  return redirect('admin/diary');
             }
-            $data['d_time'] = date('Y-m-d');
+            $data['year'] = date('Y');
+            $data['month'] = date('m');
+            $data['day'] = date('d');
             $diary = new DiaryModel;
             $res = $diary->add($data);
             if($res){
@@ -38,20 +40,20 @@ class DiaryController extends Controller
         return view('admin/diary/diary_add');
     }
 
-    public function diaryUpload(Request $request)
-    {
-        $file = $request->file('file');
-        $allowed_extensions = ["png", "jpg", "gif","jpeg"];
-        if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
-            return ['error' => '你必须上传 png, jpg 或者 gif格式的图片.'];
-        }
-        $destinationPath = 'uploads/diary/'; //public 文件夹下面建 storage/uploads 文件夹
-        $extension = $file->getClientOriginalExtension();
-        $fileName = str_random(10).'.'.$extension;
-        $res = $file->move($destinationPath, $fileName);
-        $filePath = asset($destinationPath.$fileName);
-        session(['diary_upload' => $filePath]);
-    }
+    // public function diaryUpload(Request $request)
+    // {
+    //     $file = $request->file('file');
+    //     $allowed_extensions = ["png", "jpg", "gif","jpeg"];
+    //     if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
+    //         return ['error' => '你必须上传 png, jpg 或者 gif格式的图片.'];
+    //     }
+    //     $destinationPath = 'uploads/diary/'; //public 文件夹下面建 storage/uploads 文件夹
+    //     $extension = $file->getClientOriginalExtension();
+    //     $fileName = str_random(10).'.'.$extension;
+    //     $res = $file->move($destinationPath, $fileName);
+    //     $filePath = asset($destinationPath.$fileName);
+    //     session(['diary_upload' => $filePath]);
+    // }
 
     public function diaryStop(){
         $id = Input::get('id');

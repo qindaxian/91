@@ -37,13 +37,10 @@
 							<th width="80">ID</th>
 							<th>标题</th>
 							<th width="80">封面图</th>
-							<th width="80">标签</th>
 							<th width="120">更新时间</th>
-							<th width="75">类型</th>
 							<th width="60">发布状态</th>
-							<th width="60">浏览次数</th>
 							<th width="120">操作</th>
-						</tr>
+						</tr>		
 					</thead>
 					<tbody>
 						<?php for($i=0;$i<count($data);$i++){ ?>
@@ -51,19 +48,16 @@
 								<td><input type="checkbox" value="" name=""></td>
 								<td><?= $i+1 ?></td>
 								<td class="text-l">
-									<u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10001')" title="查看"><?= $data[$i]->d_title ?></u>
+									<u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10001')" title="查看"><?= $data[$i]->title ?></u>
 								</td>
-								<td><img src="<?= $data[$i]->d_img ?>" width="150px"></td>
-								<td><?= $data[$i]->d_label ?></td>
-								<td><?= $data[$i]->d_time ?></td>
-								<td><?= $data[$i]->d_type == 1 ? "旺财日记" : "财主见面会"; ?></td>
+								<td><img src="<?= $data[$i]->file_url ?>" width="150px"></td>
+								<td><?= $data[$i]->year.'-'.$data[$i]->month.'-'.$data[$i]->day?></td>
 								<td class="td-status">
-									<?= $data[$i]->d_status == 1 ? '<span class="label label-success radius">已发布</span>' : '<span class="label label-defaunt radius">已下架</span>'; ?>
+									<?= $data[$i]->is_diary == 1 ? '<span class="label label-success radius">已发布</span>' : '<span class="label label-defaunt radius">已下架</span>'; ?>
 
 								</td>
-								<td><?= $data[$i]->d_num ?></td>
 								<td class="f-14 td-manage">
-									<?php if($data[$i]->d_status == 1){ ?>
+									<?php if($data[$i]->is_diary == 1){ ?>
 									<a style="text-decoration:none" class="article_stop" id="{{$data[$i]->d_id}}" href="javascript:;" title="下架">
 										<i class="Hui-iconfont">&#xe6de;</i>
 									</a>
