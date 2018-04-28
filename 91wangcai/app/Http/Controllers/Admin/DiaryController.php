@@ -19,16 +19,18 @@ class DiaryController extends Controller
     public function diaryAdd(Request $request){
         if(Input::all()){
             $arr = Input::all();
-            $data['d_title'] = $arr['d_title'];
-            $data['d_type'] = $arr['d_type'];
-            $data['d_content'] = $arr['editorValue'];
-            $data['d_label'] = $arr['d_label'];
-            $data['d_img'] = session('diary_upload');
-            $request->session()->forget('diary_upload');
-            if(empty($data['d_title']) || empty($data['d_type']) || empty($data['d_content']) || empty($data['d_img'])){
+            $data['title'] = $arr['title'];
+            $data['contents'] = $arr['editorValue'];
+            $data['file_url'] = $arr['file_url'];
+            $data['content_url'] = $arr['content_url'];
+            // $data['d_img'] = session('diary_upload');
+            // $request->session()->forget('diary_upload');
+            if(empty($data['title']) || empty($data['contents']) || empty($data['file_url']) || empty($data['content_url'])){
                  return redirect('admin/diary');
             }
-            $data['d_time'] = date('Y-m-d');
+            $data['year'] = date('Y');
+            $data['month'] = date('m');
+            $data['day'] = date('d');
             $diary = new DiaryModel;
             $res = $diary->add($data);
             if($res){

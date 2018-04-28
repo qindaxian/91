@@ -39,9 +39,9 @@ class DiaryModel extends Model
         return DB::table($this->table)->insert($data);
     }
 
-    public function disry_status($id,$d_status){
+    public function disry_status($id,$is_diary){
         //修改状态
-        return DB::table($this->table)->where(['d_id' => $id])->update(['d_status' => $d_status]);
+        return DB::table($this->table)->where(['d_id' => $id])->update(['is_diary' => $is_diary]);
     }
 
     /**
