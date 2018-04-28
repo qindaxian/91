@@ -20,12 +20,21 @@ class DiaryController extends Controller
         if(Input::all()){
             $arr = Input::all();
             $data['title'] = $arr['title'];
+
+            $data['contents'] = $arr['editorValue'];
+            $data['file_url'] = $arr['file_url'];
+            $data['content_url'] = $arr['content_url'];
+            // $data['d_img'] = session('diary_upload');
+            // $request->session()->forget('diary_upload');
+            if(empty($data['title']) || empty($data['contents']) || empty($data['file_url']) || empty($data['content_url'])){
+
             $data['file_url'] = $arr['file_url'];
             $data['contents'] = $arr['editorValue'];
             $data['content_url'] = $arr['content_url'];
             // $data['d_img'] = session('diary_upload');
             // $request->session()->forget('diary_upload');
             if(empty($data['title']) || empty($data['file_url']) || empty($data['contents']) || empty($data['content_url'])){
+
                  return redirect('admin/diary');
             }
             $data['year'] = date('Y');

@@ -51,7 +51,11 @@
 									<u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10001')" title="查看"><?= $data[$i]->title ?></u>
 								</td>
 								<td><img src="<?= $data[$i]->file_url ?>" width="150px"></td>
+
+								<td><?= $data[$i]->year.'-'.$data[$i]->month.'-'.$data[$i]->day ?></td>
+
 								<td><?= $data[$i]->year.'-'.$data[$i]->month.'-'.$data[$i]->day?></td>
+
 								<td class="td-status">
 									<?= $data[$i]->is_diary == 1 ? '<span class="label label-success radius">已发布</span>' : '<span class="label label-defaunt radius">已下架</span>'; ?>
 
