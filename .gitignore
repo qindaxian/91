@@ -1,13 +1,13 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-/.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+/91wangcai/node_modules
+/91wangcai/public/hot
+/91wangcai/public/storage
+/91wangcai/storage/*.key
+/91wangcai/vendor
+/91wangcai/.idea
+/91wangcai/.vagrant
+/91wangcai/Homestead.json
+/91wangcai/Homestead.yaml
+/91wangcai/npm-debug.log
+/91wangcai/yarn-error.log
 
-.env
+/91wangcai/.env
