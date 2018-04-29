@@ -121,7 +121,7 @@
         </h2>
         <div class="nav">
             <ul class="headerNav">
-                <li class=" active">
+                <li class="active">
                     <a href="/home/index">首页</a>
                 </li>
                 <li class="">

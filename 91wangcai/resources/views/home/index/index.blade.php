@@ -1,9 +1,5 @@
 @extends('home.common.base')
 @section('content')
-<!-- banner轮换图开始 -->
-<script src="http://www.91.com/js/lbt/script/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/js/lbt/script/carousel.js"></script>
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 <!doctype html>
 <html>
 <head>
@@ -13,7 +9,7 @@
     <meta name="description" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航">
     <meta name="baidu-site-verification" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航" />
     <!-- 导入首页样式开始 -->
-    <link href="http://www.91.com/v1.1.0/css/homepage/homepage_style.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('v1.1.0/css/homepage/homepage_style.css')}}" rel="stylesheet" type="text/css">
     <!-- 导入首页样式结束 -->
     <!-- 导入轮播图样式开始 -->
     <!-- 导入轮播图样式结束 -->
@@ -95,13 +91,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_tel.png')}}"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_QQ.png')}}"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_help.png')}}"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
+                <img src="{{asset('v1.1.0/img/common/weixin1.png')}}"/>
             </div>
         </div>
     </div>
@@ -120,15 +116,10 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
+    <input type="hidden" value="{{asset('v1.1.0')}}" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
 <!-- 导入头部结束 -->
-<!-- banner轮换图开始 -->
-<link rel="stylesheet" type="text/css" href="http://www.91.com/css/style.css">
-<script type="text/javascript" src="http://www.91.com/js/scripts/jquery.min.js"></script>
-<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
-<script type="text/javascript" src="http://www.91.com/js/scripts/carousel.js"></script>
 <!-- banner轮换图开始 -->
 <div class="sliderWrap">
     <div class="slider-wrap">
@@ -139,10 +130,13 @@
             @endforeach
         </ul>
         <ul class="img-index"></ul>
-        <div class="carousel-prev"><img src="http://www.91.com/images/lbt/left_btn1.png"></div>
-        <div class="carousel-next"><img src="http://www.91.com/images/lbt/right_btn1.png"></div>
+        <div class="carousel-prev"><img src="{{asset('images/lbt/left_btn1.png')}}"></div>
+        <div class="carousel-next"><img src="{{asset('images/lbt/right_btn1.png')}}"></div>
     </div>
-
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<script type="text/javascript" src="{{asset('js/scripts/jquery.min.js')}}"></script>
+<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src="{{asset('js/scripts/carousel.js')}}"></script>
     <script type="text/javascript">
         $(function(){
             $(".carousel-content").carousel({
@@ -155,14 +149,14 @@
                 auto : true,//是否自动播放
             });
             $(".carousel-prev").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn2.png");
+                $(this).find("img").attr("src","{{asset('images/lbt/left_btn2.png')}}");
             },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/left_btn1.png");
+                $(this).find("img").attr("src","{{asset('images/lbt/left_btn1.png')}}");
             });
             $(".carousel-next").hover(function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn2.png");
+                $(this).find("img").attr("src","{{asset('images/lbt/right_btn2.png')}}");
             },function(){
-                $(this).find("img").attr("src","http://www.91.com/images/lbt/right_btn1.png");
+                $(this).find("img").attr("src","{{asset('images/lbt/right_btn1.png')}}");
             });
         });
     </script>
@@ -271,7 +265,7 @@
         <div class="pinpai">
             <a href="/about/depository" target="_blank">
                 <dl>
-                    <dt><img src="http://www.91.com/v1.1.0/img/homepage/pic1.png"></dt>
+                    <dt><img src="{{asset('v1.1.0/img/homepage/pic1.png')}}"></dt>
                     <dd>
                         <h2>银行存管</h2>
                         <p>厦门银行资金存管</p>
@@ -282,7 +276,7 @@
 
             <a href="/about/qualification" target="_blank">
                 <dl>
-                    <dt><img src="http://www.91.com/v1.1.0/img/homepage/pic2.png"></dt>
+                    <dt><img src="{{asset('v1.1.0/img/homepage/pic2.png')}}"></dt>
                     <dd>
                         <h2>合规自律</h2>
                         <p>中国互联网金融协会理事单位</p>
@@ -293,7 +287,7 @@
 
             <a href="/about/investor" target="_blank">
                 <dl>
-                    <dt><img src="http://www.91.com/v1.1.0/img/homepage/pic3.png"></dt>
+                    <dt><img src="{{asset('v1.1.0/img/homepage/pic3.png')}}"></dt>
                     <dd>
                         <h2>战略投资人</h2>
                         <p>完成三轮融资</p>
@@ -596,7 +590,7 @@
         </dd>
     </dl>
     <!-- 理财项目结束 -->
-    <a href="help/safety"><img src="http://www.91.com/v1.1.0/img/homepage/banner1.jpg" alt="厦门银行存管，安全有保障"/></a>
+    <a href="help/safety"><img src="{{asset('v1.1.0/img/homepage/banner1.jpg')}}" alt="厦门银行存管，安全有保障"/></a>
     <!-- 媒体报道开始 -->
     <dl class="moduleItem">
         <dt>
@@ -698,22 +692,22 @@
         <dd class="partnerList clearfix">
             <div class="list">
                 <a href="/about/cooperation/#haitong">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner1.png" alt="海通证券">
+                    <img src="{{asset('v1.1.0/img/homepage/partner1.png')}}" alt="海通证券">
                 </a>
             </div>
             <div class="list">
                 <a href="/about/cooperation/#kuandai">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner3.png" alt="宽带资本" >
+                    <img src="{{asset('v1.1.0/img/homepage/partner3.png')}}" alt="宽带资本" >
                 </a>
             </div>
             <div class="list">
                 <a href="/about/cooperation/#jingwei">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner2.png" alt="经纬中国" >
+                    <img src="{{asset('v1.1.0/img/homepage/partner2.png')}}" alt="经纬中国" >
                 </a>
             </div>
             <div class="list lastList">
                 <a href="/about/cooperation/#xiamen">
-                    <img src="http://www.91.com/v1.1.0/img/homepage/partner4.png" alt="厦门银行" >
+                    <img src="{{asset('v1.1.0/img/homepage/partner4.png')}}" alt="厦门银行" >
                 </a>
             </div>
         </dd>
@@ -726,11 +720,11 @@
 <!-- 首页内容部分结束 -->
 @endsection('content')
 
-<!-- <script src="http://www.91.com/v1.1.0/js/homepage/homepage_main.js"></script> -->
+<!-- <script src="{{asset('')}}v1.1.0/js/homepage/homepage_main.js"></script> -->
 </div>
 </body>
 </html>
-<script src="http://www.91.com/js/jquery-3.2.1.min.js"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script>
     /**
      * 选项卡
@@ -836,7 +830,7 @@
         $("#btnSendCode").attr("disabled", "true");
         $("#btnSendCode").val(curCount + "秒后可重新发送");
         var user_phone = $("input[name = 'phone']").val();
-        var url = "http://www.91.com/index.php/home/registers";
+        var url = "{{url('home/registers')}}";
         var error = $("#span_reg");
         $.ajax({
             url:url,

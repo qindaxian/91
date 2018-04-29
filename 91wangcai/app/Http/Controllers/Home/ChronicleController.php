@@ -81,7 +81,7 @@ class ChronicleController extends Controller
                        $contents['contents']=$arr[$i]['contents'];
                        $contents['file_url'][]=$arr[$i]['file_url'];
                        $contents['content_url']=$arr[$i]['content_url'];
-                       $contents['time']=$arr[$i]['year'].'-'.$arr[$i]['month'].'-'.$arr[$i]['day'];
+                       $contents['title_time']=$arr[$i]['year'].'-'.$arr[$i]['month'].'-'.$arr[$i]['day'];
                        $data['data']['messageInfo'][]=$contents;
                    }  
 

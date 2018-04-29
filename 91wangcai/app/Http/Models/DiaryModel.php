@@ -45,7 +45,6 @@ class DiaryModel extends Model
 
     }
 
-    } 
 
 
     /**
