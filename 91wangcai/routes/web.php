@@ -151,13 +151,10 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('/caizhu', 'ChronicleController@caizhu');
     //前台旺财日记或财主数据
     Route::get('/meeting_diary', 'ChronicleController@meeting_diary');
-    
 
 
     //用户登陆
     Route::post('/login','IndexController@login');
-    Route::get('/user','IndexController@user');
-
     //用户注册
     Route::post('/register','IndexController@register');
 

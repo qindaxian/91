@@ -162,14 +162,16 @@
     </script>
     </div>
     <div class="wrap userWrap" id="user_box">
-                <div class="loginRegisterWrap">
+        @if (empty($_COOKIE['user_name']))
+            <div class="loginRegisterWrap">
                     <!-- 登录开始 -->
                     <div class="loginWrap js_item" id="logins">
                         <!-- <span class="loginArrow"></span> -->
                     <ul>
+                        <li><span style="color:red;width: 20px;" id="span_login"></span></li>
                         <li>
                             <label for="username" class="form_group_focus">
-                                <span style="color:red;" id="span_login" class="userNameIcon"></span>
+                                <span class="userNameIcon"></span>
                                 <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone" required>
                             </label>
                         </li>
@@ -184,8 +186,8 @@
                                 <span class="codeIcon"></span>
                                 <input type="text" class="input code" placeholder="请输入验证码" name="code" required>
                                 <span class="codeImgWrap">
-			  								<img src="{{ URL('home/captcha') }}" id="valicodeImg" alt="点击刷新" onclick="this.src='{{ URL('home/captcha') }}?t='+ Math.random()">
-			  							</span>
+                                            <img src="{{ URL('home/captcha') }}" id="valicodeImg" alt="点击刷新" onclick="this.src='{{ URL('home/captcha') }}?t='+ Math.random()">
+                                        </span>
                                 <span class="error"></span>
                             </label>
                         </li>
@@ -199,9 +201,26 @@
                             <input name="" type="checkbox" value="" checked="">我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
                         </li>
                     </ul>
-                    </div>
-                    <!-- 登录结束 -->
+                </div><!-- 登录结束 -->
+        @else
+             <!-- 登陆成功开始 -->
 
+                     <div class="welcomeWrap">
+                        <h2 class="welcomeText"><?php echo $userData->user_phone; ?>，欢迎您！</h2>
+                        <div class="welcomeSplit"></div>
+                        <div class="propertyWrap">
+                            <h2 class="propertyItem">
+                                <span class="propertyText">总&nbsp;&nbsp;资&nbsp;&nbsp;产:</span><?php echo $userData->user_total_assets; ?><span class="propertyText">元</span>
+                            </h2>
+                            <h2 class="propertyItem">
+                                <span class="propertyText">账户余额:</span><?php echo $userData->user_balance; ?><span class="propertyText">元</span>
+                            </h2>
+                        </div>
+                        <a href="/user/account/get" class="myPropertyLink">查看我的账户</a>
+                    </div>
+                    <!-- 登陆成功结束 -->
+
+        @endif
                     <!-- 注册开始 -->
                     <div class="registerWrap js_item" style="display:none" id="regs">
                         <!-- <span class="registerArrow"></span> -->
@@ -251,7 +270,7 @@
                             </ul>
                     </div>
                     <!-- 注册结束 -->
-                </div>
+
     </div>
 </div>
 
@@ -605,7 +624,7 @@
             <div class="mediaItem">
                 <div class="imgWrap">
                     <a target="_blank" href="/about/report_detail?media_id=4094">
-                        <img src="https://cdn-img01.91jinrong.com/data/upfiles/images/2018-4/13/ce077017-36fc-4074-a70f-9b32807d5723.jpg" alt="《北京日报》报道91科技集团许泽玮对互联网资管新政策观点：明确界定网贷平台定位 防止互联网资管业务违规"/>
+                        <img src="https://cdn-img01.91jinrong.com/userData/upfiles/images/2018-4/13/ce077017-36fc-4074-a70f-9b32807d5723.jpg" alt="《北京日报》报道91科技集团许泽玮对互联网资管新政策观点：明确界定网贷平台定位 防止互联网资管业务违规"/>
                     </a>
                 </div>
                 <h3 class="mediaTitle">
@@ -768,7 +787,7 @@
                         } else if(check.state == 3) {
                             error.html(check.text);
                         } else if(check == 4) {
-                            location.href = '/user';
+                            location.href = '{{url("home/index")}}';
                         }
                     }
                 }
@@ -808,7 +827,7 @@
                         error.html("手机号已被注册!");
                     }
                     if(check == 3) {
-                        location.href = "/user";
+                        location.href = "{{url('home/index')}}";
                     }
                 }
             });

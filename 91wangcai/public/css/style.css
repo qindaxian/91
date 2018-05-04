@@ -13,6 +13,7 @@ ul{
 	position: relative;
 	overflow: hidden;
 }
+
 .carousel li{
 	float: left;
 	position: absolute;

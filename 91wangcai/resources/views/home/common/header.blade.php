@@ -14,6 +14,8 @@
     <!-- 导入首页样式开始 -->
     <link href="{{asset('v1.1.0/css/homepage/homepage_style.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('v1.1.0/css/help/help_style.css')}}" rel="stylesheet" type="text/css">
+    <link rel="Bookmark" href="{{asset('favicon.ico')}}" >
+    <link rel="Shortcut Icon" href="{{asset('favicon.ico')}}" />
     <!-- 导入首页样式结束 -->
     <!-- 导入轮播图样式开始 -->
     <!-- 导入轮播图样式结束 -->
@@ -174,11 +176,9 @@
 
 
         </div>
+        @if (empty($_COOKIE['user_name']))
         <div class="userNav">
             <ul class="loginWrapRight clearfix">
-
-
-
                 <li id="nav_login_link" class="loginUrlLink">
                     <span class="js_userTabLink" target="_blank" id="login" style="cursor:pointer;">登录</span>
                 </li>
@@ -186,9 +186,48 @@
                 <li>
                     <span class="js_userTabLink" target="_blank" id="register" style="cursor:pointer;">注册</span>
                 </li>
-
-
             </ul>
         </div>
+        @else
+        <div class="userNav">
+            <ul class="loginWrapRight clearfix">
+                        <li class="userHover">
+                            <!-- <a href="/user/account/get">15810083779</a> -->
+                            <div class="userInfoLink">
+                                <span class="userInfoIcon"></span>
+                                <a href="/user/account/get?code=0.2776889861616779">我的账户</a>
+                            </div>
+
+                            <ul class="hideSlideMain hide">
+                                <i class="top-arrow2 top-arrow"></i>
+                                <li>
+                                    <a href="/user/account/get?code=0.2776889861616779">账户概况</a>
+                                </li>
+                                <li>
+                                    <a href="/user/recharge/to?code=0.2776889861616779" class="checkStatusBtn">充值提现</a>
+                                </li>
+                                <li>
+                                    <a href="/user/financial/chart?code=0.2776889861616779">借贷管理</a>
+                                </li>
+                                <li>
+                                    <a href="/user/commission?code=0.2776889861616779">我的佣金</a>
+                                </li>
+                                <li>
+                                    <a href="/user/redbonus?code=0.2776889861616779">红包礼券</a>
+                                </li>
+                                <li>
+                                    <a href="/user/setup?code=0.2776889861616779">账户设置</a>
+                                </li>
+                                <li>
+                                    <a href="/user/riskTest?code=0.2776889861616779">风险测评</a>
+                                </li>
+                            </ul>
+                        </li>
+<!--                         <li class="loginOutWrap">
+      <a href="{{url('login/out')}}" id="exitUser">退出</a>
+</li> -->
+            </ul>
+        </div>
+        @endif
     </div>
 </div>

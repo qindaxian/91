@@ -26,9 +26,16 @@ class IndexController extends Controller
     public function index(){
         $slideModel=new SlideShowModel();
         $slideArr=$slideModel->getSlideShow();
-        return view('home/index/index',['slideArr'=>$slideArr]);
+        $user = new UserModel();
+        @$user_name=$_COOKIE['user_name'];
+        if (!empty($user_name)) {
+            $userData = $user->selOne($user_name);
+        }
+        else{
+            $userData=[];
+        }
+        return view('home/index/index',['slideArr'=>$slideArr,'userData'=>$userData]);
     }
-
     /**
      * 用户登陆
      */
@@ -77,7 +84,7 @@ class IndexController extends Controller
         }
         $user = new UserModel();
         $data = $user->selOne($_COOKIE['user_name']);
-        return view('home/index/user',['data'=>$data]);
+        return redirect('home/index');
     }
 
     /**
