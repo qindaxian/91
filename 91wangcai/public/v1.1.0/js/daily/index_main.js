@@ -1645,7 +1645,7 @@ Diary.prototype = {
         var _that = this;
         var obj = {};
 
-        obj.url = "home/notes";
+        obj.url = "/meeting_diary";
         obj.params = {
             "type": 1,
             "page_size": _that.page_size,
@@ -1695,7 +1695,7 @@ Diary.prototype = {
     getListData: function (datayear, pageNum, pageSize) {
         var _that = this;
         var obj = {};
-        obj.url = '/mobile/v3/meeting_diary';
+        obj.url = '/meeting_diary';
         obj.params = {
             "type": 1,
             "page_size": pageSize,

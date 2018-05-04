@@ -32,7 +32,7 @@
   <!-- loading结束 -->
 <!--main开始-->
 <div class="main hidden">
-    <div class="timeline">
+    <div class="timeline" style="margin:0 auto; width: 870px;">
         <ul id="issues" class="clearfix">
         </ul>
     </div>

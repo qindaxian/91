@@ -51,9 +51,14 @@ class ApplyProjectModel extends Model
   
     public function getAll()  
     {  
-        return $this->get()->toArray();  
+        $a_id=session('admin')->a_id;
+        $roleInfo=session('roleInfo');
+        if ($roleInfo[0]['r_id']==1) {
+            return $this->get()->toArray();
+        }
+            return $this->where(['user_id'=>$a_id])->get()->toArray();
   
-    }       
+    }
   
       /** 
      * 修改管理员信息 

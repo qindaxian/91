@@ -1,6 +1,6 @@
 @extends('admin.common.base')
 @section('content')
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/jquery-1.8.2.min.js')}}"></script>
 <style>
 	.page-container{
 		width: 1400px;
@@ -53,14 +53,14 @@
 		</div>
 	</form>
 </div>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/1.9.1/jquery.min.js')}}"></script>
 
 
 
-<script type="text/javascript" src="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/webuploader/0.1.5/webuploader.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.config.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.all.min.js')}}"> </script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js')}}"></script>
 <script>
 	$("#form-article-add").on("submit",function(event){
             if(submit_name&&submit_idcard){

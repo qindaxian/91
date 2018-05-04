@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="http://www.91.com/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="{{asset('admin/static/h-ui/css/H-ui.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('admin/static/h-ui.admin/css/H-ui.admin.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('admin/lib/Hui-iconfont/1.0.8/iconfont.css')}}" />
 
-<link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="http://www.91.com/admin/static/h-ui.admin/css/style.css" />
-<link href="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{asset('admin/static/h-ui.admin/skin/default/skin.css')}}" id="skin" />
+<link rel="stylesheet" type="text/css" href="{{asset('admin/static/h-ui.admin/css/style.css')}}" />
+<link href="{{asset('admin/lib/webuploader/0.1.5/webuploader.css')}}" rel="stylesheet" type="text/css" />
 <div class="page-container">
 	<form action="" method="" enctype="multipart/form-data" class="form form-horizontal" id="form-article-add">
 		<div class="row cl">
@@ -14,7 +14,7 @@
 				<input type="text" class="input-text" value="" placeholder="" id="" name="title">
 			</div>
 		</div>
-		<!-- <div class="row cl">
+		 <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>记事类型：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
 				<select name="d_type" class="select" id="type">
@@ -29,7 +29,7 @@
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="" name="d_label">
 			</div>
-		</div> -->
+		</div>
 		<!-- <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -40,7 +40,7 @@
 				</div>
 			</div>
 		</div> -->
-		<!-- <div class="row cl">
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<div class="uploader-list-container">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片链接：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -94,26 +94,26 @@
 		</div>
 	</form>
 </div>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/static/h-ui/js/H-ui.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/1.9.1/jquery.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('admin/lib/layer/2.4/layer.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/static/h-ui/js/H-ui.js')}}"></script> 
+<script type="text/javascript" src="{{asset('admin/static/h-ui.admin/js/H-ui.admin.page.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery.validation/1.14.0/jquery.validate.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery.validation/1.14.0/validate-methods.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery.validation/1.14.0/messages_zh.js')}}"></script> 
+<script type="text/javascript" src="{{asset('admin/lib/webuploader/0.1.5/webuploader.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.config.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.all.min.js')}}"> </script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js')}}"></script>
 
 
 
 
 
-<script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/My97DatePicker/4.8/WdatePicker.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/datatables/1.10.0/jquery.dataTables.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/laypage/1.2/laypage.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js')}}"></script>
 
 <script>
 	$('#type').change(function(){
@@ -141,7 +141,7 @@ $(function(){
 		swf: 'lib/webuploader/0.1.5/Uploader.swf',
 	
 		// 文件接收服务端。
-		server: 'http://www.91.com/admin/diary_upload',
+		server: '{{url('admin/diary_upload')}}',
 	
 		// 选择文件的按钮。可选。
 		// 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -384,7 +384,7 @@ $(function(){
             swf: 'lib/webuploader/0.1.5/Uploader.swf',
             chunked: false,
             chunkSize: 512 * 1024,
-            server: 'http://www.91.com/admin/diary_upload',
+            server: '{{url('admin/diary_upload')}}',
             // runtimeOrder: 'flash',
 
             // accept: {

@@ -1,12 +1,12 @@
 @extends('admin.common.base')
 @section('content')
-        <link rel="stylesheet" type="text/css" href="http://www.91.com/admin/css/xcConfirm.css"/>
-        <script src="http://www.91.com/admin/js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
-        <script src="http://www.91.com/admin/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/css/xcConfirm.css')}}"/>
+        <script src="{{asset('admin/js/jquery-1.9.1.js')}}" type="text/javascript" charset="utf-8"></script>
+        <script src="{{asset('admin/js/xcConfirm.js')}}" type="text/javascript" charset="utf-8"></script>
         <style type="text/css">
             .sgBtn{width: 135px; height: 35px; line-height: 35px; margin-left: 10px; margin-top: 10px; text-align: center; background-color: #0095D9; color: #FFFFFF; float: left; border-radius: 5px;}
         </style>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{{asset('')}}admin/lib/jquery/jquery-1.8.2.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="page-container" style="margin-left: 200px; ">
         <h1 style="border: 2px solid black; border-radius: 50px; text-align: center;margin-bottom:20px; background-color: #DCDCDC;">贷款项目申请</h1>
@@ -103,9 +103,9 @@
     </script>
 @endsection
 
-<script type="text/javascript" src="http://www.91.com/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/webuploader/0.1.5/webuploader.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.config.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.all.min.js')}}"> </script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js')}}"></script>
 
 

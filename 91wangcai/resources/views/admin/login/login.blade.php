@@ -10,18 +10,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 
-
-<base href="http://www.91.com/">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
 <script type="text/javascript" src="lib/html5.js"></script>
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <![endif]-->
-<link href="static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="static/h-ui/css/H-ui.login.css" rel="stylesheet" type="text/css" />
-<link href="static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
-<link href="lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="{{asset('static/h-ui/css/H-ui.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('admin/static/h-ui.admin/css/H-ui.login.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('static/h-ui.admin/css/style.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('lib/Hui-iconfont/1.0.8/iconfont.css')}}" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -41,7 +39,7 @@
 
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value="" />
-<div class="header"></div>
+<div class="header"><h1>91旺财后台管理系统</h1></div>
 <div class="loginWraper">
 	<div id="loginform" class="loginBox">
 
@@ -79,16 +77,15 @@
 					<input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
 				</div>
 			</div>
-			
 		</form>
 	</div>
 </div>
 
 <div class="footer">91旺财 管理员登录</div>
 
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
-<script type="text/javascript" src="{{url('js/jquery-3.2.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/1.9.1/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('static/h-ui/js/H-ui.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {

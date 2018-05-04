@@ -168,8 +168,8 @@
                         <!-- <span class="loginArrow"></span> -->
                     <ul>
                         <li>
-                            <span style="color:red;" id="span_login"></span>
                             <label for="username" class="form_group_focus">
+                                <span style="color:red;" id="span_login" class="userNameIcon"></span>
                                 <input type="text" class="input userName" id="username" placeholder="请输入手机号" name="user_phone" required>
                             </label>
                         </li>
@@ -196,7 +196,7 @@
                             <input type="button" value="登录" class="loginBtn" id="login_btn">
                         </li>
                         <li class="checkProtocol">
-                            <input id="tiaokuanLogin" class="hidden" name="" type="checkbox" value="" checked=""><span class="checked_box" id="login_check"></span> 我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
+                            <input name="" type="checkbox" value="" checked="">我同意<a href="/about/reg_protocol" target="_blank"><span class="loginSpring">《91旺财用户注册协议》</span></a>
                         </li>
                     </ul>
                     </div>
@@ -246,7 +246,7 @@
                                     <input type="button" value="注册" class="loginBtn" id="register_btn" name="registerBtn">
                                 </li>
                                 <li class="checkProtocol">
-                                    <input type="checkbox" id="tiaokuan" class="hidden" checked=""><span class="checked_box" id="register_check"></span> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
+                                    <input type="checkbox" id="tiaokuan" class="hidden" checked=""> 我同意<a href="/about/reg_protocol" target="_blank">《91旺财用户注册协议》</a>
                                 </li>
                             </ul>
                     </div>

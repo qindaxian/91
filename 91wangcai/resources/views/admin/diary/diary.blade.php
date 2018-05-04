@@ -40,7 +40,7 @@
 							<th width="120">更新时间</th>
 							<th width="60">发布状态</th>
 							<th width="120">操作</th>
-						</tr>		
+						</tr>
 					</thead>
 					<tbody>
 						<?php for($i=0;$i<count($data);$i++){ ?>
@@ -86,10 +86,10 @@
 	</div>
 </section>
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="http://www.91.com/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<!-- <script type="text/javascript" src="http://www.91.com/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> -->
-<script type="text/javascript" src="http://www.91.com/admin/lib/laypage/1.2/laypage.js"></script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/My97DatePicker/4.8/WdatePicker.js')}}"></script>
+<!-- <script type="text/javascript" src={{asset('admin/lib/datatables/1.10.0/jquery.dataTables.min.js')}}"></script> -->
+<script type="text/javascript" src="{{asset('admin/lib/laypage/1.2/laypage.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/jquery-1.8.2.min.js')}}"></script>
 <script>
 
 /*资讯-添加*/

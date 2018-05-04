@@ -48,6 +48,7 @@ class DiaryController extends Controller
         }
         return view('admin/diary/diary_add');
     }
+}
 
     // public function diaryUpload(Request $request)
     // {

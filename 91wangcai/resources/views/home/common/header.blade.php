@@ -6,13 +6,14 @@
     <meta name="baidu-site-verification" content="91旺财是九一金融旗下互联网网络借贷信息中介平台，北京市互联网金融行业协会副会长单位,中国互联网金融协会会员理事单位,公司法人许泽玮先生现任北京市互联网金融协会党委书记，厦门银行资金存管，符合行业监管，严格自律，多重保障为用户资金保驾护航" />
 
     <!-- 导入右侧[联系我们]  js效果 -->
-    <script src="http://www.91.com/v1.1.0/js/daily/index_main.js"></script>
+    <script src="{{asset('v1.1.0/js/daily/index_main.js')}}"></script>
     {{--导入右侧[联系我们]  js效果--}}
     <!-- 导入旺财日记样式开始 -->
-    <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/daily/daily_style.css?t=2">
+    <link rel="stylesheet" type="text/css" href="{{asset('v1.1.0/css/daily/daily_style.css')}}">
     <!-- 导入旺财日记样式结束 -->
     <!-- 导入首页样式开始 -->
-    <link href="http://www.91.com/v1.1.0/css/homepage/homepage_style.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('v1.1.0/css/homepage/homepage_style.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('v1.1.0/css/help/help_style.css')}}" rel="stylesheet" type="text/css">
     <!-- 导入首页样式结束 -->
     <!-- 导入轮播图样式开始 -->
     <!-- 导入轮播图样式结束 -->
@@ -85,13 +86,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_tel.png')}}"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_QQ.png')}}"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_help.png')}}"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
+                <img src="{{asset('v1.1.0/img/common/weixin1.png')}}"/>
             </div>
         </div>
     </div>
@@ -110,13 +111,13 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
+    <input type="hidden" value="{{asset('v1.1.0')}}" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
     <div class="wrap navWrap clearfix">
         <h2 class="logo">
             <a href="/">
-                <img src="http://www.91.com/v1.1.0/img/common/logo.png" alt="91旺财">
+                <img src="{{asset('v1.1.0/img/common/logo.png')}}" alt="91旺财">
             </a>
         </h2>
         <div class="nav">
@@ -145,7 +146,6 @@
                     </div>
                 </li>
                 <li id="reportNav" class="">
-                    
                     <a href="/home/operationreport" class="yunyingReport">运营报告</a>
                     <!-- <div class="hideSlideMain hide">
                         <div class="topArrowBgWrap" >

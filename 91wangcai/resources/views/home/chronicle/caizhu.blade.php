@@ -21,7 +21,7 @@
             </ul>
         </div>
     </div>
-    <div class="main">
+    <div class="main" style="margin-left: 420px;">
         <!-- loading开始 -->
         <div class="loadWrap">
             <span class="loadlogo"></span>
@@ -29,7 +29,7 @@
             <span class="loadText">正在加载...</span>
         </div>
         <!-- loading结束 -->
-        <div class="wrapper hidden">
+        <div class="wrapper hidden" style="margin:0 auto; width: 1800px;">
             <ul class="listYear clearfix" id="listYear">
             </ul>
             <!-- 分页信息开始 -->

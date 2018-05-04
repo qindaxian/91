@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/','Home\IndexController@index');
 Route::group(['namespace' => 'Admin'], function(){
     // 控制器在 "App\Http\Controllers\Admin" 命名空间下
     Route::get('admin/index','IndexController@index');

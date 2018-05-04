@@ -36,7 +36,7 @@ class AdminLogin
         //获取当前访问的路由
         $nowUri = $request->path();
         $urlArr=array_column($powerArr,'url');
-        if($nowUri!='admin/index'&&!in_array($nowUri,$urlArr)){
+        if($nowUri!='admin/index' && !in_array($nowUri,$urlArr)){
             return redirect('admin/noPower');
         }
         //遍历数组，将子集导航包含在父集中
@@ -44,8 +44,7 @@ class AdminLogin
         foreach ($powerArr as $k => $v) {
             if ($v['parent_id'] == 0) {
                 $v['data'] = [];
-            }
-            else{
+            }else{
                 $powerNewArr[$v['parent_id']]['data'][] = $v;
             }
         }

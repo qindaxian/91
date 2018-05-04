@@ -11,7 +11,7 @@
     <meta name="keywords" content="91旺财，项目列表,网络借贷，借贷平台">
     <meta name="description" content="91旺财提供门槛低、期限灵活的出借项目,用户通过平台进行资金出借获得安全收益">
     <!-- 导入理财列表页样式开始 -->
-    <link rel="stylesheet" type="text/css" href="http://www.91.com/v1.1.0/css/financing/list_style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('v1.1.0/css/financing/list_style.css')}}">
     <!-- 导入理财列表页样式结束 -->
 </head>
 <body>
@@ -58,13 +58,13 @@
         <div class="slideContact">
             <div class="info">
                 <h5><strong>7×24小时专业顾问</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_tel.png"/><span>400-000-0091</span></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_tel.png')}}"/><span>400-000-0091</span></p>
                 <h5><strong>QQ在线</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_QQ.png"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_QQ.png')}}"/><a href="http://www.91wangcai.com/help/qq" target="_blank">点击咨询</a></p>
                 <h5><strong>自助查询</strong></h5>
-                <p class="vt"><img src="http://www.91.com/v1.1.0/img/common/ico_help.png"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
+                <p class="vt"><img src="{{asset('v1.1.0/img/common/ico_help.png')}}"/><a href="http://www.91wangcai.com/help/index" target="_blank">帮助中心</a></p>
                 <h5><strong>官方微信</strong></h5>
-                <img src="http://www.91.com/v1.1.0/img/common/weixin1.png"/>
+                <img src="{{asset('v1.1.0/img/common/weixin1.png')}}"/>
             </div>
         </div>
     </div>
@@ -83,7 +83,7 @@
     <!--clientsecret值-->
     <input type="hidden" value="78fijfdsaDjKAL09fdDCV" id="wc_pc_clientsecret"/>
     <input type="hidden" value="www.91wangcai.com" id="wangcai_domain"/>
-    <input type="hidden" value="http://www.91.com/v1.1.0" id="ctx"/>
+    <input type="hidden" value="{{asset('v1.1.0')}}" id="ctx"/>
     <!-- 顶部公告开始 -->
     <!-- 顶部公告结束 -->
 </div>
@@ -914,9 +914,9 @@
         <table ><tr><td>总共<em>30</em>条</td><td><span>首页</span></td><td><span>上一页</span></td><td><span>1</span></td><td><a href='/list?page=2'>2</a></td><td><a href='/list?page=3'>3</a></td><td><a href='/list?page=2'>下一页</a></td><td><a href='/list?page=3'>尾页</a></td><td>共分<em>3</em>页显示</td></tr></table>
     </div>
     <div class="listBottomTu">
-        <a href="/?activitynew" target="_blank"><img src="http://www.91.com/v1.1.0/img/list/listbottm1.png"/></a>
-        <a href="/?commission=" target="_blank"><img src="http://www.91.com/v1.1.0/img/list/listbottm2.png"/></a>
-        <a href="/about/borrowKnowledge" target="_blank" class="lastImg"><img src="http://www.91.com/v1.1.0/img/list/listbottm3.png"/></a>
+        <a href="/?activitynew" target="_blank"><img src="{{asset('v1.1.0/img/list/listbottm1.png')}}"/></a>
+        <a href="/?commission=" target="_blank"><img src="{{asset('v1.1.0/img/list/listbottm2.png')}}"/></a>
+        <a href="/about/borrowKnowledge" target="_blank" class="lastImg"><img src="{{asset('v1.1.0/img/list/listbottm3.png')}}"/></a>
     </div>
 </div>
 
@@ -929,12 +929,12 @@
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        })(window,document,'script','{{asset('v1.1.0/js/analytics.js')}}','ga');
         ga('create', 'UA-53638773-1', 'auto');
         ga('send', 'pageview');
     </script>
 </div>
-<script type="text/javascript" src="http://www.91.com/v1.1.0/js/financing/list_main.js"></script>
+<script type="text/javascript" src="{{asset('v1.1.0/js/financing/list_main.js')}}"></script>
 </body>
 
 </html>

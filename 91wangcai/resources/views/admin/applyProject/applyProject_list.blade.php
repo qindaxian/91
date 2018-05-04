@@ -1,7 +1,7 @@
 @extends('admin.common.base')
 @section('content')
     
-    <script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="{{asset('admin/lib/jquery/jquery-1.8.2.min.js')}}"></script>
     <script>
         $(function () {
 

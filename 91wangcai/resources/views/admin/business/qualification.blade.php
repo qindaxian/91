@@ -34,8 +34,8 @@
 		</div>
 	</form>
 </div>
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="http://www.91.com/js/tip.jquery.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/jquery-1.8.2.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/tip.jquery.js')}}"></script>
 <script>
 	var submit_name = false;
 	var submit_idcard = false;
@@ -106,6 +106,6 @@
         })
 </script>
 @endsection
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://www.91.com/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/ueditor.all.min.js')}}"> </script>
+<script type="text/javascript" src="{{asset('admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js')}}"></script>
 

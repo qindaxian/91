@@ -1,6 +1,6 @@
 @extends('admin.common.base')
 @section('content')
-<script type="text/javascript" src="http://www.91.com/admin/lib/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/lib/jquery/jquery-1.8.2.min.js')}}"></script>
 <section class="Hui-article-box">
 	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 项目管理 <span class="c-gray en">&gt;</span> 项目列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 
@@ -8,7 +8,7 @@
 
 
 
-	<script type="text/javascript" src="http://www.91.com/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="{{asset('lib/My97DatePicker/4.8/WdatePicker.js')}}"></script>
 
 
 
@@ -23,7 +23,7 @@
 				<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜项目</button>
 			</div>
 
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="project_add('添加项目','http://www.91.com/admin/product-project_add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="project_add('添加项目','{{asset('admin/product-project_add')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加项目</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 
 
 
@@ -47,7 +47,7 @@
 							<td><input name="" type="checkbox" value=""></td>
 							<td>001</td>
 							<td>分类名称</td>
-							<td><a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="100" class="picture-thumb" src="pic/200x150.jpg"></a></td>
+							<td><a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="100" class="picture-thumb" src="temp/200x150.jpg"></a></td>
 							<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">现代简约 白色 餐厅</a></td>
 							<td class="text-c">标签</td>
 							<td>2014-6-11 11:11:42</td>
